@@ -7,8 +7,9 @@ function App() {
   useEffect(() => {
     axios.get("/api/config").then(response => {
       console.log(response.data);
+      alert(response.date.name);
     });
-  });
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
