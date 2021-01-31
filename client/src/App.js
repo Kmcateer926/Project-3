@@ -1,5 +1,11 @@
 import {useEffect} from "react";
+import { HashRouter as Router, Route } from "react-router-dom";
+import Home from "./containers/Home/Home";
+import Resources from "./containers/Resources/Resources";
+import LearnMore from "./containers/LearnMore/LearnMore";
 import axios from "axios";
+import Navbar from "./components/Navbar/Navbar";
+
 
 function App() {
   useEffect(() => {
@@ -10,7 +16,14 @@ function App() {
   }, []);
   return (
     <div className="App">
-      
+       <>
+      <Router basename="/">
+        <Navbar />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/Resources" component={Resources} />
+        <Route exact path="/LearnMore" component={LearnMore} />
+      </Router>
+    </>
     </div>
   );
 }
