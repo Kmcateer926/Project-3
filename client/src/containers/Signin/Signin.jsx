@@ -72,8 +72,8 @@ const Signin = () => {
 <p>
 <Link>Forgot Password</Link>
 </p>
-    <p>
-        New to Tutor Hub? <Link to="/parentlogin">Join now</Link>
+    <p >
+        New to Tutor Hub? <a href="/parentlogin">Join now</a>
     </p>
          
         </div>

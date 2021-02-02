@@ -12,12 +12,14 @@ const style = {
     color: "rgb(179, 163, 105)",
     borderTop: "8px solid  #94b8b8",
     flexShrink: "0",
+    fontFamily: "Special Elite, cursive",
   };
   const phantom = {
     display: "block",
     padding: "20px",
     height: "60px",
     width: "100%",
+   
   };
 
 const Footer = () => {

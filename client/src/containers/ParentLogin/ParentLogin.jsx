@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import parentSubject from "./parentSubject.json";
 
+const styles = {
+
+  font: {
+    fontFamily: "Special Elite, cursive",
+  },
+  heading: {
+    paddingTop: 40
+  }
+}
+
 const ParentLogin = () => {
   const [subject, setSubject] = useState({});
 
@@ -10,17 +20,23 @@ const ParentLogin = () => {
   }, [subject]);
 
   return (
-    <div>
+    <>
+    <div className="container" style={styles.font}>
+     
         <div>
-            <h1>Create Your Teacher Account</h1>
-            <h4>Already Have an Account?<a href="/">Login</a></h4>
+            <h1 className="title is-3 has-text-centered" style={styles.heading}>Create Your Tutor Hub Account</h1>
+            <h4 className="subtitle is-6 has-text-centered">Already Have an Account?<a href="/signin"> Login</a></h4>
         </div>
-      <div className="field">
-        <label className="label">Name</label>
+
+        <div className="column is-three-fifths is-offset-one-fifth">
+        <div className="field">
+        <label className="label ">Name</label>
         <div className="control">
           <input className="input" type="text" placeholder="Text input" />
         </div>
       </div>
+        </div>
+     
 
       {/* <div className="field">
   <label className="label">Username</label>
@@ -35,8 +51,8 @@ const ParentLogin = () => {
   </div>
   <p className="help is-success">This username is available</p>
 </div> */}
-
-      <div className="field">
+<div className="column is-three-fifths is-offset-one-fifth">
+<div className="field">
         <label className="label">Email</label>
         <div className="control has-icons-left has-icons-right">
           <input
@@ -53,14 +69,25 @@ const ParentLogin = () => {
         </div>
         <p className="help is-danger">This email is invalid</p>
       </div>
-      <div className="field">
+
+</div>
+    
+<div className="column is-three-fifths is-offset-one-fifth">
+
+<div className="field">
         <label className="label">Password</label>
         <div className="control">
           <input className="input" type="text" placeholder="Password input" />
         </div>
       </div>
+  </div>
+
+
+   
       <>
-        <div className="field">
+      <div className="column is-three-fifths is-offset-one-fifth">
+
+      <div className="field">
           <label className="label">Subject</label>
           <div className="control">
             <div className="select">
@@ -73,7 +100,11 @@ const ParentLogin = () => {
             </div>
           </div>
         </div>
+      </div>
+       
       </>
+
+      <div className="column is-three-fifths is-offset-one-fifth">
       <div className="field">
         <label className="label">Message</label>
         <div className="control">
@@ -84,11 +115,25 @@ const ParentLogin = () => {
       <div className="field">
         <div className="control">
           <label className="checkbox">
-            <input type="checkbox" />I agree to the{" "}
+            <input type="checkbox" /> I agree to the{" "}
             <a href="/">terms and conditions</a>
           </label>
         </div>
       </div>
+
+      <div className="field is-grouped">
+        <div className="control">
+          <button className="button is-link" style={styles.font}>Sign Up</button>
+        </div>
+        <div className="control">
+          <button className="button is-link is-light" style={styles.font}>Cancel</button>
+        </div>
+      </div>
+
+        </div>
+   
+
+   
 
       {/* <div className="field">
   <div className="control">
@@ -103,15 +148,9 @@ const ParentLogin = () => {
   </div>
 </div> */}
 
-      <div className="field is-grouped">
-        <div className="control">
-          <button className="button is-link">Login</button>
-        </div>
-        <div className="control">
-          <button className="button is-link is-light">Cancel</button>
-        </div>
-      </div>
+     
     </div>
+    </>
   );
 };
 
