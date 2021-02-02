@@ -6,8 +6,8 @@ import Resources from "./containers/Resources/Resources";
 import Landing from "./containers/Landing/Landing.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
-
 import Directory from "./containers/Directory/Directory.jsx";
+import Footer from "./components/Footer/Footer"
 
 function App() {
 	useEffect(() => {
@@ -26,11 +26,7 @@ function App() {
 					<Route exact path="/parentlogin" component={ParentLogin} />
 					<Route exact path="/landing" component={Landing} />
 					<Route exact path="/directory" component={Directory} />
-					{/* <Route
-						exact
-						path="/ParentSignUp"
-						component={ParentSignUp}
-					/> */}
+					<Footer />
 				</Router>
 			</>
 		</div>
