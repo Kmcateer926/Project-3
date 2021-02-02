@@ -54,16 +54,16 @@ const Directory = () => {
 								className="content"
 								style={{ fontFamily: "Special Elite, cursive" }}
 							>
-								<strong>Name:</strong>
+								<strong>Name: </strong>
 								{teachers.name}
 								<br />
-								<strong>Education:</strong>
+								<strong>Education: </strong>
 								{teachers.education}
 								<br />
-								<strong>Experience:</strong>
+								<strong>Experience: </strong>
 								{teachers.experience}
 								<br />
-								<strong>Subject(s):</strong>
+								<strong>Subject(s): </strong>
 								{teachers.subjects}
 								<br />
 								<br />
