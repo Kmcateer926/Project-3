@@ -11,11 +11,11 @@ class Home extends Component {
           <video autoPlay muted loop>
             <source src={Video1} type="video/mp4" />
           </video>
-          <h1>Teacher Hub</h1>
         </div>
 
         <div className="aboutTH">
-          Find teachers in your existing school network to tutor your kids.
+          <i class="fas fa-apple-alt"></i> &nbsp; Find teachers in your existing
+          school network to tutor your children at home.
         </div>
 
         <div className="ParallaxVideo2">
