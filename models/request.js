@@ -3,17 +3,17 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const RequestSchema = new Schema({
-  firstName: {
+  name: {
     type: String,
     trim: true,
     required: "First name is Required",
   },
 
-  lastName: {
-    type: String,
-    trim: true,
-    required: "Last name is Required",
-  },
+  // lastName: {
+  //   type: String,
+  //   trim: true,
+  //   required: "Last name is Required",
+  // },
 
   //may or may not need userCreated
   userCreated: {
