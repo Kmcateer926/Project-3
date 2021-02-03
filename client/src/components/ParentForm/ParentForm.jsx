@@ -4,71 +4,87 @@ const ParentForm = ({ handleFormSubmit }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [userCreated, setUserCreated] = useState("");
-//   const [subjects, setSubjects] = useState("");
-//   const [id, setId] = useState(true);
+  //   const [email, setEmail] = useState("");
+  //   const [userCreated, setUserCreated] = useState("");
+  //   const [subjects, setSubjects] = useState("");
+  //   const [id, setId] = useState(true);
+  const styles = {
+    font: {
+      fontFamily: "Special Elite, cursive",
+    },
+    heading: {
+      paddingTop: 40,
+    },
+  };
 
   return (
     <>
-      <form
-        className="col s12"
-        onSubmit={(e) => {
-          handleFormSubmit(e, {
-            name,
-            email,
-            password,
-            // userCreated,
-            // subjects,
-            // id,
-            
-          });
-        }}
-      >
-        <div className="row">
-          <div className="input-field col s6">
-            <input
-              placeholder="Parent Name"
-              id="name"
-              type="text"
-            //   name="title"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />
-            <label htmlFor="name">name</label>
+      <div>
+        <h1 className="title is-3 has-text-centered" style={styles.heading}>
+          Create Your Tutor Hub Account
+        </h1>
+        <h4 className="subtitle is-6 has-text-centered">
+          Already Have an Account?<a href="/signin"> Login</a>
+        </h4>
+      </div>
+      <div className="container" style={styles.font}>
+        <form
+          className="col s12"
+          onSubmit={(e) => {
+            handleFormSubmit(e, {
+              name,
+              email,
+              password,
+              // userCreated,
+              // subjects,
+              // id,
+            });
+          }}
+        >
+          <div className="row">
+            <div className="input-field col s6">
+              <input
+                placeholder="Parent Name"
+                id="name"
+                type="text"
+                //   name="title"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+              <label htmlFor="name"style={styles.font}>name</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                placeholder="Parent Email"
+                id="email"
+                type="text"
+                name="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <label htmlFor="email"style={styles.font}>email</label>
+            </div>
           </div>
-          <div className="input-field col s6">
-            <input
-              placeholder="Parent Email"
-              id="email"
-              type="text"
-              name="email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-            <label htmlFor="email">email</label>
+          <div className="row">
+            <div className="input-field col s12">
+              <input
+                placeholder="Parent Password"
+                id="password"
+                type="text"
+                name="password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+              <label htmlFor="password"style={styles.font}>Password</label>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              placeholder="Parent Password"
-              id="password"
-              type="text"
-              name="password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-            <label htmlFor="password">Password</label>
-          </div>
-        </div>
-        {/* <div className="row">
+          {/* <div className="row">
           <div className="input-field col s12">
             <input
               placeholder="User Created"
@@ -83,7 +99,7 @@ const ParentForm = ({ handleFormSubmit }) => {
             <label htmlFor="userCreated">User Created</label>
           </div>
         </div> */}
-        {/* <div className="row">
+          {/* <div className="row">
           <div className="input-field col s12">
             <input
               placeholder="Parent Subject"
@@ -98,7 +114,7 @@ const ParentForm = ({ handleFormSubmit }) => {
             <label htmlFor="subject">Subject</label>
           </div>
         </div> */}
-        {/* <div className="row">
+          {/* <div className="row">
           <div className="input-field col s6">
             <input
               placeholder="Parent id"
@@ -114,14 +130,15 @@ const ParentForm = ({ handleFormSubmit }) => {
           </div>
           
         </div> */}
-        <div className="row">
-          <div className="col s12">
-            <button className="waves-effect waves-light btn">
-              Create New Parent Profile
-            </button>
+          <div className="row">
+            <div className="col s12">
+              <button className="waves-effect waves-light btn" style={styles.font}>
+                Create New Parent Profile
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </>
   );
 };
