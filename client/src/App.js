@@ -28,7 +28,7 @@ function App() {
 					<Route exact path="/landing" component={Landing} />
 					<Route exact path="/directory" component={Directory} />
 					<Route exact path="/parentsignup" component={ParentSignUp} />
-          <Route exact path="/signin" component={signin} />
+          			<Route exact path="/signin" component={Signin} />
 					<Footer />
 				</Router>
 			</>
