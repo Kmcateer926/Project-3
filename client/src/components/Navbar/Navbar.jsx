@@ -13,7 +13,7 @@ const styles = {
 
     color: "#FFFFFF",
     fontFamily: "Special Elite, cursive",
-
+    marginTop: 20
   }
 }
 

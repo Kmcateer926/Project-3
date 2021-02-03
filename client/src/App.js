@@ -7,15 +7,16 @@ import Landing from "./containers/Landing/Landing.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
 import Directory from "./containers/Directory/Directory.jsx";
-import Footer from "./components/Footer/Footer"
+import Footer from "./components/Footer/Footer";
+import Signin from "./containers/Signin/Signin";
 
 function App() {
-	useEffect(() => {
-		axios.get("/api/config").then((response) => {
-			console.log(response.data);
-			// alert(response.date.name);
-		});
-	}, []);
+  useEffect(() => {
+    axios.get("/api/config").then((response) => {
+      console.log(response.data);
+      // alert(response.date.name);
+    });
+  }, []);
 
 	return (
 		<div className="App">
@@ -27,11 +28,13 @@ function App() {
 					<Route exact path="/landing" component={Landing} />
 					<Route exact path="/directory" component={Directory} />
 					<Route exact path="/parentsignup" component={ParentSignUp} />
+          <Route exact path="/signin" component={signin} />
 					<Footer />
 				</Router>
 			</>
 		</div>
 	);
+
 }
 
 export default App;

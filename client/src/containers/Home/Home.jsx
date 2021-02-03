@@ -14,8 +14,8 @@ class Home extends Component {
         </div>
 
         <div className="aboutTH">
-          <i class="fas fa-apple-alt"></i> &nbsp; Find teachers in your existing
-          school network to tutor your children at home.
+          <i class="fas fa-user-graduate"></i> &nbsp; Find teachers in your
+          existing school network to tutor your children at home.
         </div>
 
         <div className="ParallaxVideo2">
