@@ -19,17 +19,25 @@ const ParentForm = ({ handleFormSubmit }) => {
 
   return (
     <>
-      <div>
-        <h1 className="title is-3 has-text-centered" style={styles.heading}>
+    <div className="container" style={styles.font}>
+    <h1 className="title is-3 has-text-centered" style={styles.heading}>
           Create Your Tutor Hub Account
         </h1>
         <h4 className="subtitle is-6 has-text-centered">
           Already Have an Account?<a href="/signin"> Login</a>
         </h4>
+    </div>
+      <div>
+   
+ 
+      </div>
+      <div className="container">
+
+        
       </div>
       <div className="container" style={styles.font}>
         <form
-          className="col s12"
+          className="column"
           onSubmit={(e) => {
             handleFormSubmit(e, {
               name,
@@ -41,8 +49,20 @@ const ParentForm = ({ handleFormSubmit }) => {
             });
           }}
         >
-          <div className="row">
-            <div className="input-field col s6">
+                 <div className="column is-three-fifths is-offset-one-fifth">
+            <div className="field">
+              <label className="label ">Name</label>
+              <div className="control">
+                <input className="input" type="text" id="name" placeholder="Text input"   value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}/>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="column is-three-fifths is-offset-one-fifth">
+            <div className="field">
               <input
                 placeholder="Parent Name"
                 id="name"
@@ -53,9 +73,38 @@ const ParentForm = ({ handleFormSubmit }) => {
                   setName(e.target.value);
                 }}
               />
-              <label htmlFor="name"style={styles.font}>name</label>
+              <label htmlFor="name"style={styles.font}> Name</label>
             </div>
-            <div className="input-field col s6">
+            </div> */}
+
+<div className="column is-three-fifths is-offset-one-fifth">
+            <div className="field">
+              <label className="label">Email</label>
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input is-danger"
+                  type="email"
+                  placeholder="Parent Email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-envelope"></i>
+                </span>
+                <span className="icon is-small is-right">
+                  <i className="fas fa-exclamation-triangle"></i>
+                </span>
+              </div>
+              <p className="help is-danger">This email is invalid</p>
+            </div>
+          </div>
+           
+{/* <div className="column is-three-fifths is-offset-one-fifth">
+
+<div className="input-field col s6">
               <input
                 placeholder="Parent Email"
                 id="email"
@@ -66,10 +115,29 @@ const ParentForm = ({ handleFormSubmit }) => {
                   setEmail(e.target.value);
                 }}
               />
-              <label htmlFor="email"style={styles.font}>email</label>
+              <label htmlFor="email"style={styles.font}> Email</label>
+            </div>
+</div> */}
+
+<div className="column is-three-fifths is-offset-one-fifth">
+            <div className="field">
+              <label className="label">Password</label>
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Password input"
+                  id="password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+              </div>
             </div>
           </div>
-          <div className="row">
+         {/* <div className="column is-three-fifths is-offset-one-fifth">
+         
             <div className="input-field col s12">
               <input
                 placeholder="Parent Password"
@@ -81,9 +149,12 @@ const ParentForm = ({ handleFormSubmit }) => {
                   setPassword(e.target.value);
                 }}
               />
-              <label htmlFor="password"style={styles.font}>Password</label>
+              <label htmlFor="password"style={styles.font}> Password</label>
             </div>
-          </div>
+        
+         </div> */}
+          
+       
           {/* <div className="row">
           <div className="input-field col s12">
             <input
@@ -130,12 +201,12 @@ const ParentForm = ({ handleFormSubmit }) => {
           </div>
           
         </div> */}
-          <div className="row">
-            <div className="col s12">
-              <button className="waves-effect waves-light btn" style={styles.font}>
+          <div className="column is-three-fifths is-offset-one-fifth">
+  
+              <button className="button is-link" style={styles.font}>
                 Create New Parent Profile
               </button>
-            </div>
+            
           </div>
         </form>
       </div>
