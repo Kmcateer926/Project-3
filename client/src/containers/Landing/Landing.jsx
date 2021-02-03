@@ -1,5 +1,5 @@
 import React from "react";
-import { CalendlyEventListener } from "react-calendly";
+
 
 const Landing = () => {
   return (
