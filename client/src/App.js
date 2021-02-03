@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./containers/Home/Home";
-import ParentLogin from "./containers/ParentLogIn/ParentLogin";
+import ParentLogin from "./containers/ParentLogin/ParentLogin";
 import ParentSignUp from "./containers/NewParent/NewParent";
 import Landing from "./containers/Landing/Landing.jsx";
 import axios from "axios";
@@ -28,7 +28,7 @@ function App() {
 					<Route exact path="/landing" component={Landing} />
 					<Route exact path="/directory" component={Directory} />
 					<Route exact path="/parentsignup" component={ParentSignUp} />
-          			<Route exact path="/signin" component={Signin} />
+          <Route exact path="/signin" component={Signin} />
 					<Footer />
 				</Router>
 			</>
