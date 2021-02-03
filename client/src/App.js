@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Directory from "./containers/Directory/Directory.jsx";
 import Footer from "./components/Footer/Footer";
 import Signin from "./containers/Signin/Signin";
+import Session from "./containers/Session/Session.jsx";
 
 function App() {
   useEffect(() => {
@@ -18,16 +19,20 @@ function App() {
     });
   }, []);
 
-	return (
-		<div className="App">
-			<>
-				<Router>
-					<Navbar />
-					<Route exact path="/" component={Home} />
-					<Route exact path="/parentlogin" component={ParentLogin} />
-					<Route exact path="/landing" component={Landing} />
-					<Route exact path="/directory" component={Directory} />
-					<Route exact path="/parentsignup" component={ParentSignUp} />
+
+  return (
+    <div className="App">
+      <>
+        <Router>
+          <Navbar />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/parentlogin" component={ParentLogin} />
+          <Route exact path="/landing" component={Landing} />
+          <Route exact path="/directory" component={Directory} />
+          <Route exact path="/session" component={Session} />
+    	<Route exact path="/parentsignup" component={ParentSignUp} />
+    
+
           <Route exact path="/signin" component={Signin} />
 					<Footer />
 				</Router>
