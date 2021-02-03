@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Directory.css";
 import teacherDirectory from "./teacherDirectory.json";
-import { InlineWidget } from "react-calendly";
+import CalendarApp from "../../components/Calendar/Calendar";
 
 const Directory = () => {
   const [teachers, setTeachers] = useState({});
@@ -80,12 +80,7 @@ const Directory = () => {
                   {/* TODO: add onclick to prompt teacher schedule */}
                   Book Session
                 </button>
-                <InlineWidget
-                  styles={{
-                    height: "350px",
-                  }}
-                  url="https://calendly.com/aamerson198"
-                />
+                <CalendarApp></CalendarApp>
               </div>
             </div>
           </div>
