@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Directory.css";
 import teacherDirectory from "./teacherDirectory.json";
-import { InlineWidget } from "react-calendly";
+import CalendarApp from "../../components/Calendar/Calendar";
 
 const Directory = () => {
 	const [teachers, setTeachers] = useState({});
@@ -49,50 +49,47 @@ const Directory = () => {
 						</figure>
 					</div>
 
-					<div className="card">
-						<div className="card-content">
-							<div
-								className="content"
-								style={{ fontFamily: "Special Elite, cursive" }}
-							>
-								<strong>Name: </strong>
-								{teachers.name}
-								<br />
-								<strong>Education: </strong>
-								{teachers.education}
-								<br />
-								<strong>Experience: </strong>
-								{teachers.experience}
-								<br />
-								<strong>Subject(s): </strong>
-								{teachers.subjects}
-								<br />
-								<br />
-								<button
-									className="button is-small is-fullwidth is-info"
-									style={{
-										borderRadius: "10px",
-										fontSize: "25px",
-										fontWeight: "bold",
-										fontFamily: "Special Elite, cursive",
-									}}
-								>
-									{/* TODO: add onclick to prompt teacher schedule */}
-									Book Session
-								</button>
-								<InlineWidget
-									styles={{
-										height: "350px",
-									}}
-									url="https://calendly.com/aamerson198"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-			))}
-		</>
-	);
+
+          <div className="card">
+            <div className="card-content">
+              <div
+                className="content"
+                style={{ fontFamily: "Special Elite, cursive" }}
+              >
+                <strong>Name: </strong>
+                {teachers.name}
+                <br />
+                <strong>Education: </strong>
+                {teachers.education}
+                <br />
+                <strong>Experience: </strong>
+                {teachers.experience}
+                <br />
+                <strong>Subject(s): </strong>
+                {teachers.subjects}
+                <br />
+                <br />
+                <button
+                  className="button is-small is-fullwidth is-info"
+                  style={{
+                    borderRadius: "10px",
+                    fontSize: "25px",
+                    fontWeight: "bold",
+                    fontFamily: "Special Elite, cursive",
+                  }}
+                >
+                  {/* TODO: add onclick to prompt teacher schedule */}
+                  Book Session
+                </button>
+                <CalendarApp></CalendarApp>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+
 };
 
 export default Directory;
