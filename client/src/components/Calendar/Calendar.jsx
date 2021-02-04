@@ -12,7 +12,9 @@ const Calendar = () => {
         selected={startDate}
         onChange={(date) => setStartDate(date)}
         showTimeSelect
-        dateFormat="Pp"ç
+        dateFormat="Pp"
+        minDate={new Date()}
+        filterDate={(date) => date.getDay() !== 0}
       />
     </div>
   );
