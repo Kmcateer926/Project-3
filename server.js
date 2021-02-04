@@ -16,7 +16,11 @@ const PORT = process.env.PORT || 3001;
 //   .create({
 //     body: "This is a test text message",
 //     from: "+15093944876",
+<<<<<<< HEAD
 //     // to: "+16787933025"
+=======
+//     to: "+16787933025"
+>>>>>>> 9a032c6e7cf95c6fb88d59b4b9c73395753a6af2
 //   })
 //   .then((message) => console.log(message))
 //   .catch((err) => console.log(err));

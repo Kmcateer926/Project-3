@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import API from "../../utils/API"
+import axios from "axios";
 
 const ParentForm = () => {
   const [formSignin, setFormSignin] = useState ({
@@ -25,14 +26,22 @@ setFormSignin({...formSignin, [name]: value})
   function handleFormSubmit(event) {
     event.preventDefault();
 
-    if (!(formSignin.password === formSignin.passwordCheck)) {
-      alert("The passwords need to match");
-    } else if (formSignin.name && formSignin.email && formSignin.password) {
+    // if (!formSignin.password) {
+    //   alert("The passwords need to match");
+    // } else if (formSignin.name && formSignin.email && formSignin.password) {
       API.savePost({
         name: formSignin.name,
         email: formSignin.email,
         password: formSignin.password,
       })
+      // axios
+      //     .post("/api/parent")
+      //     .then((response) => {
+      //       console.log(response.data);
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     })
         .then(() => {
           setFormSignin({
             name: "",
@@ -43,7 +52,7 @@ setFormSignin({...formSignin, [name]: value})
           alert("Sucessfully Created user");
         })
         .catch((err) => console.log(err));
-    }
+    
   
   }
   const styles = {
@@ -85,7 +94,7 @@ setFormSignin({...formSignin, [name]: value})
             <div className="field">
               <label className="label ">Name</label>
               <div className="control">
-                <input className="input" type="text" id="name" placeholder="Text input"   value={formSignin.name}
+                <input className="input" type="text" id="name" placeholder="Text input"   name="name" value={formSignin.name}
                 // onChange={(e) => {
                 //   setName(e.target.value);
                 // }}
@@ -121,6 +130,7 @@ setFormSignin({...formSignin, [name]: value})
                   placeholder="Parent Email"
                   id="email"
                   value={formSignin.email}
+                  name="email"
                   // onChange={(e) => {
                   //   setEmail(e.target.value);
                   // }}
@@ -164,6 +174,7 @@ setFormSignin({...formSignin, [name]: value})
                   placeholder="Password input"
                   id="password"
                   value={formSignin.password}
+                  name="password"
                   // onChange={(e) => {
                   //   setPassword(e.target.value);
                   // }}
