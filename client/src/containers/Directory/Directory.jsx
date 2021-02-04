@@ -4,50 +4,51 @@ import teacherDirectory from "./teacherDirectory.json";
 import CalendarApp from "../../components/Calendar/Calendar";
 
 const Directory = () => {
-  const [teachers, setTeachers] = useState({});
+	const [teachers, setTeachers] = useState({});
 
-  useEffect(() => {
-    setTeachers(teacherDirectory);
-  }, [teachers]);
+	useEffect(() => {
+		setTeachers(teacherDirectory);
+	}, [teachers]);
 
-  return (
-    <>
-      <div className="spacer" style={{ height: "50px" }}></div>
-      <div>
-        <h1
-          style={{
-            fontFamily: "Special Elite, cursive",
-            fontSize: "50px",
-            textAlign: "center",
-          }}
-        >
-          Tutor Directory
-        </h1>
-        <div className="spacer" style={{ height: "50px" }}></div>
-      </div>
-      {teacherDirectory.map((teachers) => (
-        <div
-          className="card "
-          style={{
-            margin: "10px",
-            border: "1px solid",
-            padding: "5px",
-            width: "30%",
-            display: "inline-block",
-            flexDirection: "row",
-            boxShadow: "5px 2px 2px grey",
-            borderRadius: "15px",
-          }}
-        >
-          <div className="card-image">
-            <figure className="image is-128x128">
-              <img
-                src={teachers.image}
-                alt={teachers.name}
-                style={{ borderRadius: "15px" }}
-              />
-            </figure>
-          </div>
+	return (
+		<>
+			<div className="spacer" style={{ height: "50px" }}></div>
+			<div>
+				<h1
+					style={{
+						fontFamily: "Special Elite, cursive",
+						fontSize: "50px",
+						textAlign: "center",
+					}}
+				>
+					Tutor Directory
+				</h1>
+				<div className="spacer" style={{ height: "50px" }}></div>
+			</div>
+			{teacherDirectory.map((teachers) => (
+				<div
+					className="card "
+					style={{
+						margin: "10px",
+						border: "1px solid",
+						padding: "5px",
+						width: "30%",
+						display: "inline-block",
+						flexDirection: "row",
+						boxShadow: "5px 2px 2px grey",
+						borderRadius: "15px",
+					}}
+				>
+					<div className="card-image">
+						<figure className="image is-128x128">
+							<img
+								src={teachers.image}
+								alt={teachers.name}
+								style={{ borderRadius: "15px" }}
+							/>
+						</figure>
+					</div>
+
 
           <div className="card">
             <div className="card-content">
@@ -88,6 +89,7 @@ const Directory = () => {
       ))}
     </>
   );
+
 };
 
 export default Directory;

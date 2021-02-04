@@ -1,13 +1,51 @@
 import React, { useState } from "react";
+import API from "../../utils/API"
 
-const ParentForm = ({ handleFormSubmit }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const ParentForm = () => {
+  const [formSignin, setFormSignin] = useState ({
+name: "",
+email: "",
+password: "",
+// passwordCheck: "",
+
+  })
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
   //   const [email, setEmail] = useState("");
   //   const [userCreated, setUserCreated] = useState("");
   //   const [subjects, setSubjects] = useState("");
   //   const [id, setId] = useState(true);
+
+  function handleInputChange(event) {
+const { name, value } = event.target;
+setFormSignin({...formSignin, [name]: value})
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+
+    if (!(formSignin.password === formSignin.passwordCheck)) {
+      alert("The passwords need to match");
+    } else if (formSignin.name && formSignin.email && formSignin.password) {
+      API.savePost({
+        name: formSignin.name,
+        email: formSignin.email,
+        password: formSignin.password,
+      })
+        .then(() => {
+          setFormSignin({
+            name: "",
+            email: "",
+            password: "",
+            // passwordCheck: "",
+          });
+          alert("Sucessfully Created user");
+        })
+        .catch((err) => console.log(err));
+    }
+  
+  }
   const styles = {
     font: {
       fontFamily: "Special Elite, cursive",
@@ -32,25 +70,27 @@ const ParentForm = ({ handleFormSubmit }) => {
       <div className="container" style={styles.font}>
         <form
           className="column"
-          onSubmit={(e) => {
-            handleFormSubmit(e, {
-              name,
-              email,
-              password,
-              // userCreated,
-              // subjects,
-              // id,
-            });
-          }}
+          // onSubmit={(e) => {
+          //   handleFormSubmit(e, {
+          //     name,
+          //     email,
+          //     password,
+          //     // userCreated,
+          //     // subjects,
+          //     // id,
+          //   });
+          // }}
         >
                  <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
               <label className="label ">Name</label>
               <div className="control">
-                <input className="input" type="text" id="name" placeholder="Text input"   value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}/>
+                <input className="input" type="text" id="name" placeholder="Text input"   value={formSignin.name}
+                // onChange={(e) => {
+                //   setName(e.target.value);
+                // }}
+                onChange={handleInputChange}
+                />
               </div>
             </div>
           </div>
@@ -80,10 +120,11 @@ const ParentForm = ({ handleFormSubmit }) => {
                   type="email"
                   placeholder="Parent Email"
                   id="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  value={formSignin.email}
+                  // onChange={(e) => {
+                  //   setEmail(e.target.value);
+                  // }}
+                  onChange={handleInputChange}
                 />
                 <span className="icon is-small is-left">
                   <i className="fas fa-envelope"></i>
@@ -122,10 +163,11 @@ const ParentForm = ({ handleFormSubmit }) => {
                   type="text"
                   placeholder="Password input"
                   id="password"
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
+                  value={formSignin.password}
+                  // onChange={(e) => {
+                  //   setPassword(e.target.value);
+                  // }}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -197,7 +239,7 @@ const ParentForm = ({ handleFormSubmit }) => {
         </div> */}
           <div className="column is-three-fifths is-offset-one-fifth">
   
-              <button className="button is-link" style={styles.font}>
+              <button className="button is-link" style={styles.font} onClick={handleFormSubmit}>
                 Create New Parent Profile
               </button>
             

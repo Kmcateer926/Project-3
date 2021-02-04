@@ -6,20 +6,20 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-require("dotenv").config();
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-// console.log(accountSid);
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = require("twilio")(accountSid, authToken);
+// require("dotenv").config();
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// // console.log(accountSid);
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const client = require("twilio")(accountSid, authToken);
 
-client.messages
-  .create({
-    body: "This is a test text message",
-    from: "+15093944876",
-    to: "+16787933025"
-  })
-  .then((message) => console.log(message))
-  .catch((err) => console.log(err));
+// client.messages
+//   .create({
+//     body: "This is a test text message",
+//     from: "+15093944876",
+//     // to: "+16787933025"
+//   })
+//   .then((message) => console.log(message))
+//   .catch((err) => console.log(err));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
