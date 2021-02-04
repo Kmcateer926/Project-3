@@ -10,7 +10,7 @@ const Session = () => {
 						className="column is-8 is-offset-2 is-centered"
 						style={{
 							border: "1px solid",
-							height: "300px",
+							height: "450px",
 							borderRadius: "15px",
 						}}
 					>
@@ -35,6 +35,18 @@ const Session = () => {
 							}}
 						>
 							<p>
+								<strong>
+									<img
+										src="https://res.cloudinary.com/fsgeoff/image/upload/v1612272864/business-headshots-professional-13_zj1mum.jpg"
+										alt="head-shot"
+										style={{
+											height: "125px",
+											width: "125px",
+										}}
+									></img>{" "}
+								</strong>
+							</p>
+							<p>
 								<strong>Tutor: </strong>
 							</p>
 							<p>
@@ -47,7 +59,10 @@ const Session = () => {
 								<strong>Time: </strong>
 							</p>
 
-                           <p style={{textAlign:"center"}}> <a href="/">edit</a></p> 
+							<p style={{ textAlign: "center" }}>
+								{" "}
+								<a href="/">edit</a>
+							</p>
 						</div>
 					</div>
 				</div>
