@@ -8,7 +8,8 @@ import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
 import Directory from "./containers/Directory/Directory.jsx";
 import Footer from "./components/Footer/Footer";
-import Signin from "./containers/Signin/Signin";
+import Signin from "./components/Signin/Signin";
+import ReturnParent from "./containers/ReturnParent/ReturnParent"
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
 					<Route exact path="/directory" component={Directory} />
 					<Route exact path="/parentsignup" component={ParentSignUp} />
           <Route exact path="/signin" component={Signin} />
+		  <Route exact path="/returnparent" component={ReturnParent} />
 					<Footer />
 				</Router>
 			</>

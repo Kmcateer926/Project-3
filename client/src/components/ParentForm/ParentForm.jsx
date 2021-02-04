@@ -27,14 +27,8 @@ const ParentForm = ({ handleFormSubmit }) => {
           Already Have an Account?<a href="/signin"> Login</a>
         </h4>
     </div>
-      <div>
-   
- 
-      </div>
-      <div className="container">
-
-        
-      </div>
+    
+     
       <div className="container" style={styles.font}>
         <form
           className="column"
