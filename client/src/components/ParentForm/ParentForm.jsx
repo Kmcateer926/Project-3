@@ -23,17 +23,17 @@ const { name, value } = event.target;
 setFormSignin({...formSignin, [name]: value})
   }
 
-  function handleFormSubmit(event) {
+  function handleFormSubmit(event, parentData) {
     event.preventDefault();
 
     // if (!formSignin.password) {
     //   alert("The passwords need to match");
     // } else if (formSignin.name && formSignin.email && formSignin.password) {
-      API.savePost({
-        name: formSignin.name,
-        email: formSignin.email,
-        password: formSignin.password,
-      })
+      // API.savePost({
+      //   name: formSignin.name,
+      //   email: formSignin.email,
+      //   password: formSignin.password,
+      // })
       // axios
       //     .post("/api/parent")
       //     .then((response) => {
@@ -42,6 +42,7 @@ setFormSignin({...formSignin, [name]: value})
       //     .catch((err) => {
       //       console.log(err);
       //     })
+      axios.post("/api/parents", parentData)
         .then(() => {
           setFormSignin({
             name: "",
@@ -52,7 +53,7 @@ setFormSignin({...formSignin, [name]: value})
           alert("Sucessfully Created user");
         })
         .catch((err) => console.log(err));
-    
+   
   
   }
   const styles = {
