@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Landing = () => {
 	return (
 		<>
@@ -12,6 +11,7 @@ const Landing = () => {
 						border: "1px solid",
 						height: "400px",
 						borderRadius: "15px",
+						boxShadow: "5px 2px 2px grey",
 					}}
 				>
 					<h1
