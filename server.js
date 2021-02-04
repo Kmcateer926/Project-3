@@ -6,11 +6,12 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-// require("dotenv").config();
-// const accountSid = process.env.TWILIO_ACCOUNT_SID;
-// // console.log(accountSid);
-// const authToken = process.env.TWILIO_AUTH_TOKEN;
-// const client = require("twilio")(accountSid, authToken);
+require("dotenv").config();
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// console.log(accountSid);
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require("twilio")(accountSid, authToken);
+
 
 // client.messages
 //   .create({
@@ -46,6 +47,7 @@ connection.on("error", (err) => {
 });
 
 const ParentSignUpController = require("./controllers/parentSignUpController");
+const SessionController = require("./controllers/sessionController");
 
 app.use(express.static("client/build"));
 
@@ -56,6 +58,7 @@ app.get("/api/config", (req, res) => {
 });
 
 app.use("/api/parents", ParentSignUpController);
+app.use("/api/sessions", SessionController);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
