@@ -12,14 +12,14 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require("twilio")(accountSid, authToken);
 
-client.messages
-  .create({
-    body: "This is a test text message",
-    from: "+15093944876",
-    to: "+16787933025"
-  })
-  .then((message) => console.log(message))
-  .catch((err) => console.log(err));
+// client.messages
+//   .create({
+//     body: "This is a test text message",
+//     from: "+15093944876",
+//     to: "+16787933025"
+//   })
+//   .then((message) => console.log(message))
+//   .catch((err) => console.log(err));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -46,6 +46,7 @@ connection.on("error", (err) => {
 });
 
 const ParentSignUpController = require("./controllers/parentSignUpController");
+const SessionController = require("./controllers/sessionController");
 
 app.use(express.static("client/build"));
 
@@ -56,6 +57,7 @@ app.get("/api/config", (req, res) => {
 });
 
 app.use("/api/parents", ParentSignUpController);
+app.use("/api/sessions", SessionController);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
