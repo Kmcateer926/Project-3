@@ -16,7 +16,7 @@ const EditSessionForm = ({ handleFormSubmit }) => {
       paddingTop: 40,
     },
   };
-
+ 
   return (
     <>
       <div>

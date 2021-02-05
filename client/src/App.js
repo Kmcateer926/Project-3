@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import Signin from "./containers/Signin/Signin";
 import Session from "./containers/Session/Session.jsx";
 import EditSession from "./containers/EditSession/EditSession";
+import DirectoryTest from "./containers/DirectoryTest/DirectoryTest"
 
 function App() {
   useEffect(() => {
@@ -32,7 +33,7 @@ function App() {
           <Route exact path="/session" component={Session} />
           <Route exact path="/parentsignup" component={ParentSignUp} />
           <Route exact path="/editsession" component={EditSession} />
-
+          <Route exact path="/directorytest" component={DirectoryTest} />
           <Route exact path="/signin" component={Signin} />
           <Footer />
         </Router>
