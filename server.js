@@ -46,7 +46,7 @@ connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
 
-const ParentSignUpController = require("./controllers/parentSignUpController");
+const ParentSignUpController = require("./controllers/parentController");
 const SessionController = require("./controllers/sessionController");
 
 app.use(express.static("client/build"));

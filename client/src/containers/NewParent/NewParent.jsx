@@ -2,19 +2,22 @@
 import React from "react";
 import axios from "axios";
 import ParentForm from "../../components/ParentForm/ParentForm";
+// import API from "../../utils/API"
 
 const NewParent = () => {
-  const handleFormSubmit = (e, parentData) => {
-    e.preventDefault();
-    axios
-      .post("/api/parents", parentData)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const handleFormSubmit = (e, parentData) => {
+  //   e.preventDefault();
+  //   axios
+  //     .post("/api/parents", parentData)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
+
 
   return (
     <div className="container">
@@ -24,7 +27,7 @@ const NewParent = () => {
         </div>
       </div>
       <div className="row">
-        <ParentForm handleFormSubmit={handleFormSubmit} />
+        <ParentForm />
       </div>
     </div>
   );
