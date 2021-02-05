@@ -17,11 +17,7 @@ const client = require("twilio")(accountSid, authToken);
 //   .create({
 //     body: "This is a test text message",
 //     from: "+15093944876",
-<<<<<<< HEAD
-//     // to: "+16787933025"
-=======
 //     to: "+16787933025"
->>>>>>> 9a032c6e7cf95c6fb88d59b4b9c73395753a6af2
 //   })
 //   .then((message) => console.log(message))
 //   .catch((err) => console.log(err));
@@ -50,7 +46,7 @@ connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
 
-const ParentSignUpController = require("./controllers/parentSignUpController");
+const ParentSignUpController = require("./controllers/parentController");
 const SessionController = require("./controllers/sessionController");
 
 app.use(express.static("client/build"));

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 const LoginForm = ({ handleLoginSubmit }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+const history = useHistory();
 
   const styles = {
     signin: {
@@ -19,6 +21,22 @@ const LoginForm = ({ handleLoginSubmit }) => {
     },
   };
 
+  function handleFormSubmit(event) {
+    event.preventDefault();
+const parentData = {
+  email,
+  password
+}
+
+      axios.post("/api/parents/login", parentData)
+        .then(() => {
+          history.push("/landing")
+          alert("Successfully Logged in user");
+        })
+        .catch((err) => console.log(err));
+   
+  
+  }
  
     return (
       <>
@@ -37,9 +55,7 @@ const LoginForm = ({ handleLoginSubmit }) => {
               handleLoginSubmit(e, {
                 email,
                 password,
-                // userCreated,
-                // subjects,
-                // id,
+             
               });
             }}
           >
@@ -91,6 +107,7 @@ const LoginForm = ({ handleLoginSubmit }) => {
                     <button
                       class="button is-link is-hovered"
                       style={styles.button}
+                      onClick={handleFormSubmit}
                     >
                       Sign In
                     </button>
