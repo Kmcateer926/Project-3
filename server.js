@@ -12,6 +12,7 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require("twilio")(accountSid, authToken);
 
+
 // client.messages
 //   .create({
 //     body: "This is a test text message",
@@ -45,7 +46,7 @@ connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
 
-const ParentSignUpController = require("./controllers/parentSignUpController");
+const ParentSignUpController = require("./controllers/parentController");
 const SessionController = require("./controllers/sessionController");
 
 app.use(express.static("client/build"));

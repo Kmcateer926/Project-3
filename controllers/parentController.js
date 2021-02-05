@@ -29,4 +29,15 @@ router.post("/", (req,res) => {
 });
 
 
+router.post("/login", (req,res) => {
+  console.log(req.body);
+  Parent.find(req.body).then((Parent) => {
+    console.log(Parent);
+    res.json(Parent);
+  }).catch((err) => {
+    console.log(err);
+  });
+});
+
+
 module.exports = router;
