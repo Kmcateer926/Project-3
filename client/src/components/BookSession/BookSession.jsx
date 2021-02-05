@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./Directory.css";
 import teacherDirectory from "./teacherDirectory.json";
 import CalendarApp from "../../components/Calendar/Calendar";
-import { Link } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 const BookSessionForm = ({ handleFormSubmit }) => {
   const [tutor, setTutor] = useState("");
   const [sessionLength, setSessionLength] = useState("");
 
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-
+  const history = useHistory();
   const styles = {
     font: {
       fontFamily: "Special Elite, cursive",
@@ -25,6 +25,24 @@ const BookSessionForm = ({ handleFormSubmit }) => {
   useEffect(() => {
     setTeachers(teacherDirectory);
   }, [teachers]);
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    const sessionData = {
+      tutor,
+      sessionLength,
+      date,
+      time,
+    };
+
+    axios
+      .post("/api/sessions/landing", sessionData)
+      .then(() => {
+        history.push("/landing");
+        alert("Successfully Logged in user");
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <>
@@ -105,11 +123,12 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                     fontSize: "25px",
                     fontWeight: "bold",
                     fontFamily: "Special Elite, cursive",
-                  }} onClick={handleFormSubmit}
+                  }}
+                  onClick={handleFormSubmit}
                 >
-                 
-                  <Link to="/landing" style={styles.link}>Book Session</Link>
-                  
+                  <Link to="/landing" style={styles.link}>
+                    Book Session
+                  </Link>
                 </button>
 
                 <CalendarApp></CalendarApp>
