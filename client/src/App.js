@@ -7,11 +7,11 @@ import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
 import Directory from "./containers/Directory/Directory.jsx";
 import Footer from "./components/Footer/Footer";
-import ReturnParent from "./containers/ReturnParent/ReturnParent"
+import ReturnParent from "./containers/ReturnParent/ReturnParent";
 import Session from "./containers/Session/Session.jsx";
 import EditSession from "./containers/EditSession/EditSession";
-import LoginForm from "./components/LoginForm/LoginForm"
-
+import DirectoryTest from "./containers/DirectoryTest/DirectoryTest";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 function App() {
   useEffect(() => {
@@ -32,18 +32,15 @@ function App() {
           <Route exact path="/session" component={Session} />
           <Route exact path="/parentsignup" component={ParentSignUp} />
           <Route exact path="/editsession" component={EditSession} />
-		  <Route exact path="/loginform" component={LoginForm} />
+          <Route exact path="/directorytest" component={DirectoryTest} />
 
-		  <Route exact path="/returnparent" component={ReturnParent} />
-					<Footer />
-				</Router>
-			</>
-		</div>
-	);
-  }
-      
-
-
-
+          <Route exact path="/loginform" component={LoginForm} />
+          <Route exact path="/returnparent" component={ReturnParent} />
+          <Footer />
+        </Router>
+      </>
+    </div>
+  );
+}
 
 export default App;
