@@ -18,6 +18,7 @@ router.get("/", (req, res) => {
   });
 });
 
+// CREATED A SIGNUP
 router.post("/", (req,res) => {
   console.log(req.body);
   Parent.create(req.body).then((newParent) => {
@@ -28,7 +29,7 @@ router.post("/", (req,res) => {
   });
 });
 
-
+// FOUND THE CREATED SIGNUP TO ENABLE LOGIN
 router.post("/login", (req,res) => {
   console.log(req.body);
   Parent.find(req.body).then((Parent) => {
