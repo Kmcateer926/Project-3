@@ -10,7 +10,6 @@ import Footer from "./components/Footer/Footer";
 import ReturnParent from "./containers/ReturnParent/ReturnParent";
 import Session from "./containers/Session/Session.jsx";
 import EditSession from "./containers/EditSession/EditSession";
-import DirectoryTest from "./containers/DirectoryTest/DirectoryTest";
 import LoginForm from "./components/LoginForm/LoginForm";
 
 function App() {
@@ -32,8 +31,6 @@ function App() {
           <Route exact path="/session" component={Session} />
           <Route exact path="/parentsignup" component={ParentSignUp} />
           <Route exact path="/editsession" component={EditSession} />
-          <Route exact path="/directorytest" component={DirectoryTest} />
-
           <Route exact path="/loginform" component={LoginForm} />
           <Route exact path="/returnparent" component={ReturnParent} />
           <Footer />
