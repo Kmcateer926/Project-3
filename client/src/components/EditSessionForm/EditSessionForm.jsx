@@ -19,8 +19,6 @@ const EditSessionForm = ({ handleFormSubmit }) => {
     },
   };
 
- 
- 
   return (
     <>
       <div>
