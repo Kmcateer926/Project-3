@@ -4,7 +4,6 @@ import teacherDirectory from "./teacherDirectory.json";
 import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import bulmaCalendar from "bulma-calendar/dist/js/bulma-calendar.min";
 
 const BookSessionForm = ({ handleFormSubmit }) => {
   const [tutor, setTutor] = useState("");
