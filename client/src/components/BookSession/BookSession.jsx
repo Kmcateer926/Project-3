@@ -115,6 +115,51 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                 <strong>Subject(s): </strong>
                 {teachers.subjects}
                 <br />
+                <p>
+                  <strong>
+                    Session Length:{" "}
+                    <input
+                      className="input is-danger"
+                      type="integer"
+                      placeholder="Session Length"
+                      id="email"
+                      value={sessionLength}
+                      onChange={(e) => {
+                        setSessionLength(e.target.value);
+                      }}
+                    />
+                  </strong>
+                </p>
+                <p>
+                  <strong>
+                    Date:{" "}
+                    <input
+                      className="input is-danger"
+                      type="integer"
+                      placeholder="Session Length"
+                      id="email"
+                      value={date}
+                      onChange={(e) => {
+                        setDate(e.target.value);
+                      }}
+                    />
+                  </strong>
+                </p>
+                <p>
+                  <strong>
+                    Time:{" "}
+                    <input
+                      className="input is-danger"
+                      type="integer"
+                      placeholder="Session Length"
+                      id="email"
+                      value={time}
+                      onChange={(e) => {
+                        setTime(e.target.value);
+                      }}
+                    />
+                  </strong>
+                </p>
                 <br />
                 <button
                   className="button is-small is-fullwidth is-info"
