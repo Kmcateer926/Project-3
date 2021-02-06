@@ -3,6 +3,8 @@ const express = require("express");
 const router = express.Router();
 const Parent = require("../models/parent");
 
+
+
 router.get("/", (req, res) => {
   Parent.find({
     where: {
@@ -21,7 +23,11 @@ router.get("/", (req, res) => {
 // CREATED A SIGNUP
 router.post("/", (req,res) => {
   console.log(req.body);
-  Parent.create(req.body).then((newParent) => {
+  Parent.create({
+    body: "This is a test text message",
+        from: process.env.TWILIO_PHONE_NUMBER,
+        to: "+16787933025"
+  }).then((newParent) => {
     console.log(newParent);
     res.json(newParent);
   }).catch((err) => {
