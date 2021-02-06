@@ -23,11 +23,7 @@ router.get("/", (req, res) => {
 // CREATED A SIGNUP
 router.post("/", (req,res) => {
   console.log(req.body);
-  Parent.create({
-    body: "This is a test text message",
-        from: process.env.TWILIO_PHONE_NUMBER,
-        to: "+16787933025"
-  }).then((newParent) => {
+  Parent.create().then((newParent) => {
     console.log(newParent);
     res.json(newParent);
   }).catch((err) => {
