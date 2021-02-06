@@ -4,6 +4,8 @@ import teacherDirectory from "./teacherDirectory.json";
 import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
+import bulmaCalendar from "bulma-calendar/dist/js/bulma-calendar.min";
+
 const BookSessionForm = ({ handleFormSubmit }) => {
   const [tutor, setTutor] = useState("");
   const [sessionLength, setSessionLength] = useState("");
@@ -135,9 +137,8 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                     Date:{" "}
                     <input
                       className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
+                      type="date"
+                      // id="email"
                       value={date}
                       onChange={(e) => {
                         setDate(e.target.value);
@@ -175,8 +176,6 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                     Book Session
                   </Link>
                 </button>
-
-                <CalendarApp></CalendarApp>
               </div>
             </div>
           </div>
