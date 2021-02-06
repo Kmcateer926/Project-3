@@ -20,7 +20,7 @@ const NewSession = () => {
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1 className="center-align">Add a New Parent</h1>
+          {/* <h1 className="center-align">Add a New Parent</h1> */}
         </div>
       </div>
       <div className="row">
