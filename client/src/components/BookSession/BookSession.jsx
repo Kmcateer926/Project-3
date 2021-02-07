@@ -26,7 +26,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
 
   useEffect(()=>{
     console.log(id);
-    axios.get(`/api/sessions/${id}`)
+    axios.post(`/api/sessions/${id}`)
     .then((response)=>{
       console.log(response.data);
       const {
@@ -39,6 +39,8 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
       setSessionLength(sessionLength);
       setDate(date);
       setTime(time);
+      history.push("/landing")
+      // alert("Successfully added session")
     }).catch((err)=>{
       console.log(err)
     });
@@ -47,8 +49,9 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
   // const [teachers, setTeachers] = useState({});
 
   // useEffect(() => {
+  //   console.log(id)
   //   setTeachers(teacherDirectory);
-  // }, [teachers]);
+  // }, [id]);
 
   // function handleFormSubmit(event) {
   //   event.preventDefault();
