@@ -5,7 +5,9 @@ import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 
+
 const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
+
   const [tutor, setTutor] = useState("");
   const [sessionLength, setSessionLength] = useState("");
   const [date, setDate] = useState("");
@@ -141,8 +143,8 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                 <br />
                 <strong>Subject(s): </strong>
                 {teachers.subjects}
-                <br />
-                <p>
+                <br /> <br /> <br />
+                {/* <p>
                   <strong>
                     Session Length:{" "}
                     <input
@@ -156,15 +158,16 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                       }}
                     />
                   </strong>
-                </p>
+                </p> */}
+              </div>
+              <div className="booking-deets">
                 <p>
                   <strong>
                     Date:{" "}
                     <input
                       className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
+                      type="date"
+                      // id="email"
                       value={date}
                       onChange={(e) => {
                         setDate(e.target.value);
@@ -175,7 +178,41 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                 <p>
                   <strong>
                     Time:{" "}
-                    <input
+                    <div className="field">
+                      <div className="control">
+                        <div className="select">
+                          <select>
+                            <option>Select a Time</option>
+                            <option>3:00 PM</option>
+                            <option>3:30 PM</option>
+                            <option>4:00 PM</option>
+                            <option>4:30 PM</option>
+                            <option>5:00 PM</option>
+                            <option>5:30 PM</option>
+                            <option>6:00 PM</option>
+                            <option>6:30 PM</option>
+                            <option>7:00 PM</option>
+                            <option>7:30 PM</option>
+                            <option>8:00 PM</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="cols">
+                      <div className="field">
+                        <div className="control">
+                          <label className="radio">
+                            <input type="radio" name="question" />
+                            30 min session
+                          </label>
+                          <label className="radio">
+                            <input type="radio" name="question" />
+                            60 min session
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    {/* <input
                       className="input is-danger"
                       type="integer"
                       placeholder="Session Length"
@@ -184,10 +221,10 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                       onChange={(e) => {
                         setTime(e.target.value);
                       }}
-                    />
+                    /> */}
                   </strong>
                 </p>
-                <br />
+
                 <button
                   className="button is-small is-fullwidth is-info"
                   style={{
@@ -202,8 +239,6 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                     Book Session {buttonText}
                   </Link>
                 </button>
-
-                <CalendarApp></CalendarApp>
               </div>
             </div>
           </div>
