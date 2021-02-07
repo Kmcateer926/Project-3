@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom"
 
 const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 	const deleteSession = (id) => {
@@ -63,13 +64,16 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 								>
 									You have a session with {tutor} on {date} at{" "}
 									{time} for {sessionLength}.
-									<a
+									
+										<Link to={`/admin/${_id}`}>
 										class="fa"
 										href="/"
 										style={{ margin: "5px" }}
-									>
+									
 										&#xf044;
-									</a>
+										</Link>
+									
+									
 									<a
 										class="fa "
 										href="/"

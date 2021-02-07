@@ -1,83 +1,55 @@
 import React, { useState, useEffect } from "react";
-import "./Directory.css";
-import teacherDirectory from "./teacherDirectory.json";
-import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 
+const EditSessionTest = ({teachers, buttonText, handleFormSubmit}) => {
 
-const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
+    const [tutor, setTutor] = useState("");
+    const [sessionLength, setSessionLength] = useState("");
+    const [date, setDate] = useState("");
+    const [time, setTime] = useState("");
+  
+    const { id } = useParams();
+  
+    const history = useHistory();
+  
+    const styles = {
+      font: {
+        fontFamily: "Special Elite, cursive",
+      },
+      heading: {
+        paddingTop: 40,
+      },
+    };
+  
+    useEffect(()=>{
+      console.log(id);
+      
+        axios.post(`/api/sessions/${id}`)
+        .then((response)=>{
+          console.log(response.data);
+          const {
+            tutor, 
+            sessionLength,
+            date, 
+            time
+          } = response.data;
+          setTutor(tutor);
+          setSessionLength(sessionLength);
+          setDate(date);
+          setTime(time);
+          history.push("/session")
+          // alert("Successfully added session")
+        }).catch((err)=>{
+          console.log(err)
+        });
+      
+     
+      }, [id])
 
-  const [tutor, setTutor] = useState("");
-  const [sessionLength, setSessionLength] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-
-  const { id } = useParams();
-
-  const history = useHistory();
-
-  const styles = {
-    font: {
-      fontFamily: "Special Elite, cursive",
-    },
-    heading: {
-      paddingTop: 40,
-    },
-  };
-
-  useEffect(()=>{
-    console.log(id);
-    
-      axios.post(`/api/sessions/${id}`)
-      .then((response)=>{
-        console.log(response.data);
-        const {
-          tutor, 
-          sessionLength,
-          date, 
-          time
-        } = response.data;
-        setTutor(tutor);
-        setSessionLength(sessionLength);
-        setDate(date);
-        setTime(time);
-        history.push("/session")
-        // alert("Successfully added session")
-      }).catch((err)=>{
-        console.log(err)
-      });
-    
-   
-    }, [id])
-
-  // const [teachers, setTeachers] = useState({});
-
-  // useEffect(() => {
-  //   console.log(id)
-  //   setTutor(teacherDirectory);
-  // }, [id]);
-
-  // function handleFormSubmit(event) {
-  //   event.preventDefault();
-  //   const sessionData = {
-  //     tutor,
-  //     sessionLength,
-  //     date,
-  //     time,
-  //   };
-
-  //   axios
-  //     .post("/api/sessions/landing", sessionData)
-  //     .then(() => {
-  //       history.push("/landing");
-  //       alert("Successfully Logged in user");
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
-
-  return (
-    <>
+    return (
+        <div>
+             <>
       <div className="spacer" style={{ height: "50px" }}></div>
       <div>
         <h1
@@ -91,7 +63,6 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
         </h1>
         <div className="spacer" style={{ height: "50px" }}></div>
       </div>
-      {teacherDirectory.map((teachers) => (
         <div
           className="card "
           style={{
@@ -107,11 +78,11 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
         >e
           <div className="card-image">
             <figure className="image is-128x128">
-              <img
+              {/* <img
                 src={teachers.image}
                 alt={teachers.name}
                 style={{ borderRadius: "15px" }}
-              />
+              /> */}
             </figure>
           </div>
 
@@ -247,8 +218,10 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
             </div>
           </div>
         </div>
-      ))}
+     
     </>
-  );
+        </div>
+    );
 };
-export default BookSessionForm;
+
+export default EditSessionTest;
