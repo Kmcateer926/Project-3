@@ -2,16 +2,21 @@ import React, { useState, useEffect } from "react";
 import "./Directory.css";
 import teacherDirectory from "./teacherDirectory.json";
 import CalendarApp from "../../components/Calendar/Calendar";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 
-const BookSessionForm = ({ handleFormSubmit }) => {
+
+const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
+
   const [tutor, setTutor] = useState("");
   const [sessionLength, setSessionLength] = useState("");
-
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+
+  const { id } = useParams();
+
   const history = useHistory();
+
   const styles = {
     font: {
       fontFamily: "Special Elite, cursive",
@@ -21,29 +26,52 @@ const BookSessionForm = ({ handleFormSubmit }) => {
     },
   };
 
-  const [teachers, setTeachers] = useState({});
+  useEffect(()=>{
+    console.log(id);
+    axios.post(`/api/sessions/${id}`)
+    .then((response)=>{
+      console.log(response.data);
+      const {
+        tutor, 
+        sessionLength,
+        date, 
+        time
+      } = response.data;
+      setTutor(tutor);
+      setSessionLength(sessionLength);
+      setDate(date);
+      setTime(time);
+      history.push("/landing")
+      // alert("Successfully added session")
+    }).catch((err)=>{
+      console.log(err)
+    });
+    }, [id])
 
-  useEffect(() => {
-    setTeachers(teacherDirectory);
-  }, [teachers]);
+  // const [teachers, setTeachers] = useState({});
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    const sessionData = {
-      tutor,
-      sessionLength,
-      date,
-      time,
-    };
+  // useEffect(() => {
+  //   console.log(id)
+  //   setTeachers(teacherDirectory);
+  // }, [id]);
 
-    axios
-      .post("/api/sessions/landing", sessionData)
-      .then(() => {
-        history.push("/landing");
-        alert("Successfully Logged in user");
-      })
-      .catch((err) => console.log(err));
-  }
+  // function handleFormSubmit(event) {
+  //   event.preventDefault();
+  //   const sessionData = {
+  //     tutor,
+  //     sessionLength,
+  //     date,
+  //     time,
+  //   };
+
+  //   axios
+  //     .post("/api/sessions/landing", sessionData)
+  //     .then(() => {
+  //       history.push("/landing");
+  //       alert("Successfully Logged in user");
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
 
   return (
     <>
@@ -97,7 +125,7 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                     // userCreated,
                     // subjects,
                     // id,
-                  });
+                  }, id);
                 }}
               ></form>
               <div
@@ -205,10 +233,10 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                     fontWeight: "bold",
                     fontFamily: "Special Elite, cursive",
                   }}
-                  onClick={handleFormSubmit}
+                  // onClick={handleFormSubmit}
                 >
                   <Link to="/landing" style={styles.link}>
-                    Book Session
+                    Book Session {buttonText}
                   </Link>
                 </button>
               </div>
