@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SessionRow from "../../components/SessionRow/SessionRow";
-// import BookSession from "../../components/BookSession/BookSession"
+import BookSession from "../../components/BookSession/BookSession"
 
 const Landing = () => {
 	const [sessions, setSessions] = useState([]);
+
 
 	useEffect(() => {
 		getSessions();
@@ -14,6 +15,7 @@ const Landing = () => {
 		axios.get("/api/sessions").then((response) => {
 			console.log(response.data);
 			setSessions(response.data);
+		
 		}).catch((err) => {
 			console.log(err);
 		})
@@ -24,7 +26,7 @@ const Landing = () => {
             {sessions.map((session) => (
                 <SessionRow {...session} getSessions={getSessions}/>
             ))}
-		{/* <BookSession/> */}
+		{/* <BookSession {...teachers}/> */}
 		</div>
 	);
 };

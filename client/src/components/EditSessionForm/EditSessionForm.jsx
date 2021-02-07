@@ -19,6 +19,8 @@ const EditSessionForm = ({ handleFormSubmit }) => {
     },
   };
 
+ 
+
   return (
     <>
       <div>
@@ -126,7 +128,7 @@ const EditSessionForm = ({ handleFormSubmit }) => {
 
                 <p style={{ textAlign: "center" }}>
                   {" "}
-                  <button href="/session">submit</button>
+                  <button href="/landing">submit</button>
                 </p>
               </div>
             </div>
