@@ -122,7 +122,7 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                       className="input is-danger"
                       type="integer"
                       placeholder="Session Length"
-                      id="email"
+                      id="sessionLength"
                       value={sessionLength}
                       onChange={(e) => {
                         setSessionLength(e.target.value);
@@ -137,7 +137,7 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                       className="input is-danger"
                       type="integer"
                       placeholder="Session Length"
-                      id="email"
+                      id="date"
                       value={date}
                       onChange={(e) => {
                         setDate(e.target.value);
@@ -152,7 +152,7 @@ const BookSessionForm = ({ handleFormSubmit }) => {
                       className="input is-danger"
                       type="integer"
                       placeholder="Session Length"
-                      id="email"
+                      id="time"
                       value={time}
                       onChange={(e) => {
                         setTime(e.target.value);
