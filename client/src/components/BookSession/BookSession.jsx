@@ -26,23 +26,16 @@ const BookSessionForm = ({ handleFormSubmit }) => {
     setTeachers(teacherDirectory);
   }, [teachers]);
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    const sessionData = {
-      tutor,
-      sessionLength,
-      date,
-      time,
-    };
+  
 
     axios
-      .post("/api/sessions/landing", sessionData)
+      .post("/api/sessions/landing")
       .then(() => {
         history.push("/landing");
         alert("Successfully Logged in user");
       })
       .catch((err) => console.log(err));
-  }
+  
 
   return (
     <>
