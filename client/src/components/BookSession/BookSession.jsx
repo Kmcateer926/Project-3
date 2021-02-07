@@ -26,24 +26,27 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
 
   useEffect(()=>{
     console.log(id);
-    axios.post(`/api/sessions/${id}`)
-    .then((response)=>{
-      console.log(response.data);
-      const {
-        tutor, 
-        sessionLength,
-        date, 
-        time
-      } = response.data;
-      setTutor(tutor);
-      setSessionLength(sessionLength);
-      setDate(date);
-      setTime(time);
-      history.push("/landing")
-      // alert("Successfully added session")
-    }).catch((err)=>{
-      console.log(err)
-    });
+    
+      axios.post(`/api/sessions/${id}`)
+      .then((response)=>{
+        console.log(response.data);
+        const {
+          tutor, 
+          sessionLength,
+          date, 
+          time
+        } = response.data;
+        setTutor(tutor);
+        setSessionLength(sessionLength);
+        setDate(date);
+        setTime(time);
+        history.push("/session")
+        // alert("Successfully added session")
+      }).catch((err)=>{
+        console.log(err)
+      });
+    
+   
     }, [id])
 
   // const [teachers, setTeachers] = useState({});
