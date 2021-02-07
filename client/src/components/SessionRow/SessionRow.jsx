@@ -61,6 +61,8 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 										fontFamily: "Special Elite, cursive",
 									}}
 								>
+                                        
+
 									You have a session with {tutor} on {date} at{" "}
 									{time} for {sessionLength}.
 									<a
