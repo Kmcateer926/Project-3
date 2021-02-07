@@ -11,16 +11,12 @@ const Calendar = () => {
   // const [date, setDate] = useState("");
   // const [time, setTime] = useState("");
   return (
-    <div className="calendarDiv">
-      <DatePicker
-        selected={date}
-        onChange={(date) => setDate(date)}
-        showTimeSelect
-        dateFormat="Pp"
-        minDate={new Date()}
-        filterDate={(date) => date.getDay() !== 0}
-      />
-    </div>
+    <DatePicker
+      selected={date}
+      onChange={(date) => setDate(date)}
+      minDate={new Date()}
+      filterDate={(date) => date.getDay() !== 0}
+    />
   );
 };
 
