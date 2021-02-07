@@ -6,32 +6,30 @@ const tutorSchema = new Schema({
   name: {
     type: String,
     trim: true,
-    required: "First name is Required"
+    required: "First name is Required",
   },
 
-//   lastName: {
-//     type: String,
-//     trim: true,
-//     required: "Last name is Required"
-//   },
+  //   lastName: {
+  //     type: String,
+  //     trim: true,
+  //     required: "Last name is Required"
+  //   },
 
-  password: {
+  education: {
     type: String,
     trim: true,
-    required: "Password is Required",
-    validate: [({ length }) => length >= 6, "Password should be longer."]
+    required: "education is required",
   },
 
-  email: {
+  subjects: {
     type: String,
-    unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    required: "subject is required",
   },
-//may or may not need userCreated
-  // userCreated: {
-  //   type: Date,
-  //   default: Date.now
-  // },
+
+  experience: {
+    type: Number,
+    required: "years of experience required",
+  }
 
   // subjects:[
   //   {
@@ -40,7 +38,7 @@ const tutorSchema = new Schema({
   //   }
   // ],
 
-//   status: null,
+  //   status: null,
 
   // id: {
   //   type: Number,
@@ -48,6 +46,6 @@ const tutorSchema = new Schema({
   // }
 });
 
-const Tutor = mongoose.model("tutors", tutorSchema);
+const Tutor = mongoose.model("tutor", tutorSchema);
 
 module.exports = Tutor;
