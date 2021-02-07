@@ -6,15 +6,18 @@ import SessionRow from "../../components/SessionRow/SessionRow";
 const Landing = () => {
 	const [sessions, setSessions] = useState([]);
 
-	const getSessions = () => {
-		axios.get("/api/sessions").then((response) => {
-			setSessions(response.data);
-		});
-	};
-
 	useEffect(() => {
 		getSessions();
 	},[]);
+
+	const getSessions = () => {
+		axios.get("/api/sessions").then((response) => {
+			console.log(response.data);
+			setSessions(response.data);
+		}).catch((err) => {
+			console.log(err);
+		})
+	};
 
 	return (
 		<div>
