@@ -52,7 +52,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
 
   // useEffect(() => {
   //   console.log(id)
-  //   setTeachers(teacherDirectory);
+  //   setTutor(teacherDirectory);
   // }, [id]);
 
   // function handleFormSubmit(event) {
@@ -101,7 +101,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
             boxShadow: "5px 2px 2px grey",
             borderRadius: "15px",
           }}
-        >
+        >e
           <div className="card-image">
             <figure className="image is-128x128">
               <img
@@ -133,17 +133,18 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Name: </strong>
-                {teachers.name}
+                {/* {teachers.name} */}
+                <input
+                      className="input is-danger"
+                      type="text"
+                      id="tutor"
+                      value={tutor}
+                      onChange={(e) => {
+                        setTutor(e.target.value);
+                      }}
+                    />
                 <br />
-                <strong>Education: </strong>
-                {teachers.education}
-                <br />
-                <strong>Experience: </strong>
-                {teachers.experience}
-                <br />
-                <strong>Subject(s): </strong>
-                {teachers.subjects}
-                <br /> <br /> <br />
+               
                 {/* <p>
                   <strong>
                     Session Length:{" "}

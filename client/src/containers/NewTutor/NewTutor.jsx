@@ -1,10 +1,9 @@
-  
 import React from "react";
 // import axios from "axios";
-import ParentForm from "../../components/ParentForm/ParentForm";
+import TutorForm from "../../components/TutorForm/TutorForm";
 // import API from "../../utils/API"
 
-const NewParent = () => {
+const NewTutor = () => {
  
 
 
@@ -16,10 +15,10 @@ const NewParent = () => {
         </div>
       </div>
       <div className="row">
-        <ParentForm />
+        <TutorForm />
       </div>
     </div>
   );
 };
 
-export default NewParent;
+export default NewTutor;
