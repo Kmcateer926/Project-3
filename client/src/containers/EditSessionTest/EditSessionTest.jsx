@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from "axios";
 import { useHistory } from "react-router-dom"
-import BookSession from "../../components/BookSession/BookSession";
+// import BookSession from "../../components/BookSession/BookSession";
+import EditBookSession from "../../components/EditBookSession/EditBookSession"
 
 const EditSessionTest = () => {
     const history = useHistory();
@@ -29,11 +30,11 @@ const EditSessionTest = () => {
         </div>
         <div className="row">
           
-          <BookSession handleFormSubmit={handleFormSubmit} buttonText="Update"/>
+          {/* <BookSession handleFormSubmit={handleFormSubmit} buttonText="Update"/> */}
           {/* {sessions.map((session)=>(
    <BookSession {...sessions} getSessions={getSessions}/>
           ))} */}
-         
+             <EditBookSession handleFormSubmit={handleFormSubmit} buttonText="Update"/>
         </div>
       </div>
     );
