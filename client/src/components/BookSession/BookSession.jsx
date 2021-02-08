@@ -51,30 +51,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
    
     }, [id])
 
-  // const [teachers, setTeachers] = useState({});
-
-  // useEffect(() => {
-  //   console.log(id)
-  //   setTutor(teacherDirectory);
-  // }, [id]);
-
-  // function handleFormSubmit(event) {
-  //   event.preventDefault();
-  //   const sessionData = {
-  //     tutor,
-  //     sessionLength,
-  //     date,
-  //     time,
-  //   };
-
-  //   axios
-  //     .post("/api/sessions/landing", sessionData)
-  //     .then(() => {
-  //       history.push("/landing");
-  //       alert("Successfully Logged in user");
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
+  
 
   return (
     <>
@@ -136,33 +113,18 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Name: </strong>
-                {/* {teachers.name} */}
-                <input
-                      className="input is-danger"
-                      type="text"
-                      id="tutor"
-                      value={tutor}
-                      onChange={(e) => {
-                        setTutor(e.target.value);
-                      }}
-                    />
+                {teachers.name}
                 <br />
-               
-                {/* <p>
-                  <strong>
-                    Session Length:{" "}
-                    <input
-                      className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
-                      value={sessionLength}
-                      onChange={(e) => {
-                        setSessionLength(e.target.value);
-                      }}
-                    />
-                  </strong>
-                </p> */}
+                <strong>Education: </strong>
+                {teachers.education}
+                <br />
+                <strong>Experience: </strong>
+                {teachers.experience}
+                <br />
+                <strong>Subject(s): </strong>
+                {teachers.subjects}
+                <br /> <br /> <br />
+                
               </div>
               <div className="booking-deets">
                 <p>
@@ -216,16 +178,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                         </div>
                       </div>
                     </div>
-                    {/* <input
-                      className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
-                      value={time}
-                      onChange={(e) => {
-                        setTime(e.target.value);
-                      }}
-                    /> */}
+                    
                   </strong>
                 </p>
 

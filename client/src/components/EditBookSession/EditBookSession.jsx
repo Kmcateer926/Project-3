@@ -60,7 +60,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
             textAlign: "center",
           }}
         >
-          Tutor Directory
+         Edit Session
         </h1>
         <div className="spacer" style={{ height: "50px" }}></div>
       </div>
@@ -103,7 +103,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     // id,
                   }, id);
                 }}
-              ></form>
+              >
               <div
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
@@ -120,6 +120,24 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                       }}
                     />
                 <br />
+                </div>
+                <div
+                className="content"
+                style={{ fontFamily: "Special Elite, cursive" }}
+              >
+                <strong>Date: </strong>
+                {/* {teachers.name} */}
+                <input
+                      className="input is-danger"
+                      type="text"
+                      id="tutor"
+                      value={date}
+                      onChange={(e) => {
+                        setDate(e.target.value);
+                      }}
+                    />
+                <br />
+                </div>
                
                 {/* <p>
                   <strong>
@@ -136,9 +154,9 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     />
                   </strong>
                 </p> */}
-              </div>
+              {/* </div> */}
               <div className="booking-deets">
-                <p>
+                {/* <p>
                   <strong>
                     Date:{" "}
                     <input
@@ -151,7 +169,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                       }}
                     />
                   </strong>
-                </p>
+                </p> */}
                 <p>
                   <strong>
                     Time:{" "}
@@ -204,6 +222,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 
                 <button
                   className="button is-small is-fullwidth is-info"
+                  type="submit"
                   style={{
                     borderRadius: "10px",
                     fontSize: "25px",
@@ -212,13 +231,16 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                   }}
                   // onClick={handleFormSubmit}
                 >
-                  <Link to="/landing" style={styles.link}>
+                  <Link type="/landing" style={styles.link}>
                   {buttonText}
                   </Link>
                
                 </button>
+            
               </div>
+              </form>
             </div>
+
           </div>
         </div>
       ))
