@@ -8,8 +8,8 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 		axios
 			.delete(`/api/sessions/${id}`)
 			.then(() => {
-                // getSessions();
-                console.log("getSessions");
+				// getSessions();
+				console.log("getSessions");
 			})
 			.catch((err) => {
 				console.log(err);
@@ -24,7 +24,7 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 					className="column is-10 is-offset-1"
 					style={{
 						border: "1px solid",
-						height: "400px",
+						height: "500px",
 						borderRadius: "15px",
 						boxShadow: "5px 2px 2px grey",
 					}}
@@ -37,14 +37,15 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 					>
 						Welcome to Your Teacher Hub <u>Parent</u> Account!
 					</h1>
-					<div className="spacer" style={{ height: "30px" }}></div>
+					<div className="spacer" style={{ height: "50px" }}></div>
 					<div className="columns">
 						<div
 							className="column is-10 is-offset-1"
 							style={{
-								height: "200px",
+								height: "250px",
 								border: "1px solid",
 								borderRadius: "15px",
+								boxShadow: "5px 2px 2px grey",
 							}}
 						>
 							<h1
@@ -55,40 +56,56 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 							>
 								Tutor Sessions
 							</h1>
-							<div style={{ float: "right" }}>
+							<div>
 								<p
 									style={{
 										fontFamily: "Special Elite, cursive",
 									}}
 								>
-                                        
-
-									You have a session with {tutor} on {date} at{" "}
-									{time} for {sessionLength}.
-									<a
-										class="fa"
-										href="/"
-										style={{ margin: "5px" }}
-									>
-										&#xf044;
-									</a>
-									<a
-										class="fa "
-										href="/"
-										style={{ margin: "5px" }}
-									>
-										&#xf03a;
-									</a>
-									<a
-										class="fa"
-										
-										onClick={() => {
-											deleteSession(_id);
-										}}
-										style={{ margin: "5px" }}
-									>
-										&#xf1f8;
-									</a>
+									<table className="table is-bordered is-striped is-fullwidth is-hoverable">
+										<thead>
+											<tr>
+												<th>Tutor</th>
+												<th>Date</th>
+												<th>Time</th>
+												<th>Minutes</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>{tutor}</th>
+												<th>{date}</th>
+												<td>{time}</td>
+												<td>{sessionLength}</td>
+												<td
+													className="fa"
+													onClick={() => {}}
+													style={{
+														margin: "10px",
+														marginBottom: "5px",
+													}}
+												>
+													&#xf044;
+												</td>
+												<td
+													class="fa "
+													onClick={() => {}}
+													style={{ margin: "10px" }}
+												>
+													&#xf03a;
+												</td>
+												<td
+													class="fa"
+													onClick={() => {
+														deleteSession(_id);
+													}}
+													style={{ margin: "10px" }}
+												>
+													&#xf1f8;
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</p>
 							</div>
 						</div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SessionRow from "../../components/SessionRow/SessionRow";
+// import BookSession from "../../components/BookSession/BookSession"
 
 const Landing = () => {
 	const [sessions, setSessions] = useState([]);
@@ -20,7 +21,7 @@ const Landing = () => {
             {sessions.map((session) => (
                 <SessionRow {...session} getSessions={getSessions}/>
             ))}
-			
+		{/* <BookSession/> */}
 		</div>
 	);
 };

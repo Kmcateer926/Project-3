@@ -59,8 +59,9 @@ const BookSessionForm = ({ handleFormSubmit }) => {
 				</h1>
 				<div className="spacer" style={{ height: "50px" }}></div>
 			</div>
-			{teacherDirectory.map((teachers) => (
+			{teacherDirectory.map((teachers, index) => (
 				<div
+					key={teachers.id}
 					className="card "
 					style={{
 						margin: "10px",
@@ -137,7 +138,7 @@ const BookSessionForm = ({ handleFormSubmit }) => {
 										Date:{" "}
 										<input
 											className="input is-danger"
-											type="integer"
+											type="date"
 											placeholder="Session Length"
 											id="date"
 											value={date}

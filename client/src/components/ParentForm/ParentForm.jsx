@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import API from "../../utils/API"
 import axios from "axios";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import { Link } from "react-router-dom";

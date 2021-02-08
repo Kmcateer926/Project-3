@@ -52,12 +52,8 @@ const Navbar = () => {
   
                 {/* <a className="navbar-item">Documentation</a> */}
                 {/* <NavLink to="Projects" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Tutor</button></NavLink> */}
-                <NavLink to="Contact" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Parent</button></NavLink>
-                <div className="navbar-item has-dropdown is-hoverable">
-               
-  
-                
-                </div>
+                <NavLink to="/parentsignup" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Parent</button></NavLink>
+              
               </div>
             </div>
           </nav>

@@ -5,17 +5,7 @@ import ParentForm from "../../components/ParentForm/ParentForm";
 // import API from "../../utils/API"
 
 const NewParent = () => {
-  // const handleFormSubmit = (e, parentData) => {
-  //   e.preventDefault();
-  //   axios
-  //     .post("/api/parents", parentData)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+ 
 
 
 
@@ -23,7 +13,6 @@ const NewParent = () => {
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1 className="center-align">Add a New Parent</h1>
         </div>
       </div>
       <div className="row">
