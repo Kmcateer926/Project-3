@@ -11,6 +11,7 @@ import ReturnParent from "./containers/ReturnParent/ReturnParent";
 import Session from "./containers/Session/Session.jsx";
 import EditSession from "./containers/EditSession/EditSession";
 import LoginForm from "./components/LoginForm/LoginForm";
+import EditSessionTest from "./containers/EditSessionTest/EditSessionTest"
 
 function App() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/editsession" component={EditSession} />
           <Route exact path="/loginform" component={LoginForm} />
           <Route exact path="/returnparent" component={ReturnParent} />
+		  <Route exact path="/landing/:id" component={EditSessionTest}/>
           <Footer />
         </Router>
       </>

@@ -14,6 +14,17 @@ router.get("/", (req, res) => {
 			res.status(500).end();
 		});
 });
+// created for edit (el)
+router.get("/:id", (req, res) => {
+	Session.findById(req.params.id)
+	.then((foundSession) => {
+		res.json(foundSession);
+	}) 
+	.catch((err) => {
+		console.log(err);
+		res.status(404).end();
+	});
+});
 
 router.get("/:id", (req, res) => {
 	Session.find({
