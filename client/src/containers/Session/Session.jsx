@@ -61,7 +61,7 @@ const Session = () => {
 
 							<p style={{ textAlign: "center" }}>
 								{" "}
-								<a href="/">edit</a>
+								{/* <a href="/">edit</a> */}
 							</p>
 						</div>
 					</div>

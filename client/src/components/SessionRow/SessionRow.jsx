@@ -57,6 +57,7 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 								Tutor Sessions
 							</h1>
 							<div style={{ float: "right" }}>
+								
 								<p
 									style={{
 										fontFamily: "Special Elite, cursive",
@@ -64,15 +65,13 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 								>
 									You have a session with {tutor} on {date} at{" "}
 									{time} for {sessionLength}.
-									
-										<Link to={`/admin/${_id}`}>
+									<Link to={`/landing/${_id}`}
 										class="fa"
-										href="/"
-										style={{ margin: "5px" }}
-									
+										// href="/admin/:id"
+										// style={{ margin: "5px" }}
+									>
 										&#xf044;
-										</Link>
-									
+									</Link>
 									
 									<a
 										class="fa "

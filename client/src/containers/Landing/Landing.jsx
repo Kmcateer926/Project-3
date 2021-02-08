@@ -10,7 +10,7 @@ const Landing = () => {
   const getSessions = () => {
     axios.get("/api/sessions").then((response) => {
       setSessions(response.data);
-    });
+	});
   };
 
   useEffect(() => {

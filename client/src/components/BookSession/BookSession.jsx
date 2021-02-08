@@ -15,7 +15,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
 
   const { id } = useParams();
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const styles = {
     font: {
@@ -28,26 +28,26 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
 
   useEffect(()=>{
     console.log(id);
-    
-      axios.post(`/api/sessions/${id}`)
+    if(id){
+      axios.get(`/api/sessions/${id}`)
       .then((response)=>{
         console.log(response.data);
         const {
           tutor, 
-          sessionLength,
           date, 
-          time
+          time,
+          sessionLength,
         } = response.data;
         setTutor(tutor);
-        setSessionLength(sessionLength);
         setDate(date);
         setTime(time);
-        history.push("/session")
+        setSessionLength(sessionLength);
+        // history.push("/landing")
         // alert("Successfully added session")
       }).catch((err)=>{
         console.log(err)
       });
-    
+    }
    
     }, [id])
 
@@ -104,7 +104,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
             boxShadow: "5px 2px 2px grey",
             borderRadius: "15px",
           }}
-        >e
+        >
           <div className="card-image">
             <figure className="image is-128x128">
               <img
@@ -122,9 +122,9 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                 onSubmit={(e) => {
                   handleFormSubmit(e, {
                     tutor,
-                    sessionLength,
                     date,
                     time,
+                    sessionLength,
                     // userCreated,
                     // subjects,
                     // id,
@@ -240,8 +240,9 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                   // onClick={handleFormSubmit}
                 >
                   <Link to="/landing" style={styles.link}>
-                    Book Session {buttonText}
+                  {buttonText}
                   </Link>
+               
                 </button>
               </div>
             </div>
