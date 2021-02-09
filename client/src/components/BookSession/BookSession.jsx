@@ -107,7 +107,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                     // id,
                   }, id);
                 }}
-              ></form>
+              >
               <div
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
@@ -198,6 +198,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                
                 </button>
               </div>
+              </form>
             </div>
           </div>
         </div>
