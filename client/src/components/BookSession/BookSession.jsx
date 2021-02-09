@@ -10,11 +10,10 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
   const [sessionLength, setSessionLength] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  
 
   const { id } = useParams();
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const styles = {
     font: {
@@ -27,47 +26,24 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
 
   useEffect(() => {
     console.log(id);
-    axios
-      .post(`/api/sessions/${id}`)
-      .then((response) => {
-        console.log(response.data);
-        const { tutor, sessionLength, date, time } = response.data;
-        setTutor(tutor);
-        setSessionLength(sessionLength);
-        setDate(date);
-        setTime(time);
-        history.push("/landing");
-        // alert("Successfully added session")
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (id) {
+      axios
+        .get(`/api/sessions/${id}`)
+        .then((response) => {
+          console.log(response.data);
+          const { tutor, date, time, sessionLength } = response.data;
+          setTutor(tutor);
+          setDate(date);
+          setTime(time);
+          setSessionLength(sessionLength);
+          // history.push("/landing")
+          // alert("Successfully added session")
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, [id]);
-
-  // const [teachers, setTeachers] = useState({});
-
-  // useEffect(() => {
-  //   console.log(id)
-  //   setTeachers(teacherDirectory);
-  // }, [id]);
-
-  // function handleFormSubmit(event) {
-  //   event.preventDefault();
-  //   const sessionData = {
-  //     tutor,
-  //     sessionLength,
-  //     date,
-  //     time,
-  //   };
-
-  //   axios
-  //     .post("/api/sessions/landing", sessionData)
-  //     .then(() => {
-  //       history.push("/landing");
-  //       alert("Successfully Logged in user");
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
 
   return (
     <>
@@ -117,9 +93,9 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                     e,
                     {
                       tutor,
-                      sessionLength,
                       date,
                       time,
+                      sessionLength,
                       // userCreated,
                       // subjects,
                       // id,
@@ -127,124 +103,99 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                     id
                   );
                 }}
-              ></form>
-              <div
-                className="content"
-                style={{ fontFamily: "Special Elite, cursive" }}
               >
-                <strong>Name: </strong>
-                {teachers.name}
-                <br />
-                <strong>Education: </strong>
-                {teachers.education}
-                <br />
-                <strong>Experience: </strong>
-                {teachers.experience}
-                <br />
-                <strong>Subject(s): </strong>
-                {teachers.subjects}
-                <br /> <br /> <br />
-                {/* <p>
-                  <strong>
-                    Session Length:{" "}
-                    <input
-                      className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
-                      value={sessionLength}
-                      onChange={(e) => {
-                        setSessionLength(e.target.value);
-                      }}
-                    />
-                  </strong>
-                </p> */}
-              </div>
-              <div className="booking-deets">
-                <p>
-                  <strong>
-                    Date:{" "}
-                    <input
-                      className="input is-danger"
-                      type="date"
-                      // id="email"
-                      value={date}
-                      onChange={(e) => {
-                        setDate(e.target.value);
-                      }}
-                    />
-                  </strong>
-                </p>
-                <p>
-                  <strong>
-                    Time:{" "}
-                    <div className="field">
-                      <div className="control">
-                        <div className="select">
-                          <select 
-                          >
-                            <option>Select a Time</option>
-                            <option>3:00 PM</option>
-                            <option>3:30 PM</option>
-                            <option>4:00 PM</option>
-                            <option>4:30 PM</option>
-                            <option>5:00 PM</option>
-                            <option>5:30 PM</option>
-                            <option>6:00 PM</option>
-                            <option>6:30 PM</option>
-                            <option>7:00 PM</option>
-                            <option>7:30 PM</option>
-                            <option>8:00 PM</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    Length:{" "}
-                    <div className="field">
-                      <div className="control">
-                        <div className="select">
-                          <select type="text">
-                            value={sessionLength}
-                            onChange=
-                            {(e) => {
-                              setSessionLength(e.target.value);
-                            }}
-                            <option>Select Session Length</option>
-                            <option>30 Minutes</option>
-                            <option>60 Minutes</option>
-                            <option>90 Minutes</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    {/* <input
-                      className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
-                      value={time}
-                      onChange={(e) => {
-                        setTime(e.target.value);
-                      }}
-                    /> */}
-                  </strong>
-                </p>
-
-                <button
-                  className="button is-small is-fullwidth is-info"
-                  style={{
-                    borderRadius: "10px",
-                    fontSize: "25px",
-                    fontWeight: "bold",
-                    fontFamily: "Special Elite, cursive",
-                  }}
-                  // onClick={handleFormSubmit}
+                <div
+                  className="content"
+                  style={{ fontFamily: "Special Elite, cursive" }}
                 >
-                  <Link to="/landing" style={styles.link}>
-                    Book Session {buttonText}
-                  </Link>
-                </button>
-              </div>
+                  <strong>Name: </strong>
+                  {teachers.name}
+                  <br />
+                  <strong>Education: </strong>
+                  {teachers.education}
+                  <br />
+                  <strong>Experience: </strong>
+                  {teachers.experience}
+                  <br />
+                  <strong>Subject(s): </strong>
+                  {teachers.subjects}
+                  <br /> <br /> <br />
+                </div>
+                <div className="booking-deets">
+                  <p>
+                    <strong>
+                      Date:{" "}
+                      <input
+                        className="input is-danger"
+                        type="date"
+                        // id="email"
+                        value={date}
+                        onChange={(e) => {
+                          setDate(e.target.value);
+                        }}
+                      />
+                    </strong>
+                  </p>
+                  <p>
+                    <strong>
+                      Time:{" "}
+                      <div className="field">
+                        <div className="control">
+                          <div className="select">
+                            <select>
+                              <option>Select a Time</option>
+                              <option>3:00 PM</option>
+                              <option>3:30 PM</option>
+                              <option>4:00 PM</option>
+                              <option>4:30 PM</option>
+                              <option>5:00 PM</option>
+                              <option>5:30 PM</option>
+                              <option>6:00 PM</option>
+                              <option>6:30 PM</option>
+                              <option>7:00 PM</option>
+                              <option>7:30 PM</option>
+                              <option>8:00 PM</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      Length:{" "}
+                      <div className="field">
+                        <div className="control">
+                          <div className="select">
+                            <select type="text">
+                              value={sessionLength}
+                              onChange=
+                              {(e) => {
+                                setSessionLength(e.target.value);
+                              }}
+                              <option>Select Session Length</option>
+                              <option>30 Minutes</option>
+                              <option>60 Minutes</option>
+                              <option>90 Minutes</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </strong>
+                  </p>
+
+                  <button
+                    className="button is-small is-fullwidth is-info"
+                    style={{
+                      borderRadius: "10px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                      fontFamily: "Special Elite, cursive",
+                    }}
+                    // onClick={handleFormSubmit}
+                  >
+                    <Link to="/landing" style={styles.link}>
+                      {buttonText}
+                    </Link>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
