@@ -11,35 +11,49 @@ import ReturnParent from "./containers/ReturnParent/ReturnParent";
 import Session from "./containers/Session/Session.jsx";
 import EditSession from "./containers/EditSession/EditSession";
 import LoginForm from "./components/LoginForm/LoginForm";
-import EditSessionTest from "./containers/EditSessionTest/EditSessionTest"
+import EditSessionTest from "./containers/EditSessionTest/EditSessionTest";
+
+
 
 function App() {
-  useEffect(() => {
-    axios.get("/api/config").then((response) => {
-      console.log(response.data);
-      // alert(response.date.name);
-    });
-  }, []);
+	useEffect(() => {
+		axios.get("/api/config").then((response) => {
+			console.log(response.data);
+			// alert(response.date.name);
+		});
+	}, []);
 
-  return (
-    <div className="App">
-      <>
-        <Router>
-          <Navbar />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/landing" component={Landing} />
-          <Route exact path="/directory" component={Directory} />
-          <Route exact path="/session" component={Session} />
-          <Route exact path="/parentsignup" component={ParentSignUp} />
-          <Route exact path="/editsession" component={EditSession} />
-          <Route exact path="/loginform" component={LoginForm} />
-          <Route exact path="/returnparent" component={ReturnParent} />
-		  <Route exact path="/landing/:id" component={EditSessionTest}/>
-          <Footer />
-        </Router>
-      </>
-    </div>
-  );
+	return (
+		<div className="App">
+			<>
+				<Router>
+					<Navbar />
+					<Route exact path="/" component={Home} />
+					<Route exact path="/landing" component={Landing} />
+					<Route exact path="/directory" component={Directory} />
+					<Route exact path="/session" component={Session} />
+					<Route
+						exact
+						path="/parentsignup"
+						component={ParentSignUp}
+					/>
+					<Route exact path="/editsession" component={EditSession} />
+					<Route exact path="/loginform" component={LoginForm} />
+					<Route
+						exact
+						path="/returnparent"
+						component={ReturnParent}
+					/>
+					<Route
+						exact
+						path="/landing/:id"
+						component={EditSessionTest}
+					/>
+					<Footer />
+				</Router>
+			</>
+		</div>
+	);
 }
 
 export default App;

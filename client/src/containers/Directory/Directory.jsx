@@ -5,7 +5,7 @@ import BookSession from "../../components/BookSession/BookSession";
 
 const NewSession = () => {
 
-  // const history = useHistory()
+  const history = useHistory()
 
   const handleFormSubmit = (e, sessionData) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const NewSession = () => {
       .post("/api/sessions", sessionData)
       .then((response) => {
         console.log(response.data);
-        // history.push("/landing")
+        history.push("/landing");
       })
       .catch((err) => {
         console.log(err);
