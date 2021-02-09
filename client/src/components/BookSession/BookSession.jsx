@@ -10,7 +10,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
   const [sessionLength, setSessionLength] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [length, setLength] = useState("");
+  
 
   const { id } = useParams();
 
@@ -181,7 +181,8 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                     <div className="field">
                       <div className="control">
                         <div className="select">
-                          <select>
+                          <select 
+                          >
                             <option>Select a Time</option>
                             <option>3:00 PM</option>
                             <option>3:30 PM</option>
@@ -198,25 +199,21 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="cols">
-                      <div className="field">
-                        <div className="control">
-                          <label className="radio">
-                            <input
-                              type="radio"
-                              name="question"
-                              type="text"
-                              value={length}
-                              onChange={(e) => {
-                                setLength(e.target.value);
-                              }}
-                            />
-                            30 min session
-                          </label>
-                          <label className="radio">
-                            <input type="radio" name="question" />
-                            60 min session
-                          </label>
+                    Length:{" "}
+                    <div className="field">
+                      <div className="control">
+                        <div className="select">
+                          <select type="text">
+                            value={sessionLength}
+                            onChange=
+                            {(e) => {
+                              setSessionLength(e.target.value);
+                            }}
+                            <option>Select Session Length</option>
+                            <option>30 Minutes</option>
+                            <option>60 Minutes</option>
+                            <option>90 Minutes</option>
+                          </select>
                         </div>
                       </div>
                     </div>
