@@ -5,13 +5,12 @@ import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 
-
 const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
-
   const [tutor, setTutor] = useState("");
   const [sessionLength, setSessionLength] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [length, setLength] = useState("");
 
   const { id } = useParams();
 
@@ -26,27 +25,24 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
     },
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(id);
-    axios.post(`/api/sessions/${id}`)
-    .then((response)=>{
-      console.log(response.data);
-      const {
-        tutor, 
-        sessionLength,
-        date, 
-        time
-      } = response.data;
-      setTutor(tutor);
-      setSessionLength(sessionLength);
-      setDate(date);
-      setTime(time);
-      history.push("/landing")
-      // alert("Successfully added session")
-    }).catch((err)=>{
-      console.log(err)
-    });
-    }, [id])
+    axios
+      .post(`/api/sessions/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        const { tutor, sessionLength, date, time } = response.data;
+        setTutor(tutor);
+        setSessionLength(sessionLength);
+        setDate(date);
+        setTime(time);
+        history.push("/landing");
+        // alert("Successfully added session")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
 
   // const [teachers, setTeachers] = useState({});
 
@@ -117,15 +113,19 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
               <form
                 className="column"
                 onSubmit={(e) => {
-                  handleFormSubmit(e, {
-                    tutor,
-                    sessionLength,
-                    date,
-                    time,
-                    // userCreated,
-                    // subjects,
-                    // id,
-                  }, id);
+                  handleFormSubmit(
+                    e,
+                    {
+                      tutor,
+                      sessionLength,
+                      date,
+                      time,
+                      // userCreated,
+                      // subjects,
+                      // id,
+                    },
+                    id
+                  );
                 }}
               ></form>
               <div
@@ -202,7 +202,15 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                       <div className="field">
                         <div className="control">
                           <label className="radio">
-                            <input type="radio" name="question" />
+                            <input
+                              type="radio"
+                              name="question"
+                              type="text"
+                              value={length}
+                              onChange={(e) => {
+                                setLength(e.target.value);
+                              }}
+                            />
                             30 min session
                           </label>
                           <label className="radio">
