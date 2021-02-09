@@ -156,7 +156,11 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     <div className="field">
                       <div className="control">
                         <div className="select">
-                          <select>
+                          <select type="text" value={time}
+                          onChange={(e) => {
+                            setTime(e.target.value);
+                          }}
+                          >
                             <option>Select a Time</option>
                             <option>3:00 PM</option>
                             <option>3:30 PM</option>
