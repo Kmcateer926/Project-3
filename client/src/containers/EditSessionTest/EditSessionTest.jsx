@@ -38,7 +38,7 @@ const EditSessionTest = () => {
    <BookSession {...sessions} getSessions={getSessions}/>
           ))} */}
         <EditBookSession
-          handleFormSubmit={testSubmit}
+          handleFormSubmit={handleFormSubmit}
           buttonText="Update"
         />
       </div>

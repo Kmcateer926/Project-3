@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const SessionSchema = new Schema({
-    // tutor: {
-    //     type: String,
-    //     trim: true,
-    //     required: "Please enter a tutor name",
-    // }, 
+    tutor: {
+        type: String,
+        trim: true,
+        required: "Please enter a tutor name",
+    }, 
     sessionLength: {
         type: Number,
         trim: true,
@@ -18,7 +18,11 @@ const SessionSchema = new Schema({
     time: {
         type: String,
         trim: true,
-    }
+    },
+    approved: {
+        type: Boolean,
+        default: false,
+      },
 });
 
 const Session = mongoose.model("SessionDetail", SessionSchema);

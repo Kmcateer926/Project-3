@@ -31,7 +31,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   console.log(req.body);
-  Tutor.create()
+  Tutor.create(req.body)
     .then((newTutor) => {
       console.log(newTutor);
       res.json(newTutor);

@@ -1,11 +1,11 @@
-  
-import React, { useState, useEffect , useHistory} from "react";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import BookSession from "../../components/BookSession/BookSession";
 
 const NewSession = () => {
-
-  // const history = useHistory()
+  // const alert = useContext(AlertContext);
+  const history = useHistory();
 
   const handleFormSubmit = (e, sessionData) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const NewSession = () => {
       .post("/api/sessions", sessionData)
       .then((response) => {
         console.log(response.data);
-        // history.push("/landing")
+        history.push("/landing");
       })
       .catch((err) => {
         console.log(err);
@@ -44,15 +44,16 @@ const NewSession = () => {
         </div>
       </div>
       <div className="row">
-        
-        <BookSession handleFormSubmit={handleFormSubmit} buttonText="Create New Session"/>
+        <BookSession
+          handleFormSubmit={handleFormSubmit}
+          buttonText="Create New Session"
+        />
         {/* {sessions.map((session)=>(
  <BookSession {...sessions} getSessions={getSessions}/>
         ))} */}
-       
       </div>
     </div>
   );
-  }
+};
 
 export default NewSession;

@@ -3,13 +3,13 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
+const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessions }) => {
   const deleteSession = (id) => {
     console.log(id, "test");
     axios
       .delete(`/api/sessions/${id}`)
       .then(() => {
-        // getSessions();
+        getSessions();
         console.log("getSessions");
       })
       .catch((err) => {
@@ -57,25 +57,26 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
               >
                 Tutor Sessions
               </h1>
-              <div>
-                <p
+              <table>
+                {/* <p
                   style={{
                     fontFamily: "Special Elite, cursive",
                   }}
-                >
+                > */}
                   <table className="table is-bordered is-striped is-fullwidth is-hoverable">
-                    <thead>
+                    {/* <thead>
                       <tr>
                         <th>Tutor</th>
                         <th>Date</th>
                         <th>Time</th>
                         <th>Minutes</th>
                       </tr>
-                    </thead>
+                    </thead> */}
+                    
                     <tbody>
                       <tr>
-                        <th>{tutor}</th>
-                        <th>{date}</th>
+                        <td>{tutor}</td>
+                        <td>{date}</td>
                         <td>{time}</td>
                         <td>{sessionLength}</td>
                         <td
@@ -113,8 +114,8 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
                       </tr>
                     </tbody>
                   </table>
-                </p>
-              </div>
+                {/* </p> */}
+              </table>
             </div>
           </div>
         </div>
