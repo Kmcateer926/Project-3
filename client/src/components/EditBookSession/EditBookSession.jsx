@@ -12,7 +12,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 
   const { id } = useParams();
 
-  // const history = useHistory();
+  const history = useHistory();
 
   const styles = {
     font: {
@@ -35,7 +35,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           setDate(date);
           setTime(time);
           setSessionLength(sessionLength);
-          // history.push("/landing")
+          history.push("/landing")
           // alert("Successfully added session")
         })
         .catch((err) => {
@@ -110,7 +110,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 <input
                   className="input is-danger"
                   type="text"
-                  id="tutor"
+                  id="date"
                   value={date}
                   onChange={(e) => {
                     setDate(e.target.value);
@@ -228,7 +228,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     );
                   }}
                 >
-                  <Link type="/landing" style={styles.link}>
+                  <Link style={styles.link}>
                     {buttonText}
                   </Link>
                 </button>

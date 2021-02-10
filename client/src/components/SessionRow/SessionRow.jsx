@@ -3,19 +3,19 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
-	const deleteSession = (id) => {
-		console.log(id, "test");
-		axios
-			.delete(`/api/sessions/${id}`)
-			.then(() => {
-				// getSessions();
-				console.log("getSessions");
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	};
+const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessions }) => {
+  const deleteSession = (id) => {
+    console.log(id, "test");
+    axios
+      .delete(`/api/sessions/${id}`)
+      .then(() => {
+        getSessions();
+        console.log("getSessions");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -58,26 +58,26 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
                 Tutor Sessions
               </h1>
               <div>
-                <p
+                {/* <p
                   style={{
                     fontFamily: "Special Elite, cursive",
                   }}
-                >
+                > */}
                   <table className="table is-bordered is-striped is-fullwidth is-hoverable">
-                    <thead>
+                    {/* <thead>
                       <tr>
                         <th>Tutor</th>
                         <th>Date</th>
                         <th>Time</th>
                         <th>Minutes</th>
                       </tr>
-                    </thead>
+                    </thead> */}
                     <tbody>
                       <tr>
                         <th>{tutor}</th>
-                        <th>{new Date(date).toLocaleString()}</th>
-                        <td>{time}</td>
-                        <td>{sessionLength}</td>
+						<th>{new Date(date).toLocaleString()}</th>
+                        <th>{time}</th>
+                        <th>{sessionLength}</th>
                         <td
                           class="fa"
                           // href="/admin/:id"
@@ -113,7 +113,7 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
 											</tr>
 										</tbody>
 									</table>
-								</p>
+								
 							</div>
 						</div>
 					</div>

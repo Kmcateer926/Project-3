@@ -1,5 +1,5 @@
-  
-import React, { useState, useEffect , useHistory} from "react";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import BookSession from "../../components/BookSession/BookSession";
 
@@ -44,15 +44,16 @@ const NewSession = () => {
         </div>
       </div>
       <div className="row">
-        
-        <BookSession handleFormSubmit={handleFormSubmit} buttonText="Create New Session"/>
+        <BookSession
+          handleFormSubmit={handleFormSubmit}
+          buttonText="Create New Session"
+        />
         {/* {sessions.map((session)=>(
  <BookSession {...sessions} getSessions={getSessions}/>
         ))} */}
-       
       </div>
     </div>
   );
-  }
+};
 
 export default NewSession;
