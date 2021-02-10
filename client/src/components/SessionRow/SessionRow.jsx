@@ -74,10 +74,10 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessio
                     </thead> */}
                     <tbody>
                       <tr>
-                        <td>{tutor}</td>
-                        <td>{date}</td>
-                        <td>{time}</td>
-                        <td>{sessionLength}</td>
+                        <th>{tutor}</th>
+						<th>{new Date(date).toLocaleString()}</th>
+                        <th>{time}</th>
+                        <th>{sessionLength}</th>
                         <td
                           class="fa"
                           // href="/admin/:id"

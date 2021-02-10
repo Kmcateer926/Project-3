@@ -112,7 +112,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 <input
                   className="input is-danger"
                   type="text"
-                  id="tutor"
+                  id="date"
                   value={date}
                   onChange={(e) => {
                     setDate(e.target.value);

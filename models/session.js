@@ -13,7 +13,7 @@ const SessionSchema = new Schema({
         trim: true,
     },
     date: {
-        type: Date,
+        type: String,
     }, 
     time: {
         type: String,
@@ -24,8 +24,8 @@ const SessionSchema = new Schema({
         default: false,
       },
     
-    tutor: {type: Schema.Types.ObjectId, ref: "Tutor"}
-,
+    // tutor: {type: Schema.Types.ObjectId, ref: "Tutor"}
+
 });
 
 const Session = mongoose.model("SessionDetail", SessionSchema);

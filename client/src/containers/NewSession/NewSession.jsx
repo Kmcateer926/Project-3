@@ -18,10 +18,10 @@ const NewSession = () => {
       })
       .catch((err) => {
         console.log(err);
-        alert.setAlert({
-          message: "Failed to create new session.",
-          type: "danger",
-        });
+        // alert.setAlert({
+        //   message: "Failed to create new session.",
+        //   type: "danger",
+        // });
       });
   };
 
