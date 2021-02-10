@@ -3,7 +3,7 @@ import axios from "axios";
 import SessionRow from "../../components/SessionRow/SessionRow";
 import ChalkBG from "../../components/ChalkBG/ChalkBG";
 // import BookSession from "../../components/BookSession/BookSession"
-
+import SessionTableRow from "../../components/SessionTableRow/SessionTableRow"
 
 const Landing = () => {
   const [sessions, setSessions] = useState([]);
@@ -22,7 +22,7 @@ const Landing = () => {
     <ChalkBG>
     <div>
       {sessions.map((session) => (
-        <SessionRow key={session._id} {...session} getSessions={getSessions} />
+        <SessionTableRow key={session._id} {...session} getSessions={getSessions} />
       ))}
       {/* <BookSession/> */}
     </div>
