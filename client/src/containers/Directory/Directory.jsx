@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import BookSession from "../../components/BookSession/BookSession";
+import ChalkBG from "../../components/ChalkBG/ChalkBG";
 
 const NewSession = () => {
 
@@ -37,6 +38,7 @@ const NewSession = () => {
   // }
 
   return (
+    <ChalkBG>
     <div className="container">
       <div className="row">
         <div className="col">
@@ -53,6 +55,7 @@ const NewSession = () => {
         ))} */}
       </div>
     </div>
+    </ChalkBG>
   );
 };
 
