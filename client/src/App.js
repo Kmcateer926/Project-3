@@ -16,12 +16,12 @@ import Admin from "./containers/Admin/Admin";
 import NewSession from "./containers/NewSession/NewSession";
 import NewTutor from "./containers/NewTutor/NewTutor";
 function App() {
-  useEffect(() => {
-    axios.get("/api/config").then((response) => {
-      console.log(response.data);
-      // alert(response.date.name);
-    });
-  }, []);
+	useEffect(() => {
+		axios.get("/api/config").then((response) => {
+			console.log(response.data);
+			// alert(response.date.name);
+		});
+	}, []);
 
   return (
     <div className="App">
@@ -46,6 +46,8 @@ function App() {
         </Router>
       </>
     </div>
+
+    
   );
 }
 

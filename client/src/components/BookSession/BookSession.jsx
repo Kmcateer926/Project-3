@@ -7,9 +7,7 @@ import axios from "axios";
 import SessionForm from "../../components/SessionForm/SessionForm"
 import TutorCard from "../../components/TutorCard/TutorCard"
 
-
 const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
-
   const [tutor, setTutor] = useState("");
   const [sessionLength, setSessionLength] = useState("");
   const [date, setDate] = useState("");
@@ -28,32 +26,26 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
     },
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(id);
-    if(id){
-      axios.get(`/api/sessions/${id}`)
-      .then((response)=>{
-        console.log(response.data);
-        const {
-          tutor, 
-          date, 
-          time,
-          sessionLength,
-        } = response.data;
-        setTutor(tutor);
-        setDate(date);
-        setTime(time);
-        setSessionLength(sessionLength);
-        // history.push("/landing")
-        // alert("Successfully added session")
-      }).catch((err)=>{
-        console.log(err)
-      });
+    if (id) {
+      axios
+        .get(`/api/sessions/${id}`)
+        .then((response) => {
+          console.log(response.data);
+          const { tutor, date, time, sessionLength } = response.data;
+          setTutor(tutor);
+          setDate(date);
+          setTime(time);
+          setSessionLength(sessionLength);
+          // history.push("/landing")
+          // alert("Successfully added session")
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-   
-    }, [id])
-
-  
+  }, [id]);
 
   return (
     <>
@@ -100,108 +92,112 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
               <form
                 className="column"
                 onSubmit={(e) => {
-                  handleFormSubmit(e, {
-                    tutor,
-                    date,
-                    time,
-                    sessionLength,
-                    // userCreated,
-                    // subjects,
-                    // id,
-                  }, id);
+                  handleFormSubmit(
+                    e,
+                    {
+                      tutor,
+                      date,
+                      time,
+                      sessionLength,
+                      // userCreated,
+                      // subjects,
+                      // id,
+                    },
+                    id
+                  );
                 }}
               >
-              <div
-                className="content"
-                style={{ fontFamily: "Special Elite, cursive" }}
-              >
-                <strong>Name: </strong>
-                {teachers.name}
-                <br />
-                <strong>Education: </strong>
-                {teachers.education}
-                <br />
-                <strong>Experience: </strong>
-                {teachers.experience}
-                <br />
-                <strong>Subject(s): </strong>
-                {teachers.subjects}
-                <br /> <br /> <br />
-                
-              </div>
-              
-              <div className="booking-deets">
-                <p>
-                  <strong>
-                    Date:{" "}
-                    <input
-                      className="input is-danger"
-                      type="date"
-                      // id="email"
-                      value={date}
-                      onChange={(e) => {
-                        setDate(e.target.value);
-                      }}
-                    />
-                  </strong>
-                </p>
-                <p>
-                  <strong>
-                    Time:{" "}
-                    <div className="field">
-                      <div className="control">
-                        <div className="select">
-                          <select>
-                            <option>Select a Time</option>
-                            <option>3:00 PM</option>
-                            <option>3:30 PM</option>
-                            <option>4:00 PM</option>
-                            <option>4:30 PM</option>
-                            <option>5:00 PM</option>
-                            <option>5:30 PM</option>
-                            <option>6:00 PM</option>
-                            <option>6:30 PM</option>
-                            <option>7:00 PM</option>
-                            <option>7:30 PM</option>
-                            <option>8:00 PM</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="cols">
+                <div
+                  className="content"
+                  style={{ fontFamily: "Special Elite, cursive" }}
+                >
+                  <strong>Name: </strong>
+                  {teachers.name}
+                  <br />
+                  <strong>Education: </strong>
+                  {teachers.education}
+                  <br />
+                  <strong>Experience: </strong>
+                  {teachers.experience}
+                  <br />
+                  <strong>Subject(s): </strong>
+                  {teachers.subjects}
+                  <br /> <br /> <br />
+                </div>
+                <div className="booking-deets">
+                  <p>
+                    <strong>
+                      Date:{" "}
+                      <input
+                        className="input is-danger"
+                        type="date"
+                        // id="email"
+                        value={date}
+                        onChange={(e) => {
+                          setDate(e.target.value);
+                        }}
+                      />
+                    </strong>
+                  </p>
+                  <p>
+                    <strong>
+                      Time:{" "}
                       <div className="field">
                         <div className="control">
-                          <label className="radio">
-                            <input type="radio" name="question" />
-                            30 min session
-                          </label>
-                          <label className="radio">
-                            <input type="radio" name="question" />
-                            60 min session
-                          </label>
+                          <div className="select">
+                            <select>
+                              <option>Select a Time</option>
+                              <option>3:00 PM</option>
+                              <option>3:30 PM</option>
+                              <option>4:00 PM</option>
+                              <option>4:30 PM</option>
+                              <option>5:00 PM</option>
+                              <option>5:30 PM</option>
+                              <option>6:00 PM</option>
+                              <option>6:30 PM</option>
+                              <option>7:00 PM</option>
+                              <option>7:30 PM</option>
+                              <option>8:00 PM</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                  </strong>
-                </p>
+                      Length:{" "}
+                      <div className="field">
+                        <div className="control">
+                          <div className="select">
+                            <select type="text">
+                              value={sessionLength}
+                              onChange=
+                              {(e) => {
+                                setSessionLength(e.target.value);
+                              }}
+                              <option>Select Session Length</option>
+                              <option>30 Minutes</option>
+                              <option>60 Minutes</option>
+                              <option>90 Minutes</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </strong>
+                  </p>
 
-                <button
-                  className="button is-small is-fullwidth is-info"
-                  style={{
-                    borderRadius: "10px",
-                    fontSize: "25px",
-                    fontWeight: "bold",
-                    fontFamily: "Special Elite, cursive",
-                  }}
-                  // onClick={handleFormSubmit}
-                >
-                  <Link to="/landing" style={styles.link}>
-                  {buttonText}
-                  </Link>
-               
-                </button>
-              </div><SessionForm></SessionForm>
+                  <button
+                    className="button is-small is-fullwidth is-info"
+                    style={{
+                      borderRadius: "10px",
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                      fontFamily: "Special Elite, cursive",
+                    }}
+                    // onClick={handleFormSubmit}
+                  >
+                    <Link to="/landing" style={styles.link}>
+                      {buttonText}
+                    </Link>
+                  </button>
+                </div>
               </form>
             </div>
           </div>

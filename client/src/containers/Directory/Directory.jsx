@@ -4,8 +4,8 @@ import axios from "axios";
 import BookSession from "../../components/BookSession/BookSession";
 
 const NewSession = () => {
-  // const alert = useContext(AlertContext);
-  const history = useHistory();
+
+  const history = useHistory()
 
   const handleFormSubmit = (e, sessionData) => {
     e.preventDefault();
