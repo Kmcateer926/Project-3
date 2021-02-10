@@ -6,7 +6,7 @@ import ParentForm from "../../components/ParentForm/ParentForm";
 
 const NewParent = () => {
   return (
-    <ChalkBG>
+    // <ChalkBG>
       <div className="container">
         <div className="row">
           <div className="col"></div>
@@ -15,7 +15,7 @@ const NewParent = () => {
           <ParentForm />
         </div>
       </div>
-    </ChalkBG>
+    // </ChalkBG>
   );
 };
 

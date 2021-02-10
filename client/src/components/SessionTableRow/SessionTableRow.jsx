@@ -33,18 +33,15 @@ session: {
   fontFamily: "Special Elite, cursive",
   paddingTop: 25,
   paddingLeft: 35,
-  paddingRight: 35
+  paddingRight: 35,
+  // color: "#ffffff"
 } 
   }
   
   return (
     
     <>
-   
 
-
-    
- 
       <tr className="session" style={styles.session}> 
 
       <td>{tutor}</td>
@@ -72,7 +69,7 @@ session: {
       </tr>
 
  
-     
+ 
 
 
 
