@@ -76,7 +76,7 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessio
                       <tr>
                         <th>{tutor}</th>
 						<th>{new Date(date).toLocaleString()}</th>
-                        <th>{time}</th>
+                        <th>{new Date(time).toTimeString()}</th>
                         <th>{sessionLength}</th>
                         <td
                           class="fa"

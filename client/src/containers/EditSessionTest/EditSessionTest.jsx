@@ -27,7 +27,7 @@ const EditSessionTest = () => {
     console.log("test");
   };
   return (
-    <ChalkBG>
+    // <ChalkBG>
       <div className="container">
         <div className="row">
           <div className="col">
@@ -45,7 +45,7 @@ const EditSessionTest = () => {
           />
         </div>
       </div>
-    </ChalkBG>
+    // </ChalkBG>
   );
 };
 
