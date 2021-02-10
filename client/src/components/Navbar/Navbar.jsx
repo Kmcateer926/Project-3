@@ -1,56 +1,65 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
-class Navbar extends Component {
-  render() {
-    return (
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
-         <Link to="/" className="navbar-brand">
-        Teacher Hub
-      </Link>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+import React from 'react';
+import { Link, NavLink } from "react-router-dom";
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link
-                to="/LearnMore"
-                className={
-                  window.location.pathname === "/LearnMore"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Learn More
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/Resources"
-                className={
-                  window.location.pathname === "/Resources"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Resources
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    );
+const styles = {
+
+  navbar: {
+    fontFamily: "Special Elite, cursive",
+    background: " #94b8b8",
+   
+  },
+
+  title: {
+
+    color: "#FFFFFF",
+    fontFamily: "Special Elite, cursive",
+    marginTop: 20
   }
 }
+
+const Navbar = () => {
+    return (
+
+      
+      
+        <>
+        <div>
+          <nav className="navbar is-mobile" role="navigation" aria-label="main navigation" style={styles.navbar}>
+            <div className="navbar-brand">
+  
+              <a
+                role="button"
+                className="navbar-burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navbarBasicExample"
+                href="/"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+  
+            <div id="navbarBasicExample" className="navbar-menu">
+              <div className="navbar-start">
+                {/* <a className="navbar-item">Home</a> */}
+  <Link to="Home" className="navbar-item title is-1" style={styles.title}>Tutor Hub</Link>
+  
+  </div>
+  
+  <div className="navbar-end">
+  
+                {/* <a className="navbar-item">Documentation</a> */}
+                {/* <NavLink to="Projects" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Tutor</button></NavLink> */}
+                <NavLink to="/parentsignup" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Parent</button></NavLink>
+              
+              </div>
+            </div>
+          </nav>
+        </div>
+      </>
+    );
+};
 
 export default Navbar;

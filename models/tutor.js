@@ -2,52 +2,50 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const TutorSchema = new Schema({
-  firstName: {
+const tutorSchema = new Schema({
+  name: {
     type: String,
     trim: true,
-    required: "First name is Required"
+    required: "First name is Required",
   },
 
-  lastName: {
+  //   lastName: {
+  //     type: String,
+  //     trim: true,
+  //     required: "Last name is Required"
+  //   },
+
+  education: {
     type: String,
     trim: true,
-    required: "Last name is Required"
+    required: "education is required",
   },
 
-  password: {
+  subjects: {
     type: String,
-    trim: true,
-    required: "Password is Required",
-    validate: [({ length }) => length >= 6, "Password should be longer."]
+    required: "subject is required",
   },
 
-  email: {
-    type: String,
-    unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-  },
-//may or may not need userCreated
-  userCreated: {
-    type: Date,
-    default: Date.now
-  },
-
-  subjects:[
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Subjects"
-    }
-  ],
-
-  status: null,
-
-  id: {
+  experience: {
     type: Number,
-    required: true
+    required: "years of experience required",
   }
+
+  // subjects:[
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Subjects"
+  //   }
+  // ],
+
+  //   status: null,
+
+  // id: {
+  //   type: Number,
+  //   required: true
+  // }
 });
 
-const Tutor = mongoose.model("Tutor", TutorSchema);
+const Tutor = mongoose.model("tutor", tutorSchema);
 
 module.exports = Tutor;

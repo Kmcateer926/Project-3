@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Sarah Collins",
+    "education": "Georgia State",
+    "subjects": ["Spelling, Science"],
+    "experience": "10 years"
+  },
+  {
+    "name": "Peg Sanders",
+    "education": "Georgia Tech",
+    "subjects": ["Spelling, Math"],
+    "experience": "12 years"
+  },
+  {
+    "name": "Emily Peters",
+    "education": "Georgia Southern",
+    "subjects": ["Math, Spelling, Science"],
+    "experience": "7 years"
+  },
+  {
+    "name": "Diane Turner",
+    "education": "University of Georgia",
+    "subjects": ["Math, Reading"],
+    "experience": "11 years"
+  },
+  {
+    "name": "Tom Jones",
+    "education": "Savannah State University",
+    "subjects": ["Math"],
+    "experience": "6 years"
+  },
+  {
+    "name": "Alfred Owens",
+    "education": "Tennessee State University",
+    "subjects": ["Spelling, Science"],
+    "experience": "18 years"
+  },
+  {
+    "name": "Jim Simpson",
+    "education": "Norfolk State University",
+    "subjects": ["Math, Science"],
+    "experience": "9 years"
+  },
+  {
+    "name": "Hal Simmons",
+    "education": "NYU",
+    "subjects": ["Math, Reading, Spanish"],
+    "experience": "4 years"
+  },
+  {
+    "name": "Leon Carter",
+    "education": "Hunter College",
+    "subjects": ["Science, History"],
+    "experience": "9 years"
+  },
+  {
+    "name": "Michael Smith",
+    "education": "Brooklyn College",
+    "subjects": ["Spelling, Science, Phonics"],
+    "experience": "7 years"
+  },
+  {
+    "name": "Stephanie Anderson",
+    "education": "UCLA",
+    "subjects": ["Math, Spelling, Science"],
+    "experience": "5 years"
+  },
+  {
+    "name": "Lisa Green",
+    "education": "Clemson University",
+    "subjects": ["Math, Reading"],
+    "experience": "8 years"
+  },
+  {
+    "name": "Tim Wayans",
+    "education": "Medgar Evers College",
+    "subjects": ["Math, Phonics"],
+    "experience": "14 years"
+  },
+  {
+    "name": "Tanya Littlejohn",
+    "education": "Ball State University",
+    "subjects": ["Spelling, Science"],
+    "experience": "6 years"
+  },
+  {
+    "name": "Brian Appleberry",
+    "education": "University of Pennsylvania",
+    "subjects": ["Math, Science"],
+    "experience": "8 years"
+  },
+  {
+    "name": "Sheri Sharp",
+    "education": "City College",
+    "subjects": ["Math, Reading, History"],
+    "experience": "7 years"
+  },
+  {
+    "name": "Cynthia Rollins",
+    "education": "Kennesaw State University",
+    "subjects": ["Math, History, Science"],
+    "experience": "5 years"
+  },
+  {
+    "name": "Evette Williams",
+    "education": "Indiana University",
+    "subjects": ["  Science"],
+    "experience": "11 years"
+  }
+]

@@ -6,22 +6,35 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
+require("dotenv").config();
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// console.log(accountSid);
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require("twilio")(accountSid, authToken);
+
+
+// client.messages
+//   .create({
+//     body: "This is a test text message",
+//     from: "+15093944876",
+//     to: "+16787933025"
+//   })
+//   .then((message) => console.log(message))
+//   .catch((err) => console.log(err));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if(process.env.NODE_ENV === `production`){
-app.use(express.static("client/build"));
+if (process.env.NODE_ENV === `production`) {
+  app.use(express.static("client/build"));
 }
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/tutor-hub",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  }
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tutor-hub", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+});
 
 const connection = mongoose.connection;
 
@@ -33,12 +46,20 @@ connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
 
+const ParentSignUpController = require("./controllers/parentController");
+const SessionController = require("./controllers/sessionController");
+const TutorController = require("./controllers/tutorController");
+app.use(express.static("client/build"));
+
 app.get("/api/config", (req, res) => {
   res.json({
     success: true,
   });
 });
 
+app.use("/api/parents", ParentSignUpController);
+app.use("/api/sessions", SessionController);
+app.use("/api/tutors", TutorController);
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
