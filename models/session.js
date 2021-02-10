@@ -19,7 +19,13 @@ const SessionSchema = new Schema({
         type: String,
         trim: true,
     },
+    approved: {
+        type: Boolean,
+        default: false,
+      },
+    
     tutor: {type: Schema.Types.ObjectId, ref: "Tutor"}
+,
 });
 
 const Session = mongoose.model("SessionDetail", SessionSchema);
