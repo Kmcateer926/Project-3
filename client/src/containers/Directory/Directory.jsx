@@ -1,10 +1,9 @@
-  
-import React, { useState, useEffect , useHistory} from "react";
+import React, { useState, useEffect, useHistory } from "react";
 import axios from "axios";
 import BookSession from "../../components/BookSession/BookSession";
+import ChalkBG from "../../components/ChalkBG/ChalkBG";
 
 const NewSession = () => {
-
   // const history = useHistory()
 
   const handleFormSubmit = (e, sessionData) => {
@@ -37,6 +36,7 @@ const NewSession = () => {
   // }
 
   return (
+    <ChalkBG>
     <div className="container">
       <div className="row">
         <div className="col">
@@ -44,15 +44,17 @@ const NewSession = () => {
         </div>
       </div>
       <div className="row">
-        
-        <BookSession handleFormSubmit={handleFormSubmit} buttonText="Create New Session"/>
+        <BookSession
+          handleFormSubmit={handleFormSubmit}
+          buttonText="Create New Session"
+        />
         {/* {sessions.map((session)=>(
  <BookSession {...sessions} getSessions={getSessions}/>
         ))} */}
-       
       </div>
     </div>
+    </ChalkBG>
   );
-  }
+};
 
 export default NewSession;

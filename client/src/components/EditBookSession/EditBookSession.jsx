@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
+import ChalkBG from "../ChalkBG/ChalkBG";
 
 const EditBookSession = ({ buttonText, handleFormSubmit }) => {
   const [tutor, setTutor] = useState("");
@@ -45,6 +46,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
   }, [id]);
   return (
     <>
+    
       <div className="spacer" style={{ height: "50px" }}></div>
       <div>
         <h1
@@ -237,6 +239,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           </div>
         </div>
       </div>
+      
       ))
     </>
   );

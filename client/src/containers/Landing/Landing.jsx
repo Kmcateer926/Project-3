@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SessionRow from "../../components/SessionRow/SessionRow";
+import ChalkBG from "../../components/ChalkBG/ChalkBG";
 // import BookSession from "../../components/BookSession/BookSession"
 
 
@@ -18,12 +19,14 @@ const Landing = () => {
   }, []);
 
   return (
+    <ChalkBG>
     <div>
       {sessions.map((session) => (
         <SessionRow key={session._id} {...session} getSessions={getSessions} />
       ))}
       {/* <BookSession/> */}
     </div>
+    </ChalkBG>
   );
 };
 
