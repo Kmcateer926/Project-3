@@ -19,7 +19,7 @@ const SessionSchema = new Schema({
         type: String,
         trim: true,
     },
-    tutor: {type: Schema.Types.ObjectId, ref: "Tutor"}
+    // tutor: {type: Schema.Types.ObjectId, ref: "Tutor"}
 });
 
 const Session = mongoose.model("SessionDetail", SessionSchema);
