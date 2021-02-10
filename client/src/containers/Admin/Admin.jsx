@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SessionTableRow from "../../components/SessionTableRow/SessionTableRow";
+// import SessionTableRow from "../../components/SessionTableRow/SessionTableRow";
+import TutorTableRow from "../../components/TutorTableRow/TutorTableRow"
 
 const Admin = () => {
   // 1. hard code the render
@@ -11,18 +12,18 @@ const Admin = () => {
   // 3c. Inside useEffect, make an axios call.
   // 3d. set the response.data on state (setProducts) NEVER DIRECTLY MUTATE STATE
 
-  const [sessions, setSessions] = useState([]);
+  const [tutors, setTutors] = useState([]);
 
   useEffect(() => {
-    getSessions();
+    getTutors();
   }, []);
 
-  const getSessions = () => {
+  const getTutors = () => {
     axios
-      .get("/api/sessions")
+      .get("/api/tutors")
       .then((response) => {
         console.log(response.data);
-        setSessions(response.data);
+        setTutors(response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -41,10 +42,10 @@ const Admin = () => {
           <table className="striped">
             <thead>
               <tr>
-                <th>Tutor</th>
-                <th>Date</th>
-                <th>SessionLength</th>
-                <th>Time</th>
+                <th>Name</th>
+                <th>education</th>
+                <th>Subjects</th>
+                <th>Experience</th>
                 <th>Approved</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -52,11 +53,11 @@ const Admin = () => {
             </thead>
 
             <tbody>
-              {sessions.map((session) => (
-                <SessionTableRow
-                  key={session._id}
-                  {...session}
-                  getSessions={getSessions}
+              {tutors.map((tutor) => (
+                <TutorTableRow
+                  key={tutor._id}
+                  {...tutor}
+                  getTutors={getTutors}
                 />
               ))}
             </tbody>

@@ -7,21 +7,21 @@ import PropTypes from "prop-types";
 // import { faEdit, faTrash, faStar } from "@fortawesome/free-solid-svg-icons";
 // import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
 
-const SessionTableRow = ({
+const TutorTableRow = ({
   _id,
-  tutor,
-  date,
-  sessionLength,
-  time,
+  name,
+  education,
+  subjects,
+  experience,
   approved,
 
-  getSessions,
+  getTutors,
 }) => {
-  const deleteSession = (id) => {
+  const deleteTutor = (id) => {
     axios
-      .delete(`/api/sessions/${id}`)
+      .delete(`/api/tutors/${id}`)
       .then(() => {
-        getSessions();
+        getTutors();
       })
       .catch((err) => {
         console.log(err);
@@ -31,11 +31,11 @@ const SessionTableRow = ({
   
   return (
     <tr>
-      <td>{tutor}</td>
-      <td>{date}</td>
-      <td>{sessionLength}</td>
+      <td>{name}</td>
+      <td>{education}</td>
+      <td>{subjects}</td>
 
-      <td>{time}</td>
+      <td>{experience}</td>
 
       
         <td
@@ -43,7 +43,7 @@ const SessionTableRow = ({
           // href="/admin/:id"
           // style={{ margin: "5px" }}
         >
-          <Link to={`/landing/${_id}`}>&#xf044;</Link>
+          <Link to={`/admin/${_id}`}>&#xf044;</Link>
 
           {/* // 	className="fa"
 												// 	onClick={() => {}}
@@ -64,7 +64,7 @@ const SessionTableRow = ({
         <button
           //   icon={faTrash}
           onClick={() => {
-            deleteSession(_id);
+            deleteTutor(_id);
           }}
         />
       </td>
@@ -72,12 +72,12 @@ const SessionTableRow = ({
   );
 };
 
-SessionTableRow.propTypes = {
+TutorTableRow.propTypes = {
     _id: PropTypes.string.isRequired,
-    tutor: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
-    sessionLength: PropTypes.number.isRequired,
-    date: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    education: PropTypes.string.isRequired,
+    subjects: PropTypes.string.isRequired,
+    experience: PropTypes.number.isRequired,
 };
 
-export default SessionTableRow;
+export default TutorTableRow;

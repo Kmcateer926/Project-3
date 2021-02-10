@@ -1,56 +1,50 @@
-
 import React, { useState, useEffect } from "react";
-
 
 import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 
 const EditBookSession = ({ buttonText, handleFormSubmit }) => {
-    const [tutor, setTutor] = useState("");
-    const [sessionLength, setSessionLength] = useState("");
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-  
-    const { id } = useParams();
-  
-    // const history = useHistory();
-  
-    const styles = {
-      font: {
-        fontFamily: "Special Elite, cursive",
-      },
-      heading: {
-        paddingTop: 40,
-      },
-    };
-  
-    useEffect(()=>{
-      console.log(id);
-      if(id){
-        axios.get(`/api/sessions/${id}`)
-        .then((response)=>{
+  const [tutor, setTutor] = useState("");
+  const [sessionLength, setSessionLength] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+
+  const { id } = useParams();
+
+  // const history = useHistory();
+
+  const styles = {
+    font: {
+      fontFamily: "Special Elite, cursive",
+    },
+    heading: {
+      paddingTop: 40,
+    },
+  };
+
+  useEffect(() => {
+    console.log(id);
+    if (id) {
+      axios
+        .get(`/api/sessions/${id}`)
+        .then((response) => {
           console.log(response.data);
-          const {
-            tutor, 
-            date, 
-            time,
-            sessionLength,
-          } = response.data;
+          const { tutor, date, time, sessionLength } = response.data;
           setTutor(tutor);
           setDate(date);
           setTime(time);
           setSessionLength(sessionLength);
           // history.push("/landing")
           // alert("Successfully added session")
-        }).catch((err)=>{
-          console.log(err)
+        })
+        .catch((err) => {
+          console.log(err);
         });
-      }
-     
-      }, [id])
-    return (
-        <>
+    }
+  }, [id]);
+  return (
+    <>
       <div className="spacer" style={{ height: "50px" }}></div>
       <div>
         <h1
@@ -60,50 +54,36 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
             textAlign: "center",
           }}
         >
-         Edit Session
+          Edit Session
         </h1>
         <div className="spacer" style={{ height: "50px" }}></div>
       </div>
-      
-        <div
-          className="card "
-          style={{
-            margin: "10px",
-            border: "1px solid",
-            padding: "5px",
-            width: "30%",
-            display: "inline-block",
-            flexDirection: "row",
-            boxShadow: "5px 2px 2px grey",
-            borderRadius: "15px",
-          }}
-        >
-          <div className="card-image">
-            <figure className="image is-128x128">
-              <img
-                // src={teachers.image}
-                // alt={teachers.name}
-                style={{ borderRadius: "15px" }}
-              />
-            </figure>
-          </div>
+      <div
+        className="card "
+        style={{
+          margin: "10px",
+          border: "1px solid",
+          padding: "5px",
+          width: "30%",
+          display: "inline-block",
+          flexDirection: "row",
+          boxShadow: "5px 2px 2px grey",
+          borderRadius: "15px",
+        }}
+      >
+        <div className="card-image">
+          <figure className="image is-128x128">
+            <img
+              // src={teachers.image}
+              // alt={teachers.name}
+              style={{ borderRadius: "15px" }}
+            />
+          </figure>
+        </div>
 
-          <div className="card">
-            <div className="card-content">
-              <form
-                className="column"
-                onSubmit={(e) => {
-                  handleFormSubmit(e, {
-                    tutor,
-                    date,
-                    time,
-                    sessionLength,
-                    // userCreated,
-                    // subjects,
-                    // id,
-                  }, id);
-                }}
-              >
+        <div className="card">
+          <div className="card-content">
+            <form className="column">
               <div
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
@@ -111,35 +91,35 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 <strong>Name: </strong>
                 {/* {teachers.name} */}
                 <input
-                      className="input is-danger"
-                      type="text"
-                      id="tutor"
-                      value={tutor}
-                      onChange={(e) => {
-                        setTutor(e.target.value);
-                      }}
-                    />
+                  className="input is-danger"
+                  type="text"
+                  id="tutor"
+                  value={tutor}
+                  onChange={(e) => {
+                    setTutor(e.target.value);
+                  }}
+                />
                 <br />
-                </div>
-                <div
+              </div>
+              <div
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Date: </strong>
                 {/* {teachers.name} */}
                 <input
-                      className="input is-danger"
-                      type="text"
-                      id="tutor"
-                      value={date}
-                      onChange={(e) => {
-                        setDate(e.target.value);
-                      }}
-                    />
+                  className="input is-danger"
+                  type="text"
+                  id="tutor"
+                  value={date}
+                  onChange={(e) => {
+                    setDate(e.target.value);
+                  }}
+                />
                 <br />
-                </div>
-               
-                {/* <p>
+              </div>
+
+              {/* <p>
                   <strong>
                     Session Length:{" "}
                     <input
@@ -176,7 +156,11 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     <div className="field">
                       <div className="control">
                         <div className="select">
-                          <select>
+                          <select type="text" value={time}
+                          onChange={(e) => {
+                            setTime(e.target.value);
+                          }}
+                          >
                             <option>Select a Time</option>
                             <option>3:00 PM</option>
                             <option>3:30 PM</option>
@@ -222,30 +206,40 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 
                 <button
                   className="button is-small is-fullwidth is-info"
-                  type="submit"
                   style={{
                     borderRadius: "10px",
                     fontSize: "25px",
                     fontWeight: "bold",
                     fontFamily: "Special Elite, cursive",
                   }}
-                  // onClick={handleFormSubmit}
+                  onClick={(e) => {
+                    handleFormSubmit(
+                      e,
+                      {
+                        tutor,
+                        date,
+                        time,
+                        sessionLength,
+                        // userCreated,
+                        // subjects,
+                        // id,
+                      },
+                      id
+                    );
+                  }}
                 >
-                  <Link type="/landing" style={styles.link}>
-                  {buttonText}
+                  <Link style={styles.link}>
+                    {buttonText}
                   </Link>
-               
                 </button>
-            
               </div>
-              </form>
-            </div>
-
+            </form>
           </div>
         </div>
+      </div>
       ))
     </>
-    );
+  );
 };
 
 export default EditBookSession;

@@ -4,6 +4,8 @@ import teacherDirectory from "./teacherDirectory.json";
 import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
+import SessionForm from "../../components/SessionForm/SessionForm"
+import TutorCard from "../../components/TutorCard/TutorCard"
 
 
 const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
@@ -55,7 +57,8 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
 
   return (
     <>
-      <div className="spacer" style={{ height: "50px" }}></div>
+    
+      <div className="spacer" style={{ height: "50px" }}><TutorCard></TutorCard></div>
       <div>
         <h1
           style={{
@@ -107,7 +110,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                     // id,
                   }, id);
                 }}
-              ></form>
+              >
               <div
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
@@ -126,6 +129,7 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                 <br /> <br /> <br />
                 
               </div>
+              
               <div className="booking-deets">
                 <p>
                   <strong>
@@ -197,7 +201,8 @@ const BookSessionForm = ({ buttonText, handleFormSubmit }) => {
                   </Link>
                
                 </button>
-              </div>
+              </div><SessionForm></SessionForm>
+              </form>
             </div>
           </div>
         </div>

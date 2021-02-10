@@ -14,6 +14,7 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import EditSessionTest from "./containers/EditSessionTest/EditSessionTest"
 import Admin from "./containers/Admin/Admin";
 import NewSession from "./containers/NewSession/NewSession";
+import NewTutor from "./containers/NewTutor/NewTutor";
 function App() {
   useEffect(() => {
     axios.get("/api/config").then((response) => {
@@ -37,7 +38,10 @@ function App() {
           <Route exact path="/returnparent" component={ReturnParent} />
 		  <Route exact path="/landing/:id" component={EditSessionTest}/>
       <Route exact path="/admin" component={Admin}></Route>
-      <Route exact path="/admin/new-session" component={NewSession} />
+      <Route exact path="/landing/new-session" component={NewSession} />
+      {/* <Route exact path="/admin/new-session" component={NewSession} /> */}
+      {/* <Route exact path="/admin/:id" component={EditSessionTest}/> */}
+      <Route exact path="/admin/new-tutor" component={NewTutor} />
           <Footer />
         </Router>
       </>

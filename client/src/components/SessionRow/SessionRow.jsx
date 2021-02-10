@@ -57,7 +57,7 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessio
               >
                 Tutor Sessions
               </h1>
-              <table>
+              <div>
                 {/* <p
                   style={{
                     fontFamily: "Special Elite, cursive",
@@ -72,7 +72,6 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessio
                         <th>Minutes</th>
                       </tr>
                     </thead> */}
-                    
                     <tbody>
                       <tr>
                         <td>{tutor}</td>
@@ -115,7 +114,7 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessio
                     </tbody>
                   </table>
                 {/* </p> */}
-              </table>
+              </div>
             </div>
           </div>
         </div>

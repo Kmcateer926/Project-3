@@ -1,25 +1,25 @@
 import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import SessionForm from "../../components/SessionForm/SessionForm";
+import TutorForm from "../../components/TutorForm/TutorForm"
 // import AlertContext from "../../utils/alertContext";
 
-const NewSession = () => {
+const NewTutor = () => {
 //   const alert = useContext(AlertContext);
   const history = useHistory();
 
-  const handleFormSubmit = (e, sessionData) => {
+  const handleFormSubmit = (e, tutorData) => {
     e.preventDefault();
     axios
-      .post("/api/sessions", sessionData)
+      .post("/api/tutors", tutorData)
       .then((response) => {
         console.log(response.data);
-        history.push("/landing");
+        history.push("/admin");
       })
       .catch((err) => {
         console.log(err);
         alert.setAlert({
-          message: "Failed to create new session.",
+          message: "Failed to create new tutor.",
           type: "danger",
         });
       });
@@ -29,17 +29,17 @@ const NewSession = () => {
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1 className="center-align">Add a New Product</h1>
+          <h1 className="center-align">Add a New TUtor</h1>
         </div>
       </div>
       <div className="row">
-        <SessionForm
+        <TutorForm
           handleFormSubmit={handleFormSubmit}
-          buttonText="Create New Session"
+          buttonText="Create New Tutor"
         />
       </div>
     </div>
   );
 };
 
-export default NewSession;
+export default NewTutor;
