@@ -6,7 +6,7 @@ const Session = require("../models/session");
 router.get("/", (req, res) => {
 	Session.find({})
 		.then((sessions) => {
-      console.log(sessions);
+			console.log(sessions);
 			res.json(sessions);
 		})
 		.catch((err) => {
@@ -17,13 +17,14 @@ router.get("/", (req, res) => {
 // created for edit (el)
 router.get("/:id", (req, res) => {
 	Session.findById(req.params.id)
-	.then((foundSession) => {
-		res.json(foundSession);
-	}) 
-	.catch((err) => {
-		console.log(err);
-		res.status(404).end();
-	});
+	.populate("tutor")
+		.then((foundSession) => {
+			res.json(foundSession);
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(404).end();
+		});
 });
 
 router.get("/:id", (req, res) => {
@@ -32,6 +33,7 @@ router.get("/:id", (req, res) => {
 			id: req.params.id,
 		},
 	})
+		.populate("tutor")
 		.then((sessions) => {
 			res.json(sessions);
 		})
@@ -44,6 +46,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
 	console.log(req.body);
 	Session.create(req.body)
+		.populate("tutor")
 		.then((newSession) => {
 			console.log(newSession);
 			res.json(newSession);

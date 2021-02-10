@@ -18,7 +18,8 @@ const SessionSchema = new Schema({
     time: {
         type: String,
         trim: true,
-    }
+    },
+    tutor: {type: Schema.Types.ObjectId, ref: "Tutor"}
 });
 
 const Session = mongoose.model("SessionDetail", SessionSchema);

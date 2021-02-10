@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-  })
+  }).populate("session")
     .then((tutors) => {
       res.json(tutors);
     })
@@ -32,6 +32,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   console.log(req.body);
   Tutor.create()
+  .populate("session")
     .then((newTutor) => {
       console.log(newTutor);
       res.json(newTutor);

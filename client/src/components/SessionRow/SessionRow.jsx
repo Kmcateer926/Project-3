@@ -4,18 +4,18 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
-  const deleteSession = (id) => {
-    console.log(id, "test");
-    axios
-      .delete(`/api/sessions/${id}`)
-      .then(() => {
-        // getSessions();
-        console.log("getSessions");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+	const deleteSession = (id) => {
+		console.log(id, "test");
+		axios
+			.delete(`/api/sessions/${id}`)
+			.then(() => {
+				// getSessions();
+				console.log("getSessions");
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 
   return (
     <>
@@ -85,50 +85,50 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time }) => {
                         >
                           <Link to={`/landing/${_id}`}>&#xf044;</Link>
 
-                          {/* // 	className="fa"
+													{/* // 	className="fa"
 												// 	onClick={() => {}}
 												// 	style={{ */}
-                          {/* // 		margin: "10px",
+													{/* // 		margin: "10px",
 												// 		marginBottom: "5px",
 												// 	}}
 												// > */}
-                          {/* // 	&#xf044; */}
-                        </td>
-                        <td
-                          class="fa "
-                          onClick={() => {}}
-                          style={{ margin: "10px" }}
-                        >
-                          &#xf03a;
-                        </td>
-                        <td
-                          class="fa"
-                          onClick={() => {
-                            deleteSession(_id);
-                          }}
-                          style={{ margin: "10px" }}
-                        >
-                          &#xf1f8;
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+													{/* // 	&#xf044; */}
+												</td>
+												<td
+													class="fa "
+													onClick={() => {}}
+													style={{ margin: "10px" }}
+												>
+													&#xf03a;
+												</td>
+												<td
+													class="fa"
+													onClick={() => {
+														deleteSession(_id);
+													}}
+													style={{ margin: "10px" }}
+												>
+													&#xf1f8;
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 };
 
 SessionRow.propTypes = {
-  _id: PropTypes.string.isRequired,
-  tutor: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
-  sessionLength: PropTypes.number.isRequired,
-  date: PropTypes.string.isRequired,
+	_id: PropTypes.string.isRequired,
+	tutor: PropTypes.string.isRequired,
+	time: PropTypes.string.isRequired,
+	sessionLength: PropTypes.number.isRequired,
+	date: PropTypes.string.isRequired,
 };
 
 export default SessionRow;
