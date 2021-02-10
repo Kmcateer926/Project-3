@@ -42,7 +42,8 @@ const EditSessionTest = () => {
           <EditBookSession
             handleFormSubmit={handleFormSubmit}
             buttonText="Update"
-          />
+            
+          /> 
         </div>
       </div>
     </ChalkBG>
