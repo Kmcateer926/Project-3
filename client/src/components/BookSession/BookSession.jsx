@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Directory.css";
 import teacherDirectory from "./teacherDirectory.json";
-import CalendarApp from "../../components/Calendar/Calendar";
+// import CalendarApp from "../../components/Calendar/Calendar";
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import SessionForm from "../../components/SessionForm/SessionForm"
