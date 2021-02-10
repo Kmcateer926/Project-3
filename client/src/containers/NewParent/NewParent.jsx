@@ -5,9 +5,25 @@ import ParentForm from "../../components/ParentForm/ParentForm";
 // import API from "../../utils/API"
 
 const NewParent = () => {
+  const styles = {
+    signUp: {
+      backgroundImage: `url("https://t4.ftcdn.net/jpg/03/67/24/77/360_F_367247734_rml9UJtyflIYwvH5Sp6zQkAoxDOnksSS.jpg")`,
+      backgroundSize: "cover",
+      backgroundPosition: "center center",
+      backgroundSize: "cover",
+	  backgroundRepeat: "no-repeat",
+	  width: "100%",
+    //   maxWidth: "2310vw",
+      height: "100vh",
+      position: "absolute",
+      backgroundAttachment: "fixed",
+      
+     
+    }
+  }
   return (
     // <ChalkBG>
-      <div className="container">
+      <div className="container" style={styles.signUp}>
         <div className="row">
           <div className="col"></div>
         </div>
