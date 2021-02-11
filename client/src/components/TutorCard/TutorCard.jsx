@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-// import SessionForm from "../../components/SessionForm/SessionForm";
+
+import SessionForm from "../../components/SessionForm/SessionForm";
 const TutorCard = ({ name, education, subjects, experience, _id, email }) => {
+    
   return (
     <div className="col s4">
       <div className="row">
@@ -23,6 +25,18 @@ const TutorCard = ({ name, education, subjects, experience, _id, email }) => {
             {/* <SessionForm></SessionForm> */}
             <div className="card-action">
               <Link to={`/tutors/${_id}`}></Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col s12 m7">
+          <div className="card">
+            <div>
+            <SessionForm
+        //   handleFormSubmit={handleFormSubmit}
+          buttonText="Create New Session"
+        />
             </div>
           </div>
         </div>
