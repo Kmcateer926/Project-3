@@ -36,7 +36,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           setDate(date);
           setTime(time);
           setSessionLength(sessionLength);
-          history.push("/landing")
+          history.push("/landing");
           // alert("Successfully added session")
         })
         .catch((err) => {
@@ -46,7 +46,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
   }, [id]);
   return (
     <>
-    
       <div className="spacer" style={{ height: "50px" }}></div>
       <div>
         <h1
@@ -158,10 +157,12 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     <div className="field">
                       <div className="control">
                         <div className="select">
-                          <select type="text" value={time}
-                          onChange={(e) => {
-                            setTime(e.target.value);
-                          }}
+                          <select
+                            type="text"
+                            value={time}
+                            onChange={(e) => {
+                              setTime(e.target.value);
+                            }}
                           >
                             <option>Select a Time</option>
                             <option>3:00 PM</option>
@@ -179,30 +180,25 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="cols">
-                      <div className="field">
-                        <div className="control">
-                          <label className="radio">
-                            <input type="radio" name="question" />
-                            30 min session
-                          </label>
-                          <label className="radio">
-                            <input type="radio" name="question" />
-                            60 min session
-                          </label>
+                    Session Length:{" "}
+                    <div className="field">
+                      <div className="control">
+                        <div className="select">
+                          <select
+                            type="text"
+                            value={sessionLength}
+                            onChange={(e) => {
+                              setSessionLength(e.target.value);
+                            }}
+                          >
+                            <option>Select Session Length by in Minutes</option>
+                            <option>30</option>
+                            <option>60</option>
+                            <option>90</option>
+                          </select>
                         </div>
                       </div>
                     </div>
-                    {/* <input
-                      className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
-                      value={time}
-                      onChange={(e) => {
-                        setTime(e.target.value);
-                      }}
-                    /> */}
                   </strong>
                 </p>
 
@@ -230,16 +226,13 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     );
                   }}
                 >
-                  <Link style={styles.link}>
-                    {buttonText}
-                  </Link>
+                  <Link style={styles.link}>{buttonText}</Link>
                 </button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      
       ))
     </>
   );

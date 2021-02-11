@@ -38,7 +38,7 @@ const NewSession = () => {
   // }
 
   return (
-    <ChalkBG>
+    
     <div className="container">
       <div className="row">
         <div className="col">
@@ -55,7 +55,7 @@ const NewSession = () => {
         ))} */}
       </div>
     </div>
-    </ChalkBG>
+    
   );
 };
 

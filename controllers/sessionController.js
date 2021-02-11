@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 // created for edit (el)
 router.get("/:id", (req, res) => {
 	Session.findById(req.params.id)
-	.populate("tutor")
+	// .populate("tutor")
 		.then((foundSession) => {
 			res.json(foundSession);
 		})
@@ -33,7 +33,7 @@ router.get("/:id", (req, res) => {
 			id: req.params.id,
 		},
 	})
-		.populate("tutor")
+		// .populate("tutor")
 		.then((sessions) => {
 			res.json(sessions);
 		})
