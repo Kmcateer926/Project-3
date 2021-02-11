@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
 // CREATED A SIGNUP
 router.post("/", (req,res) => {
   console.log(req.body);
-  Parent.create().then((newParent) => {
+  Parent.create(req.body).then((newParent) => {
     console.log(newParent);
     res.json(newParent);
   }).catch((err) => {
