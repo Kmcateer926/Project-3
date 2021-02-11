@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 
 const SessionTableRow = ({
   _id,
-  tutor,
+  student,
   date,
   sessionLength,
   time,
@@ -44,7 +44,7 @@ session: {
 
       <tr className="session" style={styles.session}> 
 
-      <td>{tutor}</td>
+      <td>{student}</td>
       <td>{date}</td>
       <td>{sessionLength}</td>
 
@@ -80,7 +80,7 @@ session: {
 
 SessionTableRow.propTypes = {
     _id: PropTypes.string.isRequired,
-    tutor: PropTypes.string.isRequired,
+    student: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     sessionLength: PropTypes.number.isRequired,
     date: PropTypes.string.isRequired,
