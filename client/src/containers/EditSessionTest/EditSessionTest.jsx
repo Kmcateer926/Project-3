@@ -3,10 +3,10 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 // import BookSession from "../../components/BookSession/BookSession";
 import EditBookSession from "../../components/EditBookSession/EditBookSession";
-import ChalkBG from "../../components/ChalkBG/ChalkBG";
+// import ChalkBG from "../../components/ChalkBG/ChalkBG";
 
 const EditSessionTest = () => {
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleFormSubmit = (e, sessionData, id) => {
     console.log(sessionData);
@@ -16,7 +16,7 @@ const EditSessionTest = () => {
       .put(`/api/sessions/${id}`, sessionData)
       .then((response) => {
         console.log(response.data);
-        history.push("/landing");
+        // history.push("/landing");
       })
       .catch((err) => {
         console.log(err);
@@ -27,7 +27,7 @@ const EditSessionTest = () => {
     console.log("test");
   };
   return (
-    <ChalkBG>
+    // <ChalkBG>
       <div className="container">
         <div className="row">
           <div className="col">
@@ -45,7 +45,7 @@ const EditSessionTest = () => {
           />
         </div>
       </div>
-    </ChalkBG>
+    // </ChalkBG>
   );
 };
 
