@@ -47,8 +47,9 @@ const Landing = () => {
           <tr>
             <th>Tutor</th>
             <th>Date</th>
+			<th>Session Length</th>
             <th>Time</th>
-            <th>Session Length</th>
+          
             <th></th>
             <th></th>
           </tr>

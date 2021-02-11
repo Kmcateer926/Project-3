@@ -15,7 +15,8 @@ const NewParent = () => {
 	  width: "100%",
     //   maxWidth: "2310vw",
       height: "100vh",
-      position: "absolute",
+      position: "fixed",
+      minWidth: "100%",
       backgroundAttachment: "fixed",
       
      

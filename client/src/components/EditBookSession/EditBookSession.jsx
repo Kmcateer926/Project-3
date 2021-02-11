@@ -108,8 +108,19 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Date: </strong>
+
+                {" "}
+                      <input
+                        className="input is-danger"
+                        type="date"
+                        id="date"
+                        value={date}
+                        onChange={(e) => {
+                          setDate(e.target.value);
+                        }}
+                      />
                 {/* {teachers.name} */}
-                <input
+                {/* <input
                   className="input is-danger"
                   type="text"
                   id="date"
@@ -117,7 +128,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                   onChange={(e) => {
                     setDate(e.target.value);
                   }}
-                />
+                /> */}
                 <br />
               </div>
 
@@ -183,11 +194,23 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                       <div className="field">
                         <div className="control">
                           <label className="radio">
-                            <input type="radio" name="question" />
+                            <input type="radio" name="question" 
+                            id="sessionLength"
+                            value={sessionLength}
+                            onChange={(e) => {
+                                setSessionLength(e.target.value);
+                              }}
+                            />
                             30 min session
                           </label>
                           <label className="radio">
-                            <input type="radio" name="question" />
+                            <input type="radio" name="question" 
+                             id="sessionLength"
+                             value={sessionLength}
+                             onChange={(e) => {
+                                setSessionLength(e.target.value);
+                              }}
+                            />
                             60 min session
                           </label>
                         </div>

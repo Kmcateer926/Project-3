@@ -47,7 +47,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
 	console.log(req.body);
 	Session.create(req.body)
-		.populate("tutor")
+		// .populate("tutor")
 		.then((newSession) => {
 			console.log(newSession);
 			res.json(newSession);

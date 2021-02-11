@@ -82,9 +82,9 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
           <div className="input-field col s12">
             <input
               placeholder="SessionLength"
-              id="time"
+              id="sessionLength"
               type="text"
-              name="time"
+              name="sessionLength"
               value={sessionLength}
               onChange={(e) => {
                 setSessionLength(e.target.value);
