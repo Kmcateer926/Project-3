@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const SessionSchema = new Schema({
-    tutor: {
+    student: {
         type: String,
         trim: true,
         required: "Please enter a tutor name",
@@ -24,10 +24,10 @@ const SessionSchema = new Schema({
         default: false,
       },
     
-    // tutor: {type: Schema.Types.ObjectId, ref: "Tutor"}
+   
 
 });
 
-const Session = mongoose.model("SessionDetail", SessionSchema);
+const Session = mongoose.model("Session", SessionSchema);
 
 module.exports = Session;

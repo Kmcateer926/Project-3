@@ -39,21 +39,13 @@ const tutorSchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
-
-  // subjects:[
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "Subjects"
-  //   }
-  // ],
-
-  //   status: null,
-
+ 
+  
   
 
-  session: [{type: Schema.Types.ObjectId, ref: "Session"}]
+   session: [{type: Schema.Types.ObjectId, ref: "Session"}]
 });
 
-const Tutor = mongoose.model("tutor", tutorSchema);
+const Tutor = mongoose.model("Tutor", tutorSchema);
 
 module.exports = Tutor;
