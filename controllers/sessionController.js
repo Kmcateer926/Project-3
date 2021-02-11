@@ -6,7 +6,7 @@ const Session = require("../models/session");
 router.get("/", (req, res) => {
 	Session.find({})
 		.then((sessions) => {
-      console.log(sessions);
+      console.log(sessions); 
 			res.json(sessions);
 		})
 		.catch((err) => {
