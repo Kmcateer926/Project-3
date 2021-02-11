@@ -210,7 +210,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                               setSessionLength(e.target.value);
                             }}
                           >
-                            <option>Select Session Length by in Minutes</option>
+                            <option>Select Session Length in Minutes</option>
                             <option>30</option>
                             <option>60</option>
                             <option>90</option>
