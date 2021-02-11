@@ -3,26 +3,24 @@ import { Link, NavLink } from "react-router-dom";
 
 const styles = {
 
-  navbar: {
-    fontFamily: "Special Elite, cursive",
-    background: " #94b8b8",
-   
-  },
-
-  title: {
-
-    color: "#FFFFFF",
-    fontFamily: "Special Elite, cursive",
-    marginTop: 20
+    navbar: {
+      fontFamily: "Special Elite, cursive",
+      background: " #94b8b8",
+     
+    },
+  
+    title: {
+  
+      color: "#FFFFFF",
+      fontFamily: "Special Elite, cursive",
+      marginTop: 20,
+      paddingRight: 35
+    }
   }
-}
 
-const Navbar = () => {
+const NavbarSession = () => {
     return (
-
-      
-      
-        <>
+         <>
         <div>
           <nav className="navbar is-mobile" role="navigation" aria-label="main navigation" style={styles.navbar}>
             <div className="navbar-brand">
@@ -52,7 +50,7 @@ const Navbar = () => {
   
                 {/* <a className="navbar-item">Documentation</a> */}
                 {/* <NavLink to="Projects" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Tutor</button></NavLink> */}
-                <NavLink to="/parentsignup" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Parent</button></NavLink>
+                <NavLink to="/directory" className="navbar-item title is-3" activeClassName="active" style={styles.title}>Directory</NavLink>
               
               </div>
             </div>
@@ -62,4 +60,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavbarSession;

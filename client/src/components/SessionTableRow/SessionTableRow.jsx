@@ -28,9 +28,22 @@ const SessionTableRow = ({
       });
   };
 
+  const styles= {
+session: {
+  fontFamily: "Special Elite, cursive",
+  paddingTop: 25,
+  paddingLeft: 35,
+  paddingRight: 35,
+  // color: "#ffffff"
+} 
+  }
   
   return (
-    <tr>
+    
+    <>
+
+      <tr className="session" style={styles.session}> 
+
       <td>{tutor}</td>
       <td>{date}</td>
       <td>{sessionLength}</td>
@@ -38,37 +51,30 @@ const SessionTableRow = ({
       <td>{time}</td>
 
       
-        <td
-          class="fa"
-          // href="/admin/:id"
-          // style={{ margin: "5px" }}
-        >
+        <td class="fa">
           <Link to={`/landing/${_id}`}>&#xf044;</Link>
-
-          {/* // 	className="fa"
-												// 	onClick={() => {}}
-												// 	style={{ */}
-          {/* // 		margin: "10px",
-												// 		marginBottom: "5px",
-												// 	}}
-												// > */}
-          {/* // 	&#xf044; */}
         </td>
       
-      {/* <td>
-        <Link to={`/admin/${_id}`}>
-          <button icon={faEdit} />
-        </Link>
-      </td> */}
-      <td>
+      <td  >
+    
         <button
-          //   icon={faTrash}
+       
+       class="fas fa-trash-alt"
           onClick={() => {
             deleteSession(_id);
           }}
         />
       </td>
-    </tr>
+   
+      </tr>
+
+ 
+ 
+
+
+
+   
+    </>
   );
 };
 

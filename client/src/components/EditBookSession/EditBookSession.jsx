@@ -41,7 +41,11 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           setDate(date);
           setTime(time);
           setSessionLength(sessionLength);
+
+        //   history.push("/landing")
+
           // history.push("/landing")
+
           // alert("Successfully added session")
         }).catch((err)=>{
           console.log(err)
@@ -126,16 +130,30 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Date: </strong>
+
+                {/* {" "} */}
+                      <input
+                        className="input is-danger"
+                        type="text"
+                        id="date"
+                        value={date}
+                        onChange={(e) => {
+                          setDate(e.target.value);
+                        }}
+                      />
                 {/* {teachers.name} */}
-                <input
-                      className="input is-danger"
-                      type="text"
-                      id="tutor"
-                      value={date}
-                      onChange={(e) => {
-                        setDate(e.target.value);
-                      }}
-                    />
+
+                 <input
+                  className="input is-danger"
+                  type="text"
+                  id="date"
+                  value={date}
+                  onChange={(e) => {
+                    setDate(e.target.value);
+                  }}
+                /> 
+
+
                 <br />
                 </div>
                
@@ -170,6 +188,26 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     />
                   </strong>
                 </p> */}
+
+                {/* TESTED THESE INPUTS TO MATCH THE NEW-SESSION */}
+                  {/* <input
+                        className="input is-danger"
+                        type="text"
+                        id="time"
+                        value={time}
+                        onChange={(e) => {
+                          setTime(e.target.value);
+                        }}
+                      />
+                       <input
+                        className="input is-danger"
+                        type="text"
+                        id="sessionLength"
+                        value={sessionLength}
+                        onChange={(e) => {
+                          setSessionLength(e.target.value);
+                        }}
+                      /> */}
                 <p>
                   <strong>
                     Time:{" "}
@@ -197,11 +235,23 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                       <div className="field">
                         <div className="control">
                           <label className="radio">
-                            <input type="radio" name="question" />
+                            <input type="radio" name="question" 
+                            id="sessionLength30"
+                            value={sessionLength}
+                            onChange={(e) => {
+                                setSessionLength(e.target.value);
+                              }}
+                            />
                             30 min session
                           </label>
                           <label className="radio">
-                            <input type="radio" name="question" />
+                            <input type="radio" name="question" 
+                             id="sessionLength60"
+                             value={sessionLength}
+                             onChange={(e) => {
+                                setSessionLength(e.target.value);
+                              }}
+                            />
                             60 min session
                           </label>
                         </div>
@@ -217,8 +267,8 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         setTime(e.target.value);
                       }}
                     /> */}
-                  </strong>
-                </p>
+                  </strong> 
+                </p> 
 
                 <button
                   className="button is-small is-fullwidth is-info"
