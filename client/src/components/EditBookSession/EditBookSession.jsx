@@ -109,10 +109,10 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
               >
                 <strong>Date: </strong>
 
-                {" "}
+                {/* {" "} */}
                       <input
                         className="input is-danger"
-                        type="date"
+                        type="text"
                         id="date"
                         value={date}
                         onChange={(e) => {
@@ -163,6 +163,26 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     />
                   </strong>
                 </p> */}
+
+                {/* TESTED THESE INPUTS TO MATCH THE NEW-SESSION */}
+                  {/* <input
+                        className="input is-danger"
+                        type="text"
+                        id="time"
+                        value={time}
+                        onChange={(e) => {
+                          setTime(e.target.value);
+                        }}
+                      />
+                       <input
+                        className="input is-danger"
+                        type="text"
+                        id="sessionLength"
+                        value={sessionLength}
+                        onChange={(e) => {
+                          setSessionLength(e.target.value);
+                        }}
+                      /> */}
                 <p>
                   <strong>
                     Time:{" "}
@@ -195,7 +215,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         <div className="control">
                           <label className="radio">
                             <input type="radio" name="question" 
-                            id="sessionLength"
+                            id="sessionLength30"
                             value={sessionLength}
                             onChange={(e) => {
                                 setSessionLength(e.target.value);
@@ -205,7 +225,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                           </label>
                           <label className="radio">
                             <input type="radio" name="question" 
-                             id="sessionLength"
+                             id="sessionLength60"
                              value={sessionLength}
                              onChange={(e) => {
                                 setSessionLength(e.target.value);
@@ -226,8 +246,8 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         setTime(e.target.value);
                       }}
                     /> */}
-                  </strong>
-                </p>
+                  </strong> 
+                </p> 
 
                 <button
                   className="button is-small is-fullwidth is-info"
