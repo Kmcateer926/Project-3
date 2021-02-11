@@ -80,7 +80,7 @@ router.get("/apple/:id", (req, res)=> {
 	theOther.Tutor.findOne({
 		_id: req.params.id
 	})
-	.populate('session')
+	// .populate('session')
 	.then((dbSession)=> {
 		//console.log(theOther.Session.SessionSchema)
 		res.json(dbSession)

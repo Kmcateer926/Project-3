@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const SessionForm = ({ buttonText, handleFormSubmit }) => {
-  const [tutor, setTutor] = useState("");
+  const [student, setStudent] = useState("");
   const [date, setDate] = useState("");
   const [sessionLength, setSessionLength] = useState("");
   const [time, setTime] = useState("");
@@ -19,8 +19,8 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         .get(`/api/sessions/${id}`)
         .then((response) => {
           console.log(response.data);
-          const { tutor, date, sessionLength, time, approved } = response.data;
-          setTutor(tutor);
+          const { student, date, sessionLength, time, approved } = response.data;
+          setStudent(student);
           setDate(date);
           setSessionLength(sessionLength);
           setTime(time);
@@ -40,7 +40,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
           handleFormSubmit(
             e,
             {
-              tutor,
+              student,
               date,
               sessionLength,
               time,
@@ -54,12 +54,12 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
           <div className="input-field col s6">
             <input
               placeholder="Tutor Name"
-              id="tutor"
+              id="student"
               type="text"
-              name="tutor"
-              value={tutor}
+              name="student"
+              value={student}
               onChange={(e) => {
-                setTutor(e.target.value);
+                setStudent(e.target.value);
               }}
             />
             <label htmlFor="title">Tutor Name</label>
