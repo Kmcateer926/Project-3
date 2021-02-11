@@ -12,6 +12,7 @@ const ParentForm = () => {
 
   function handleFormSubmit(event) {
     event.preventDefault();
+
 const parentData = {
   name,
   email,
@@ -29,13 +30,17 @@ const parentData = {
   const styles = {
     font: {
       fontFamily: "Special Elite, cursive",
+
+     
     },
     heading: {
       paddingTop: 40,
+      color: "#FFFFFF"
     },
     link: {
       color: "#FFFFFF",
       fontFamily: "Special Elite, cursive",
+      
     }
   };
 
@@ -45,7 +50,7 @@ const parentData = {
     <h1 className="title is-3 has-text-centered" style={styles.heading}>
           Create Your Tutor Hub Account
         </h1>
-        <h4 className="subtitle is-6 has-text-centered">
+        <h4 className="subtitle is-6 has-text-centered" style={styles.link}>
           Already Have an Account?<a href="/signin"> Login</a>
         </h4>
     </div>
@@ -54,12 +59,13 @@ const parentData = {
       <div className="container" style={styles.font}>
         <form
           className="column"
+        
         >
                  <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
-              <label className="label ">Name</label>
+              <label className="label" style={styles.link}>Name</label>
               <div className="control">
-                <input className="input" type="text" id="name" placeholder="Text input"   name="name" value={name}
+                <input className="input" type="text" id="name" placeholder="Name"   name="name" value={name}
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
@@ -72,10 +78,10 @@ const parentData = {
 
 <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
-              <label className="label">Email</label>
+              <label className="label"   style={styles.link}>Email</label>
               <div className="control has-icons-left has-icons-right">
                 <input
-                  className="input is-danger"
+                  className="input"
                   type="email"
                   placeholder="Parent Email"
                   id="email"
@@ -89,23 +95,20 @@ const parentData = {
                 <span className="icon is-small is-left">
                   <i className="fas fa-envelope"></i>
                 </span>
-                <span className="icon is-small is-right">
-                  <i className="fas fa-exclamation-triangle"></i>
-                </span>
               </div>
-              <p className="help is-danger">This email is invalid</p>
+           
             </div>
           </div>
            
 
 <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
-              <label className="label">Password</label>
+              <label className="label" style={styles.link}>Password</label>
               <div className="control">
                 <input
                   className="input"
                   type="text"
-                  placeholder="Password input"
+                  placeholder="Password"
                   id="password"
                   value={password}
                   name="password"

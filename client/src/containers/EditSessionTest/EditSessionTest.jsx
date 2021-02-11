@@ -23,9 +23,9 @@ const EditSessionTest = () => {
       });
   };
 
-  const testSubmit = () => {
-    console.log("test");
-  };
+//   const testSubmit = () => {
+//     console.log("test");
+//   };
   return (
     // <ChalkBG>
       <div className="container">

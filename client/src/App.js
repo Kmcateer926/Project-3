@@ -4,7 +4,7 @@ import Home from "./containers/Home/Home";
 import ParentSignUp from "./containers/NewParent/NewParent";
 import Landing from "./containers/Landing/Landing.jsx";
 import axios from "axios";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/NavbarHome/NavbarHome";
 import Directory from "./containers/Directory/Directory.jsx";
 import Footer from "./components/Footer/Footer";
 import ReturnParent from "./containers/ReturnParent/ReturnParent";
