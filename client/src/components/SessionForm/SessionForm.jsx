@@ -74,7 +74,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             <input
               placeholder="Date"
               id="date"
-              type="text"
+              type="date"
               name="date"
               value={date}
               onChange={(e) => {
