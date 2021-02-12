@@ -34,17 +34,17 @@ const EditSessionTest = () => {
             {/* <h1 className="center-align">Add a New Parent</h1> */}
           </div>
         </div>
-        <div className="row">
-          {/* <BookSession handleFormSubmit={handleFormSubmit} buttonText="Update"/> */}
-          {/* {sessions.map((session)=>(
+      {/* </div> */}
+      <div className="row">
+        {/* <BookSession handleFormSubmit={handleFormSubmit} buttonText="Update"/> */}
+        {/* {sessions.map((session)=>(
    <BookSession {...sessions} getSessions={getSessions}/>
           ))} */}
-          <EditBookSession
-            handleFormSubmit={handleFormSubmit}
-            buttonText="Update"
-            
-          /> 
-        </div>
+        <EditBookSession
+          handleFormSubmit={handleFormSubmit}
+          buttonText="Update"
+        />
+      </div>
       </div>
     // </ChalkBG>
   );

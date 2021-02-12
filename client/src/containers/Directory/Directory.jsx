@@ -1,6 +1,6 @@
 // import React, { useContext } from "react";
 // import { useHistory } from "react-router-dom";
-  
+
 import React, { useEffect, useState, useHistory } from "react";
 import axios from "axios";
 // import BookSession from "../../components/BookSession/BookSession";
@@ -11,36 +11,38 @@ import axios from "axios";
 import TutorCard from "../../components/TutorCard/TutorCard";
 
 const Tutors = () => {
-  const [tutors, setTutors] = useState([]);
-  // const history = useHistory();
-  useEffect(() => {
-    axios
-      .get("/api/tutors")
-      .then((response) => {
-        setTutors(response.data);
-        // history.push("/landing");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+	const [tutors, setTutors] = useState([]);
 
-  return (
+	
 
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <h1 className="center-align">Available Tutors</h1>
-        </div>
-      </div>
-      <div className="row">
-        {tutors.map((tutor) => (
+	useEffect(() => {
+		axios
+			.get("/api/tutors")
+			.then((response) => {
+				setTutors(response.data);
+				console.log(tutors);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
+
+	// const history = useHistory();
+
+	return (
+		<div className="container">
+			<div className="row">
+				<div className="col">
+					<h1 className="center-align">Available Tutors</h1>
+				</div>
+			</div>
+			<div className="row">
+				{tutors.map((tutor) => (
           <TutorCard {...tutor} key={tutor._id} />
         ))}
-      </div>
-    </div>
-
-  );
+			</div>
+		</div>
+	);
 };
 
 export default Tutors;

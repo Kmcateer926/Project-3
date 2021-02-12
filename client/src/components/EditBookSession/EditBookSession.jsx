@@ -199,29 +199,22 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="cols">
-                      <div className="field">
-                        <div className="control">
-                          <label className="radio">
-                            <input type="radio" name="question" 
-                            id="sessionLength30"
+                    Session Length:{" "}
+                    <div className="field">
+                      <div className="control">
+                        <div className="select">
+                          <select
+                            type="text"
                             value={sessionLength}
                             onChange={(e) => {
-                                setSessionLength(e.target.value);
-                              }}
-                            />
-                            30 min session
-                          </label>
-                          <label className="radio">
-                            <input type="radio" name="question" 
-                             id="sessionLength60"
-                             value={sessionLength}
-                             onChange={(e) => {
-                                setSessionLength(e.target.value);
-                              }}
-                            />
-                            60 min session
-                          </label>
+                              setSessionLength(e.target.value);
+                            }}
+                          >
+                            <option>Select Session Length in Minutes</option>
+                            <option>30</option>
+                            <option>60</option>
+                            <option>90</option>
+                          </select>
                         </div>
                       </div>
                     </div>

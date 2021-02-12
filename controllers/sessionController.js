@@ -7,11 +7,7 @@ const theOther = require('../models')
 router.get("/", (req, res) => {
 	Session.find({})
 		.then((sessions) => {
-<<<<<<< HEAD
-      console.log(sessions); 
-=======
 			console.log(sessions);
->>>>>>> 0f97a4386033502327e4f5f793aad03ea59b99a2
 			res.json(sessions);
 		})
 		.catch((err) => {
