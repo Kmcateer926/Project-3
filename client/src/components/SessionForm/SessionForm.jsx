@@ -19,7 +19,13 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         .get(`/api/sessions/${id}`)
         .then((response) => {
           console.log(response.data);
-          const { student, date, sessionLength, time, approved } = response.data;
+          const {
+            student,
+            date,
+            sessionLength,
+            time,
+            approved,
+          } = response.data;
           setStudent(student);
           setDate(date);
           setSessionLength(sessionLength);
@@ -53,7 +59,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         <div className="row">
           <div className="input-field col s6">
             <input
-              placeholder="Tutor Name"
+              placeholder="Student Name"
               id="student"
               type="text"
               name="student"
@@ -62,7 +68,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setStudent(e.target.value);
               }}
             />
-            <label htmlFor="title">Tutor Name</label>
+            <label htmlFor="title">Student Name</label>
           </div>
           <div className="input-field col s6">
             <input
@@ -80,22 +86,45 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         </div>
         <div className="row">
           <div className="input-field col s12">
-            <input
-              placeholder="SessionLength"
-              id="sessionLength"
+            <select
               type="text"
-              name="sessionLength"
               value={sessionLength}
               onChange={(e) => {
                 setSessionLength(e.target.value);
               }}
-            />
+            >
+              <option>Select Session Length in Minutes</option>
+              <option>30</option>
+              <option>60</option>
+              <option>90</option>
+            </select>
             <label htmlFor="description">Session Length</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s12">
-            <input
+            <select
+              type="text"
+              value={time}
+              onChange={(e) => {
+                setTime(e.target.value);
+              }}
+            >
+              <option>Select a Time</option>
+              <option>3:00 PM</option>
+              <option>3:30 PM</option>
+              <option>4:00 PM</option>
+              <option>4:30 PM</option>
+              <option>5:00 PM</option>
+              <option>5:30 PM</option>
+              <option>6:00 PM</option>
+              <option>6:30 PM</option>
+              <option>7:00 PM</option>
+              <option>7:30 PM</option>
+              <option>8:00 PM</option>
+            </select>
+
+            {/* <input
               placeholder="SessionLength"
               id="time"
               type="text"
@@ -104,7 +133,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               onChange={(e) => {
                 setTime(e.target.value);
               }}
-            />
+            /> */}
             <label htmlFor="description">Time</label>
           </div>
         </div>
@@ -123,9 +152,9 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         {/* </div> */}
         <div className="row">
           <div className="col s12">
-            <button className="waves-effect waves-light btn">
+            {/* <button className="waves-effect waves-light btn">
               {buttonText}
-            </button>
+            </button> */}
           </div>
         </div>
       </form>
