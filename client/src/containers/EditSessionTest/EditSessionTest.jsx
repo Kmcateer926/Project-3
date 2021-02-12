@@ -6,7 +6,7 @@ import EditBookSession from "../../components/EditBookSession/EditBookSession";
 // import ChalkBG from "../../components/ChalkBG/ChalkBG";
 
 const EditSessionTest = () => {
-  // const history = useHistory();
+  const history = useHistory();
 
   const handleFormSubmit = (e, sessionData, id) => {
     console.log(sessionData);
@@ -16,7 +16,7 @@ const EditSessionTest = () => {
       .put(`/api/sessions/${id}`, sessionData)
       .then((response) => {
         console.log(response.data);
-        // history.push("/landing");
+        history.push("/landing");
       })
       .catch((err) => {
         console.log(err);
