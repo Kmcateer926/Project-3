@@ -28,62 +28,48 @@ const SessionTableRow = ({
       });
   };
 
-  const styles= {
-session: {
-  fontFamily: "Special Elite, cursive",
-  paddingTop: 25,
-  paddingLeft: 35,
-  paddingRight: 35,
-  // color: "#ffffff"
-} 
-  }
-  
+  const styles = {
+    session: {
+      fontFamily: "Special Elite, cursive",
+      paddingTop: 25,
+      paddingLeft: 35,
+      paddingRight: 35,
+      // color: "#ffffff"
+    },
+  };
+
   return (
-    
     <>
+      <tr className="session" style={styles.session}>
+        <td>{student}</td>
+        <td>{date}</td>
+        <td>{sessionLength}</td>
 
-      <tr className="session" style={styles.session}> 
+        <td>{time}</td>
 
-      <td>{student}</td>
-      <td>{date}</td>
-      <td>{sessionLength}</td>
-
-      <td>{time}</td>
-
-      
         <td class="fa">
           <Link to={`/landing/${_id}`}>&#xf044;</Link>
         </td>
-      
-      <td  >
-    
-        <button
-       
-       class="fas fa-trash-alt"
-          onClick={() => {
-            deleteSession(_id);
-          }}
-        />
-      </td>
-   
+
+        <td>
+          <button
+            class="fas fa-trash-alt"
+            onClick={() => {
+              deleteSession(_id);
+            }}
+          />
+        </td>
       </tr>
-
- 
- 
-
-
-
-   
     </>
   );
 };
 
 SessionTableRow.propTypes = {
-    _id: PropTypes.string.isRequired,
-    student: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
-    sessionLength: PropTypes.number.isRequired,
-    date: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
+  student: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  sessionLength: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 export default SessionTableRow;

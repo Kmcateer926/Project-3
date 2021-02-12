@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 const TutorTableRow = ({
   _id,
   name,
+  imageURL,
   education,
   subjects,
   experience,
@@ -32,6 +33,7 @@ const TutorTableRow = ({
   return (
     <tr>
       <td>{name}</td>
+      <td><img src={imageURL} alt={name} style={{ height: "3em" }}></img></td>
       <td>{education}</td>
       <td>{subjects}</td>
 
@@ -75,6 +77,7 @@ const TutorTableRow = ({
 TutorTableRow.propTypes = {
     _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    imageURL: PropTypes.string.isRequired,
     education: PropTypes.string.isRequired,
     subjects: PropTypes.string.isRequired,
     experience: PropTypes.number.isRequired,

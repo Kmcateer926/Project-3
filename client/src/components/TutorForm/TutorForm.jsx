@@ -7,7 +7,7 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
   const [education, setEducation] = useState("");
   const [subjects, setSubjects] = useState("");
   const [experience, setExperience] = useState("");
-
+  const [imageURL, setImageURL] = useState("");
   const [approved, setApproved] = useState(false);
   const [email, setEmail] = useState("");
 //   const [password, setPassword] = useState("");
@@ -20,8 +20,9 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
         .get(`/api/tutors/${id}`)
         .then((response) => {
           console.log(response.data);
-          const { name, education, subjects, experience, approved } = response.data;
+          const { name, imageURL, education, subjects, experience, approved } = response.data;
           setName(name);
+          setImageURL(imageURL);
           setEducation(education);
           setSubjects(subjects);
           setExperience(experience);
@@ -42,6 +43,7 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
             e,
             {
               name,
+              imageURL,
               education,
               subjects,
               experience,
@@ -66,6 +68,21 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
             />
             <label htmlFor="title">Tutor Name</label>
           </div>
+          <div className="row">
+          <div className="input-field col s12">
+            <input
+              placeholder="Tutor Image"
+              id="imageURL"
+              type="text"
+              name="imageURL"
+              value={imageURL}
+              onChange={(e) => {
+                setImageURL(e.target.value);
+              }}
+            />
+            <label htmlFor="imageURL">Tutor Image</label>
+          </div>
+        </div>
           <div className="input-field col s6">
             <input
               placeholder="Education"

@@ -5,7 +5,7 @@ import axios from "axios";
 
 import SessionForm from "../../components/SessionForm/SessionForm";
 
-const TutorCard = ({ name, education, subjects, _id, experience, email }) => {
+const TutorCard = ({ name, imageURL, education, subjects, _id, experience, email }) => {
   const history = useHistory();
 
   const handleFormSubmit = (event, formData) => {
@@ -23,7 +23,9 @@ const TutorCard = ({ name, education, subjects, _id, experience, email }) => {
           <div className="card" style={{ display: "inline-block" }}>
             <header class="card-header">
               <p class="card-header-title">{name}</p>
+              <img src={imageURL} alt={name} />
             </header>
+            <span className="card-title"></span>
             <div className="card-content">
               <div className="content">
                 <p>
