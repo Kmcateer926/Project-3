@@ -8,7 +8,7 @@ const TutorCard = ({ name, education, subjects, _id, experience, email }) => {
 		<div className="container">
 			<div className="columns">
 				<div className="column is-3">
-					<div className="card" style={{display:"inline-block", position:"absolute"}}>
+					<div className="card" style={{display:"inline-block"}}>
 						<header class="card-header">
 							<p class="card-header-title">{name}</p>
 						</header>
@@ -26,7 +26,7 @@ const TutorCard = ({ name, education, subjects, _id, experience, email }) => {
 									</strong>
 								</p>
 							</div>
-
+<SessionForm></SessionForm>
 							<footer class="card-footer">
 								<a href="/" className="card-footer-item">
 									Book Session
@@ -34,7 +34,7 @@ const TutorCard = ({ name, education, subjects, _id, experience, email }) => {
 							</footer>
 
 							
-							{/* <SessionForm></SessionForm> */}
+							
 							<div className="card-action">
 								<Link to={`/tutors/${_id}`}></Link>
 							</div>
