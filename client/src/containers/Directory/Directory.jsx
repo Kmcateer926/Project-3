@@ -25,7 +25,7 @@ const Tutors = () => {
 			});
 	}, []);
 
-	// const history = useHistory();
+	
 
 	return (
 		 <>
@@ -42,7 +42,7 @@ const Tutors = () => {
 							color:"white"
 						}}
 					>
-						Available Tutors
+						Tutor Directory
 					</h1>
 				</div>
 
@@ -51,7 +51,7 @@ const Tutors = () => {
 					style={{
 						display: "flex",
 						flexWrap: "wrap",
-						// justifyContent: "center",
+						justifyContent: "center",
 						alignItems: "center",
 					}}
 				>
