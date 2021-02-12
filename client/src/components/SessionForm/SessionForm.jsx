@@ -152,9 +152,9 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         {/* </div> */}
         <div className="row">
           <div className="col s12">
-            {/* <button className="waves-effect waves-light btn">
+            <button type="submit" className="waves-effect waves-light btn">
               {buttonText}
-            </button> */}
+            </button>
           </div>
         </div>
       </form>

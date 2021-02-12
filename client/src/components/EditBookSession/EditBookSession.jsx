@@ -100,7 +100,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Date: </strong>
-                {/* {" "} */}
+                {" "}
                       <input
                         className="input is-danger"
                         type="text"

@@ -1,17 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 import SessionForm from "../../components/SessionForm/SessionForm";
-const TutorCard = ({
-  name,
-  education,
-  imageURL,
-  subjects,
-  _id,
-  experience,
-  email,
-}) => {
+
+const TutorCard = ({ name, imageURL, education, subjects, _id, experience, email }) => {
+  const history = useHistory();
+
+  const handleFormSubmit = (event, formData) => {
+    event.preventDefault();
+    axios.post("/api/sessions", formData).then((response) => {
+      console.log(response);
+      history.push("/landing");
+    });
+  };
+
   return (
     <div className="container">
       <div className="columns">
@@ -34,12 +38,15 @@ const TutorCard = ({
                   <strong>Experience(Yrs): {experience}</strong>
                 </p>
               </div>
-              <SessionForm></SessionForm>
-              <footer class="card-footer">
-                <a href="/" className="card-footer-item">
+              <SessionForm
+                handleFormSubmit={handleFormSubmit}
+                buttonText="Book Session"
+              ></SessionForm>
+              {/* <footer class="card-footer">
+                <Link to="/landing" className="card-footer-item">
                   Book Session
-                </a>
-              </footer>
+                </Link>
+              </footer> */}
 
               <div className="card-action">
                 <Link to={`/tutors/${_id}`}></Link>
