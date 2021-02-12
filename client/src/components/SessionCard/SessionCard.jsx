@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const SessionCard = ({ tutor, date, sessionLength, time, _id }) => {
+const SessionCard = ({ student, date, sessionLength, time, _id }) => {
   return (
     <div className="col s4">
       <div className="row">
@@ -11,7 +11,7 @@ const SessionCard = ({ tutor, date, sessionLength, time, _id }) => {
             <div className="card-image">
               
               <span className="card-title">
-                {tutor} - {date}
+                {student} - {date}
               </span>
             </div>
             <div className="card-content">
@@ -29,7 +29,7 @@ const SessionCard = ({ tutor, date, sessionLength, time, _id }) => {
 
 SessionCard.propTypes = {
   _id: PropTypes.string.isRequired,
-  tutor: PropTypes.string.isRequired,
+  student: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   sessionLength: PropTypes.number.isRequired,
   date: PropTypes.string.isRequired,
