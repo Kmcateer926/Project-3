@@ -35,6 +35,11 @@ const tutorSchema = new Schema({
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
  
+  imageURL: {
+    type: String,
+    trim: true,
+    required: "Enter a tutor image URL",
+  },
   
   
 
