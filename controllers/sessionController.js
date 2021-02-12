@@ -58,14 +58,14 @@ router.post("/", (req, res) => {
     // .populate("tutor")
     .then((newSession) => {
       console.log(newSession);
-      client.messages
-        .create({
-          body: `${req.body.student} booked for ${req.body.date} at ${req.body.time}`,
-          from: "+15093944876",
-          to: "+16787933025",
-        })
-        .then((message) => console.log(message))
-        .catch((err) => console.log(err));
+    //   client.messages
+    //     .create({
+    //       body: `${req.body.student} booked for ${req.body.date} at ${req.body.time}`,
+    //       from: "+15093944876",
+    //       to: "+16787933025",
+    //     })
+    //     .then((message) => console.log(message))
+    //     .catch((err) => console.log(err));
       res.json(newSession);
     })
     .catch((err) => {
