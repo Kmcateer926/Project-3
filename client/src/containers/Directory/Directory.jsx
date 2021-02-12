@@ -11,6 +11,7 @@ import axios from "axios";
 import TutorCard from "../../components/TutorCard/TutorCard";
 
 const Tutors = () => {
+
 	const [tutors, setTutors] = useState([]);
 
 	
@@ -43,6 +44,7 @@ const Tutors = () => {
 			</div>
 		</div>
 	);
+
 };
 
 export default Tutors;
