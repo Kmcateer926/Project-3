@@ -52,7 +52,7 @@ const Navbar = () => {
   <div className="navbar-end">
   
                 {/* <a className="navbar-item">Documentation</a> */}
-                {/* <NavLink to="Projects" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Tutor</button></NavLink> */}
+                <NavLink to="/directory" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Tutors</button></NavLink>
                 <NavLink to="/parentsignup" className="navbar-item title is-3" activeClassName="active" style={styles.title}>Parent</NavLink>
               
               </div>
