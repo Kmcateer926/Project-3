@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 
 const SessionTableRow = ({
   _id,
+  tutor,
   student,
   date,
   sessionLength,
@@ -41,6 +42,7 @@ const SessionTableRow = ({
   return (
     <>
       <tr className="session" style={styles.session}>
+        <td>{tutor}</td>
         <td>{student}</td>
         <td>{date}</td>
         <td>{sessionLength}</td>
