@@ -10,8 +10,6 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
 
   // const [approved, setApproved] = useState(false);
 
-  const { id } = useParams();
-
   useEffect(() => {
     console.log(id);
     if (id) {
@@ -73,7 +71,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
           <div className="input-field col s6">
             <input
               placeholder="Date"
-              id="date"
+              id="bulmaCalendar"
               type="date"
               name="date"
               value={date}
