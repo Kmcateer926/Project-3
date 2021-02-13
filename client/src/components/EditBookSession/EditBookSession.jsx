@@ -15,7 +15,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
       fontFamily: "Special Elite, cursive",
     },
     heading: {
-      paddingTop: 40,
+    //   paddingTop: 40,
     },
   };
   useEffect(() => {
@@ -40,7 +40,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
   }, [id]);
   return (
     <>
-      <div className="spacer" style={{ height: "50px" }}></div>
+      {/* <div className="spacer"></div> */}
       <div>
         <h1
           style={{
@@ -51,7 +51,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
         >
           Edit Session
         </h1>
-        <div className="spacer" style={{ height: "50px" }}></div>
+        {/* <div className="spacer" style={{ height: "50px" }}></div> */}
       </div>
       <div
         className="card "
@@ -66,7 +66,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           borderRadius: "15px",
         }}
       >
-        <div className="card-image">
+        {/* <div className="card-image">
           <figure className="image is-128x128">
             <img
               // src={teachers.image}
@@ -74,7 +74,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
               style={{ borderRadius: "15px" }}
             />
           </figure>
-        </div>
+        </div> */}
         <div className="card">
           <div className="card-content">
             <form className="column">
@@ -83,11 +83,12 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Name: </strong>
-                {/* {teachers.name} */}
+            
                 <input
-                  className="input is-danger"
+                  className="input"
                   type="text"
                   id="tutor"
+                  style={{ fontFamily: "Special Elite, cursive" }}
                   value={student}
                   onChange={(e) => {
                     setStudent(e.target.value);
@@ -99,16 +100,20 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
-                <strong>Date: </strong>{" "}
-                <input
-                  className="input is-danger"
-                  type="date"
-                  id="date"
-                  value={date}
-                  onChange={(e) => {
-                    setDate(e.target.value);
-                  }}
-                />
+
+                <strong>Date: </strong>
+                {" "}
+                      <input
+                        className="input"
+                        type="text"
+                        id="date"
+                        style={{ fontFamily: "Special Elite, cursive" }}
+                        value={date}
+                        onChange={(e) => {
+                          setDate(e.target.value);
+                        }}
+                      />
+
                 {/* {teachers.name} */}
                 {/* <input
                   className="input is-danger"
@@ -172,17 +177,18 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         }}
                       /> */}
                 <p>
-                  <strong>
+                  <strong style={{fontFamily: "Special Elite, cursive"}}>
                     Time:{" "}
                     <div className="field">
                       <div className="control">
                         <div className="select">
-                          <select
-                            type="text"
-                            value={time}
-                            onChange={(e) => {
-                              setTime(e.target.value);
-                            }}
+
+                          <select type="text" value={time}
+                            style={{ fontFamily: "Special Elite, cursive" }}
+                          onChange={(e) => {
+                            setTime(e.target.value);
+                          }}
+
                           >
                             <option>Select a Time</option>
                             <option>3:00 PM</option>
@@ -201,11 +207,14 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                       </div>
                     </div>
                     Session Length:{" "}
-                    <div className="field">
+                    <div className="field" 
+                    style={{paddingBottom: "25px",
+                    fontFamily: "Special Elite, cursive"}}>
                       <div className="control">
                         <div className="select">
                           <select
                             type="text"
+                            style={{ fontFamily: "Special Elite, cursive" }}
                             value={sessionLength}
                             onChange={(e) => {
                               setSessionLength(e.target.value);
@@ -238,6 +247,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     fontSize: "25px",
                     fontWeight: "bold",
                     fontFamily: "Special Elite, cursive",
+                    background: " #94b8b8",
                   }}
                   onClick={(e) => {
                     handleFormSubmit(
@@ -262,7 +272,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           </div>
         </div>
       </div>
-      ))
+     
     </>
   );
 };
