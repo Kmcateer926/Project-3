@@ -8,7 +8,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
   const [sessionLength, setSessionLength] = useState("");
   const [time, setTime] = useState("");
 
-  const [approved, setApproved] = useState(false);
+  // const [approved, setApproved] = useState(false);
 
   const { id } = useParams();
 
@@ -30,7 +30,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
           setDate(date);
           setSessionLength(sessionLength);
           setTime(time);
-          setApproved(approved);
+          // setApproved(approved);
         })
         .catch((err) => {
           console.log(err);
@@ -50,7 +50,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               date,
               sessionLength,
               time,
-              approved,
+              // approved,
             },
             id
           );
@@ -137,7 +137,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             {/* <label htmlFor="description">Time</label> */}
           </div>
         </div>
-        <div className="is-3" >
+        {/* <div className="is-3" >
           <label>
             <input
               type="checkbox"
@@ -148,7 +148,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             />
             <span style={{fontFamily:"Special Elite, cursive"}}>Approved</span>
           </label>
-        </div>
+        </div> */}
         {/* </div> */}
         
             <button type="submit" className="button is-light is-outlined ">
