@@ -26,15 +26,7 @@ const TutorCard = ({
 
 	return (
 		<>
-			{/* <div
-				className="columns"
-				style={{
-					display: "flex",
-					flexWrap: "wrap",
-					// justifyContent: "center",
-					alignItems: "center",
-				}}
-			> */}
+			
 			<div
 				className=" card column is-3"
 				style={{
@@ -44,7 +36,6 @@ const TutorCard = ({
 					borderRadius: "15px",
 					padding: "10px",
 					flexDirection: "row",
-					// boxShadow: "5px 5px 5px grey",
 					display: "inline-block",
           fontFamily: "Special Elite, cursive",
           backgroundImage:`url(${board})`,
