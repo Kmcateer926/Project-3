@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CalendarApp from "../../components/Calendar/Calendar";
+
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 // import ChalkBG from "../ChalkBG/ChalkBG";
@@ -100,6 +100,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
+
                 <strong>Date: </strong>
                 {" "}
                       <input
@@ -112,6 +113,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                           setDate(e.target.value);
                         }}
                       />
+
                 {/* {teachers.name} */}
                 {/* <input
                   className="input is-danger"
@@ -156,7 +158,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                   </strong>
                 </p> */}
                 {/* TESTED THESE INPUTS TO MATCH THE NEW-SESSION */}
-                  {/* <input
+                {/* <input
                         className="input is-danger"
                         type="text"
                         id="time"
@@ -180,11 +182,13 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     <div className="field">
                       <div className="control">
                         <div className="select">
+
                           <select type="text" value={time}
                             style={{ fontFamily: "Special Elite, cursive" }}
                           onChange={(e) => {
                             setTime(e.target.value);
                           }}
+
                           >
                             <option>Select a Time</option>
                             <option>3:00 PM</option>
@@ -234,8 +238,8 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         setTime(e.target.value);
                       }}
                     /> */}
-                  </strong> 
-                </p> 
+                  </strong>
+                </p>
                 <button
                   className="button is-small is-fullwidth is-info"
                   style={{
@@ -261,9 +265,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                     );
                   }}
                 >
-                  <Link style={styles.link}>
-                    {buttonText}
-                  </Link>
+                  <Link style={styles.link}>{buttonText}</Link>
                 </button>
               </div>
             </form>
