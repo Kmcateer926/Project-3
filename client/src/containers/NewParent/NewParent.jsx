@@ -1,5 +1,5 @@
 import React from "react";
-import ChalkBG from "../../components/ChalkBG/ChalkBG";
+// import ChalkBG from "../../components/ChalkBG/ChalkBG";
 // import axios from "axios";
 import ParentForm from "../../components/ParentForm/ParentForm";
 import "./NewParent.css"
@@ -11,7 +11,7 @@ const NewParent = () => {
       backgroundImage: `url("https://t4.ftcdn.net/jpg/03/67/24/77/360_F_367247734_rml9UJtyflIYwvH5Sp6zQkAoxDOnksSS.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center center",
-      backgroundSize: "cover",
+      // backgroundSize: "cover",
 	  backgroundRepeat: "no-repeat",
 	  width: "100%",
     //   maxWidth: "2310vw",

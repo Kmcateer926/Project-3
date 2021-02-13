@@ -1,7 +1,7 @@
 // import React, { useContext } from "react";
 
 import board from "../../components/ChalkBG/chalkBoard.jpg";
-import React, { useEffect, useState, useHistory } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import TutorCard from "../../components/TutorCard/TutorCard";
@@ -12,7 +12,7 @@ const Tutors = () => {
 const [approvedTutors, setApprovedTutors] = useState([]);
 	useEffect(() => {
 		axios
-			.get("/api/tutors")
+			.get("/api/tutors/approved")
 			.then((response) => {
 				setApprovedTutors(response.data);
 				console.log(approvedTutors);

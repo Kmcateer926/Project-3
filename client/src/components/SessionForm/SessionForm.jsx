@@ -22,7 +22,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             date,
             sessionLength,
             time,
-            approved,
+            // approved,
           } = response.data;
           setStudent(student);
           setDate(date);
