@@ -68,7 +68,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setStudent(e.target.value);
               }}
             />
-            <label htmlFor="title">Student Name</label>
+            {/* <label htmlFor="title">Student Name</label> */}
           </div>
           <div className="input-field col s6">
             <input
@@ -81,7 +81,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setDate(e.target.value);
               }}
             />
-            <label htmlFor="price">Date</label>
+            {/* <label htmlFor="price">Date</label> */}
           </div>
         </div>
         <div className="row">
@@ -93,12 +93,12 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setSessionLength(e.target.value);
               }}
             >
-              <option>Select Session Length in Minutes</option>
+              <option>Session(Mins)</option>
               <option>30</option>
               <option>60</option>
               <option>90</option>
             </select>
-            <label htmlFor="description">Session Length</label>
+            {/* <label htmlFor="description">Session Length</label> */}
           </div>
         </div>
         <div className="row">
@@ -110,7 +110,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setTime(e.target.value);
               }}
             >
-              <option>Select a Time</option>
+              <option>Time</option>
               <option>3:00 PM</option>
               <option>3:30 PM</option>
               <option>4:00 PM</option>
@@ -134,10 +134,10 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setTime(e.target.value);
               }}
             /> */}
-            <label htmlFor="description">Time</label>
+            {/* <label htmlFor="description">Time</label> */}
           </div>
         </div>
-        <div className="input-field col s6">
+        <div className="is-3" >
           <label>
             <input
               type="checkbox"
@@ -146,13 +146,13 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setApproved(!approved);
               }}
             />
-            <span>Approved?</span>
+            <span style={{fontFamily:"Special Elite, cursive"}}>Approved?</span>
           </label>
         </div>
         {/* </div> */}
         <div className="row">
           <div className="col s12">
-            <button type="submit" className="waves-effect waves-light btn">
+            <button type="submit" className="button is-light is-outlined ">
               {buttonText}
             </button>
           </div>
