@@ -28,28 +28,36 @@ const Landing = () => {
       backgroundSize: "cover",
       backgroundPosition: "center center",
       backgroundSize: "cover",
-	  backgroundRepeat: "no-repeat",
-	  width: "100%",
-    //   maxWidth: "2310vw",
+      backgroundRepeat: "no-repeat",
+      width: "100%",
+      //   maxWidth: "2310vw",
       height: "100vh",
       position: "fixed",
-      backgroundAttachment: "fixed",
+	  backgroundAttachment: "fixed",
+	
     },
-    background: {},
+	heading: {
+	  color: "#FFFFFF",
+	  textAlign: "center"
+	},
+	background: {
+		backgroundBlendMode: "screen",
+	}
   };
+  
 
   return (
-
-
     <div class="table-container" style={styles.session}>
-      <table class="table is-fullwidth is-bordered">
-        <thead>
+		<h1 className="title is-2" style={styles.heading}>Scheduled Tutor Sessions</h1>
+      <table class="table is-fullwidth is-bordered" style={styles.background}>
+        <thead >
           <tr>
             <th>Tutor</th>
+            <th>Student</th>
             <th>Date</th>
-			<th>Session Length</th>
+            <th>Session Length</th>
             <th>Time</th>
-          
+
             <th></th>
             <th></th>
           </tr>
@@ -65,9 +73,6 @@ const Landing = () => {
         </tbody>
       </table>
     </div>
-
-   
-
   );
 };
 
