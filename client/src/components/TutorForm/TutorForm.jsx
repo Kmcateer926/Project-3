@@ -63,20 +63,20 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 					style={{
 						border: "solid black 1px",
 						textAlign: "center",
-            borderRadius: "15px",
-            padding:"10px",
+						borderRadius: "15px",
+						padding: "10px",
 					}}
 				>
-          <h1
-					style={{
-						fontFamily: "Special Elite, cursive",
-						fontSize: "35px",
-						textAlign: "center",
-					}}
-				>
-					Add Tutor
-				</h1>
-          <div style={{ height: "50px" }}></div>
+					<h1
+						style={{
+							fontFamily: "Special Elite, cursive",
+							fontSize: "35px",
+							textAlign: "center",
+						}}
+					>
+						Add Tutor
+					</h1>
+					<div style={{ height: "50px" }}></div>
 					<form
 						onSubmit={(e) => {
 							handleFormSubmit(
@@ -104,6 +104,9 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 							onChange={(e) => {
 								setName(e.target.value);
 							}}
+							style={{
+								marginBottom: "5px",
+							}}
 						/>
 						<input
 							className="input is-normal is-link"
@@ -114,6 +117,9 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 							value={imageURL}
 							onChange={(e) => {
 								setImageURL(e.target.value);
+							}}
+							style={{
+								marginBottom: "5px",
 							}}
 						/>
 						<input
@@ -126,6 +132,9 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 							onChange={(e) => {
 								setEducation(e.target.value);
 							}}
+							style={{
+								marginBottom: "5px",
+							}}
 						/>
 						<input
 							className="input is-normal"
@@ -137,6 +146,9 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 							onChange={(e) => {
 								setSubjects(e.target.value);
 							}}
+							style={{
+								marginBottom: "5px",
+							}}
 						/>
 						<input
 							className="input is-normal"
@@ -147,6 +159,9 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 							value={experience}
 							onChange={(e) => {
 								setExperience(e.target.value);
+							}}
+							style={{
+								marginBottom: "5px",
 							}}
 						/>
 						<div></div>{" "}
@@ -166,25 +181,25 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 								<span className="icon is-small is-left">
 									<i className="fas fa-envelope"></i>
 								</span>
-								<span className="icon is-small is-right">
-									<i className="fas fa-exclamation-triangle"></i>
-								</span>
+								<span className="icon is-small is-right"></span>
 							</div>
 						</div>
-						<button className="button is-dark is-outlined">
+						<button className="button is-dark is-outlined" style={{fontFamily: "Special Elite, cursive", fontSize:"20px"}}>
 							{buttonText}
 						</button>
-            <div><label>
-							<input
-								type="checkbox"
-								checked={approved}
-								onChange={() => {
-									setApproved(!approved);
-								}}
-							/>
-							<span>Approved?</span>
-						</label></div>
-						
+						<div>
+							<label style={{fontFamily: "Special Elite, cursive"}}>
+								<input
+                
+									type="checkbox"
+									checked={approved}
+									onChange={() => {
+										setApproved(!approved);
+									}}
+								/>
+								<span>Approved</span>
+							</label>
+						</div>
 					</form>
 				</div>
 			</div>
