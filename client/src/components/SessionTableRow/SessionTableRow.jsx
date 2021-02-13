@@ -36,9 +36,7 @@ const SessionTableRow = ({
 			paddingLeft: 35,
 			paddingRight: 35,
 
-			// color: "#ffffff"
-		},
-	};
+
 
 	return (
 		<>
@@ -47,24 +45,32 @@ const SessionTableRow = ({
 				<td>{student}</td>
 				<td>{date}</td>
 				<td>{sessionLength}</td>
+<td>{time}</td>
 
-				<td>{time}</td>
+        <td >
+          <button class="fa">
+          <Link to={`/landing/${_id}`}>&#xf044;</Link>
+          </button>
+        
+        </td>
 
-				<td class="fa">
-					<Link to={`/landing/${_id}`}>&#xf044;</Link>
-				</td>
+        <td>
+          <button
+            class="fas fa-trash-alt"
+            onClick={() => {
+              deleteSession(_id);
+            }}
+          />
+        </td>
+      </tr>
+  
+     
+    </>
+  );
 
-				<td>
-					<button
-						class="fas fa-trash-alt"
-						onClick={() => {
-							deleteSession(_id);
-						}}
-					/>
-				</td>
-			</tr>
-		</>
-	);
+				
+
+				
 };
 
 SessionTableRow.propTypes = {

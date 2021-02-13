@@ -20,6 +20,7 @@ const NewParent = () => {
       minWidth: "100%",
       backgroundAttachment: "fixed",
       
+      
      
     }
   }
