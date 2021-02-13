@@ -105,7 +105,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 {" "}
                       <input
                         className="input"
-                        type="text"
+                        type="date"
                         id="date"
                         style={{ fontFamily: "Special Elite, cursive" }}
                         value={date}
