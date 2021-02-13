@@ -20,7 +20,7 @@ const [approvedTutors, setApprovedTutors] = useState([]);
 			.catch((err) => {
 				console.log(err);
 			});
-	}, []);
+	}, [approvedTutors]);
 
 	
 

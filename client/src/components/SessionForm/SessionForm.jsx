@@ -9,7 +9,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
   const [time, setTime] = useState("");
 
   // const [approved, setApproved] = useState(false);
-
+  const { id } = useParams();
   useEffect(() => {
     console.log(id);
     if (id) {
