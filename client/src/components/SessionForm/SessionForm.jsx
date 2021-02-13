@@ -146,17 +146,15 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setApproved(!approved);
               }}
             />
-            <span style={{fontFamily:"Special Elite, cursive"}}>Approved?</span>
+            <span style={{fontFamily:"Special Elite, cursive"}}>Approved</span>
           </label>
         </div>
         {/* </div> */}
-        <div className="row">
-          <div className="col s12">
+        
             <button type="submit" className="button is-light is-outlined ">
               {buttonText}
             </button>
-          </div>
-        </div>
+          
       </form>
     </>
   );

@@ -30,7 +30,7 @@ const Tutors = () => {
 	return (
 		 <>
 		 <body style={{backgroundImage:`url(${board})`}}>
-			<div style={{ height: "50px" }}></div>
+			<div style={{ height: "70px" }}></div>
 			<div className="container">
 				
 				<div className="column">
@@ -38,14 +38,14 @@ const Tutors = () => {
 						style={{
 							textAlign: "center",
 							fontFamily: "Special Elite, cursive",
-							fontSize: "40px",
+							fontSize: "50px",
 							color:"white"
 						}}
 					>
 						Tutor Directory
 					</h1>
 				</div>
-
+				<div style={{ height: "70px" }}></div>
 				<div
 					className="columns"
 					style={{
