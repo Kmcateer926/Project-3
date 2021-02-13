@@ -44,7 +44,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
       <div className="container" style={styles.signin}>
         <div className="columns">
           <div className="column has-text-centered">
-            <p className="title is-3">Welcome Back</p>
+            <h1 className="title is-3">Welcome Back</h1>
             <p>Sign in to find your tutor</p>
           </div>
         </div>
@@ -123,7 +123,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
                   <Link>Forgot Password</Link>
                 </p>
                 <p>
-                  New to Tutor Hub? <a href="/parentsignup">Join now</a>
+                  New to Tutor Hub? <Link to="/parentsignup">Join now</Link>
                 </p>
               </div>
             </div>

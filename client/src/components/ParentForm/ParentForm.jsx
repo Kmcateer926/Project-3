@@ -51,7 +51,7 @@ const parentData = {
           Create Your Tutor Hub Account
         </h1>
         <h4 className="subtitle is-6 has-text-centered" style={styles.link}>
-          Already Have an Account?<a href="/signin"> Login</a>
+        
         </h4>
     </div>
     
