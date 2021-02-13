@@ -107,7 +107,7 @@ const parentData = {
               <div className="control">
                 <input
                   className="input"
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   id="password"
                   value={password}

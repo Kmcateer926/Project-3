@@ -23,12 +23,30 @@ const EditSessionTest = () => {
       });
   };
 
+  const styles = {
+    edit: {
+      backgroundImage: `url("https://t4.ftcdn.net/jpg/03/67/24/77/360_F_367247734_rml9UJtyflIYwvH5Sp6zQkAoxDOnksSS.jpg")`,
+      backgroundSize: "cover",
+      backgroundPosition: "center center",
+      backgroundSize: "cover",
+	  backgroundRepeat: "no-repeat",
+	  width: "100%",
+    //   maxWidth: "2310vw",
+      height: "100vh",
+      position: "fixed",
+      minWidth: "100%",
+      backgroundAttachment: "fixed",
+     color: "#ffffff",
+     textAlign: "center",
+    }
+  }
+
 //   const testSubmit = () => {
 //     console.log("test");
 //   };
   return (
     // <ChalkBG>
-      <div className="container">
+      <div className="container" style={styles.edit}>
         <div className="row">
           <div className="col">
             {/* <h1 className="center-align">Add a New Parent</h1> */}
