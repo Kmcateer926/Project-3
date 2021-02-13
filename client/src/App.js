@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./containers/Home/Home";
 import ParentSignUp from "./containers/NewParent/NewParent";

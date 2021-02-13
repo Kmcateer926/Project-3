@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 // import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
+import Switch from "../../components/Switch/Switch";
 const TutorTableRow = ({
   _id,
   name,
@@ -10,7 +10,6 @@ const TutorTableRow = ({
   subjects,
   experience,
   approved,
-
   getTutors,
 }) => {
   const deleteTutor = (id) => {
@@ -23,7 +22,7 @@ const TutorTableRow = ({
         console.log(err);
       });
   };
-  const editTutor = (id, featured) => {
+  const editTutor = (id, approved) => {
     axios
       .put(`/api/tutors/${id}`, { approved: !approved })
       .then((response) => {
@@ -37,20 +36,22 @@ const TutorTableRow = ({
   return (
     <tr>
       <td>{name}</td>
-
       <td>{education}</td>
       <td>{subjects}</td>
-
       <td>{experience}</td>
       <td>
         <label class="checkbox">
-          <input
+		<Switch
+        isOn={approved}
+        handleToggle={() => editTutor(_id, approved)}
+      />
+          {/* <input
             type="checkbox"
             onClick={() => {
-              editTutor(_id, approved);
+              
             }}
           />
-         
+          */}
         </label>
         {/* <button
           icon={approved}

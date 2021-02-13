@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ChalkBG from "../../components/ChalkBG/ChalkBG";
+// import ChalkBG from "../../components/ChalkBG/ChalkBG";
 import "./style.css";
 import Video1 from "./video1.mp4";
 import Video2 from "./video2.mp4";
