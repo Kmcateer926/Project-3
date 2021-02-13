@@ -44,7 +44,7 @@ const Admin = () => {
 						<th>Education</th>
 						<th>Subjects</th>
 						<th>Experience(Yrs)</th>
-						<th>Edit</th>
+						<th>Approved</th>
 						<th>Delete</th>
 					</tr>
 				</thead>
