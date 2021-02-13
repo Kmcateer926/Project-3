@@ -45,15 +45,16 @@ const Navbar = () => {
             <div id="navbarBasicExample" className="navbar-menu">
               <div className="navbar-start">
                 {/* <a className="navbar-item">Home</a> */}
-  <Link to="Home" className="navbar-item title is-1" style={styles.title}>Tutor Hub</Link>
+  <Link to="/" className="navbar-item title is-1" style={styles.title}>Tutor Hub</Link>
   
   </div>
   
   <div className="navbar-end">
   
                 {/* <a className="navbar-item">Documentation</a> */}
-                <NavLink to="/directory" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Tutors</button></NavLink>
-                <NavLink to="/parentsignup" className="navbar-item title is-3" activeClassName="active" style={styles.title}>Parent</NavLink>
+                
+                <NavLink to="/directory" className="navbar-item title is-4" activeClassName="active" style={styles.title}>Tutors</NavLink>
+                <NavLink to="/loginform" className="navbar-item title is-4" activeClassName="active" style={styles.title}>Sign-in</NavLink>
               
               </div>
             </div>
