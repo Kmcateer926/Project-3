@@ -26,7 +26,6 @@ const TutorCard = ({
 
 	return (
 		<>
-			
 			<div
 				className=" card column is-3"
 				style={{
@@ -37,26 +36,35 @@ const TutorCard = ({
 					padding: "10px",
 					flexDirection: "row",
 					display: "inline-block",
-          fontFamily: "Special Elite, cursive",
-          backgroundImage:`url(${board})`,
-          color: "white",
-          
+					fontFamily: "Special Elite, cursive",
+					backgroundImage: `url(${board})`,
+					color: "white",
 				}}
 			>
-				<h1 class="title" style={{color:"white"}}>{name}</h1>
+				<h1
+					class="title"
+					style={{ color: "white", textAlign: "center" }}
+				>
+					{name}
+				</h1>
 				<p>
 					<img src={imageURL} alt={name} />
 				</p>
 
-				<div style={{ fontSize: "18px"}}>
-					<p style={{color:"white"}}>
-						<strong style={{color:"white"}}>Education: {education}</strong>
+				<div style={{ fontSize: "18px" }}>
+					<p style={{ color: "white" }}>
+						<strong style={{ color: "white" }}>Education: </strong>
+						{education}
 					</p>
 					<p>
-						<strong style={{color:"white"}}>Subjects(s): {subjects}</strong>
+						<strong style={{ color: "white" }}>Subjects(s):</strong>{" "}
+						{subjects}
 					</p>
 					<p>
-						<strong style={{color:"white"}}>Experience(Yrs): {experience}</strong>
+						<strong style={{ color: "white" }}>
+							Experience(Yrs):{" "}
+						</strong>
+						{experience}
 					</p>
 				</div>
 				<hr />
