@@ -14,6 +14,15 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/approved", (req, res) => {
+  Tutor.find({ approved: true })
+    .limit(15)
+    .then((approvedTutor) => {
+      res.json(approvedTutor);
+    });
+});
+
+
 router.get("/:id", (req, res) => {
   Tutor.find({
     where: {

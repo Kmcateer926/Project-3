@@ -28,7 +28,7 @@ const EditSessionTest = () => {
       backgroundImage: `url("https://t4.ftcdn.net/jpg/03/67/24/77/360_F_367247734_rml9UJtyflIYwvH5Sp6zQkAoxDOnksSS.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center center",
-      backgroundSize: "cover",
+      // backgroundSize: "cover",
 	  backgroundRepeat: "no-repeat",
 	  width: "100%",
     //   maxWidth: "2310vw",
