@@ -12,6 +12,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
       marginTop: 40,
       marginRight: 50,
       fontFamily: "Special Elite, cursive",
+      align: "center"
     },
     submit: {
       paddingTop: 10,
@@ -109,7 +110,8 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
                     style={styles.button}
                     onClick={handleFormSubmit}
                   >
-                    Sign In
+                      <Link to="/landing">Sign In</Link>
+                  
                   </button>
                 </div>
               </div>

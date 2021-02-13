@@ -31,6 +31,7 @@ const parentData = {
     font: {
       fontFamily: "Special Elite, cursive",
 
+
      
     },
     heading: {
