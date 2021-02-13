@@ -35,6 +35,7 @@ const SessionTableRow = ({
       paddingTop: 25,
       paddingLeft: 35,
       paddingRight: 35,
+      
       // color: "#ffffff"
     },
   };
