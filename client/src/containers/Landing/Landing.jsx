@@ -38,7 +38,8 @@ const Landing = () => {
     },
 	heading: {
 	  color: "#FFFFFF",
-	  textAlign: "center"
+	  textAlign: "center",
+	
 	},
 	background: {
 		backgroundBlendMode: "screen",

@@ -42,7 +42,8 @@ const SessionTableRow = ({
 
   return (
     <>
-      <tr className="session" style={styles.session}>
+
+<tr className="session" style={styles.session}>
         <td>{tutor}</td>
         <td>{student}</td>
         <td>{date}</td>
@@ -50,8 +51,11 @@ const SessionTableRow = ({
 
         <td>{time}</td>
 
-        <td class="fa">
+        <td >
+          <button class="fa">
           <Link to={`/landing/${_id}`}>&#xf044;</Link>
+          </button>
+        
         </td>
 
         <td>
@@ -63,6 +67,8 @@ const SessionTableRow = ({
           />
         </td>
       </tr>
+  
+     
     </>
   );
 };

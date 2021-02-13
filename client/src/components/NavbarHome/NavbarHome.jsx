@@ -19,10 +19,8 @@ const styles = {
 }
 
 const Navbar = () => {
-    return (
-
-      
-      
+  
+    return (      
         <>
         <div>
           <nav className="navbar is-mobile" role="navigation" aria-label="main navigation" style={styles.navbar}>
@@ -48,6 +46,8 @@ const Navbar = () => {
   <Link to="/" className="navbar-item title is-1" style={styles.title}>Tutor Hub</Link>
   
   </div>
+
+  
   
   <div className="navbar-end">
   
