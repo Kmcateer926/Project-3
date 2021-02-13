@@ -15,7 +15,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
       fontFamily: "Special Elite, cursive",
     },
     heading: {
-    //   paddingTop: 40,
+      //   paddingTop: 40,
     },
   };
   useEffect(() => {
@@ -83,7 +83,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Name: </strong>
-            
+
                 <input
                   className="input"
                   type="text"
@@ -100,20 +100,17 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
-
-                <strong>Date: </strong>
-                {" "}
-                      <input
-                        className="input"
-                        type="text"
-                        id="date"
-                        style={{ fontFamily: "Special Elite, cursive" }}
-                        value={date}
-                        onChange={(e) => {
-                          setDate(e.target.value);
-                        }}
-                      />
-
+                <strong>Date: </strong>{" "}
+                <input
+                  className="input"
+                  type="date"
+                  id="date"
+                  style={{ fontFamily: "Special Elite, cursive" }}
+                  value={date}
+                  onChange={(e) => {
+                    setDate(e.target.value);
+                  }}
+                />
                 {/* {teachers.name} */}
                 {/* <input
                   className="input is-danger"
@@ -177,18 +174,18 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         }}
                       /> */}
                 <p>
-                  <strong style={{fontFamily: "Special Elite, cursive"}}>
+                  <strong style={{ fontFamily: "Special Elite, cursive" }}>
                     Time:{" "}
                     <div className="field">
                       <div className="control">
                         <div className="select">
-
-                          <select type="text" value={time}
+                          <select
+                            type="text"
+                            value={time}
                             style={{ fontFamily: "Special Elite, cursive" }}
-                          onChange={(e) => {
-                            setTime(e.target.value);
-                          }}
-
+                            onChange={(e) => {
+                              setTime(e.target.value);
+                            }}
                           >
                             <option>Select a Time</option>
                             <option>3:00 PM</option>
@@ -207,9 +204,13 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                       </div>
                     </div>
                     Session Length:{" "}
-                    <div className="field" 
-                    style={{paddingBottom: "25px",
-                    fontFamily: "Special Elite, cursive"}}>
+                    <div
+                      className="field"
+                      style={{
+                        paddingBottom: "25px",
+                        fontFamily: "Special Elite, cursive",
+                      }}
+                    >
                       <div className="control">
                         <div className="select">
                           <select
@@ -272,7 +273,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           </div>
         </div>
       </div>
-     
     </>
   );
 };
