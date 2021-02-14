@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Admin.css";
+import board from "../../components/ChalkBG/chalkBoard.jpg";
 import TutorTableRow from "../../components/TutorTableRow/TutorTableRow";
 
 const Admin = () => {
@@ -32,20 +33,22 @@ const Admin = () => {
 
 	return (
 		<>
+    <body style={{backgroundImage:`url(${board})`}}>
+    <div style={{ height: "50px" }}></div>
 			<div className="column is-12">
-				<h1 style={{textAlign:"center", fontSize:"40px", fontFamily:"Special Elite, cursive"}}>Admin View</h1>
+				<h1 style={{textAlign:"center", color:"white",fontSize:"60px", fontFamily:"Special Elite, cursive"}}>Admin View</h1>
 			</div>
 			<div style={{ height: "50px" }}></div>
 <div className="container">
-			<table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+			<table className="table is-bordered  is-narrow  is-fullwidth" style={{backgroundImage:`url(${board})`}}>
 				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Education</th>
-						<th>Subjects</th>
-						<th>Experience(Yrs)</th>
-						<th>Approved</th>
-						<th>Delete</th>
+					<tr  >
+						<th id="row">NAME</th>
+						<th id="row">EDUCATION</th>
+						<th id="row">SUBJECTS</th>
+						<th id="row">EXPERIENCE(Years)</th>
+						<th id="row">APPROVED</th>
+						<th id="row"> DELETE</th>
 					</tr>
 				</thead>
 
@@ -60,6 +63,7 @@ const Admin = () => {
 				</tbody>
 			</table>
       </div>
+      </body>
 		</>
 	);
 };
