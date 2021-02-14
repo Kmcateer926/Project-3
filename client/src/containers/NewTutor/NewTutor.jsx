@@ -27,7 +27,7 @@ const NewTutor = () => {
 
 	return (
 		<>
-			<div className="container">
+			<div>
 				<TutorForm
 					handleFormSubmit={handleFormSubmit}
 					buttonText="Create New Tutor"

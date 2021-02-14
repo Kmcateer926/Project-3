@@ -46,7 +46,7 @@ const Admin = () => {
 						<th id="row">NAME</th>
 						<th id="row">EDUCATION</th>
 						<th id="row">SUBJECTS</th>
-						<th id="row">EXPERIENCE(Years)</th>
+						<th id="row">YEARS</th>
 						<th id="row">APPROVED</th>
 						<th id="row"> DELETE</th>
 					</tr>
@@ -54,7 +54,7 @@ const Admin = () => {
 
 				<tbody>
 					{tutors.map((tutor) => (
-						<TutorTableRow
+						<TutorTableRow 
 							key={tutor._id}
 							{...tutor}
 							getTutors={getTutors}
