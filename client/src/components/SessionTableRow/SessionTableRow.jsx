@@ -55,9 +55,9 @@ const SessionTableRow = ({
           </button>
         </td>
 
-				<td class="fa">
+				{/* <td class="fa">
 					<Link to={`/landing/${_id}`}>&#xf044;</Link>
-				</td>
+				</td> */}
 
 				<td>
 					<button

@@ -40,7 +40,7 @@ const Admin = () => {
 			</div>
 			<div style={{ height: "50px" }}></div>
 <div className="container">
-			<table className="table is-bordered  is-narrow  is-fullwidth" style={{backgroundImage:`url(${board})`}}>
+			<table id="admin-table"className="table is-bordered  is-narrow  is-fullwidth" style={{backgroundImage:`url(${board})`}}>
 				<thead>
 					<tr  >
 						<th id="row">NAME</th>
