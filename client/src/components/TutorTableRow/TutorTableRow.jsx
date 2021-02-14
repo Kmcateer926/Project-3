@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import board from "../../components/ChalkBG/chalkBoard.jpg";
 import PropTypes from "prop-types";
 import Switch from "../../components/Switch/Switch";
 
@@ -35,6 +35,9 @@ const TutorTableRow = ({
       });
   };
   return (
+    <>
+    <body style={{backgroundImage:`url(${board})`}}>
+      <table>
     <tr>
       <td>{name}</td>
       <td>{education}</td>
@@ -47,24 +50,16 @@ const TutorTableRow = ({
         isOn={approved}
         handleToggle={() => editTutor(_id, approved)}
       />
-          {/* <input
-            type="checkbox"
-            onClick={() => {
-              
-            }}
-          />
-          */}
+      
+         
         </label>
         {/* <button
           icon={approved}
          
         /> */}
       </td>
-      {/* <td>
-        <button className="fa fa-edit">
-          <Link to={`/admin/${_id}`}></Link>
-        </button>
-      </td> */}
+      
+      
 
       <td>
         <button
@@ -75,6 +70,9 @@ const TutorTableRow = ({
         />
       </td>
     </tr>
+    </table>
+    </body>
+    </>
   );
 };
 
