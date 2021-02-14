@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SessionRow from "../../components/SessionRow/SessionRow";
+// import SessionRow from "../../components/SessionRow/SessionRow";
 // import ChalkBG from "../../components/ChalkBG/ChalkBG";
 // import BookSession from "../../components/BookSession/BookSession"
 import SessionTableRow from "../../components/SessionTableRow/SessionTableRow";
@@ -27,7 +27,7 @@ const Landing = () => {
       backgroundImage: `url("https://txcatholic.org/wp-content/uploads/2019/03/Chalkboard-books-and-apple-for-web.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center center",
-      backgroundSize: "cover",
+      // backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       width: "100%",
       //   maxWidth: "2310vw",
@@ -38,7 +38,8 @@ const Landing = () => {
     },
 	heading: {
 	  color: "#FFFFFF",
-	  textAlign: "center"
+	  textAlign: "center",
+	
 	},
 	background: {
 		backgroundBlendMode: "screen",

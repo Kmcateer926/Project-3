@@ -1,25 +1,26 @@
 // import React, { useContext } from "react";
 
 import board from "../../components/ChalkBG/chalkBoard.jpg";
-import React, { useEffect, useState, useHistory } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import TutorCard from "../../components/TutorCard/TutorCard";
 
-const Tutors = () => {
-	const [tutors, setTutors] = useState([]);
 
+const Tutors = () => {
+	// const [tutors, setTutors] = useState([]);
+const [approvedTutors, setApprovedTutors] = useState([]);
 	useEffect(() => {
 		axios
-			.get("/api/tutors")
+			.get("/api/tutors/approved")
 			.then((response) => {
-				setTutors(response.data);
-				console.log(tutors);
+				setApprovedTutors(response.data);
+				console.log(approvedTutors);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	}, []);
+	}, [approvedTutors]);
 
 	
 
@@ -51,7 +52,7 @@ const Tutors = () => {
 						alignItems: "center",
 					}}
 				>
-					{tutors.map((tutor) => (
+					{approvedTutors.map((tutor) => (
 						<TutorCard {...tutor} key={tutor._id} />
 					))}
 				</div>

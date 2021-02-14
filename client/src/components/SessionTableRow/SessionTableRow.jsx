@@ -29,26 +29,31 @@ const SessionTableRow = ({
 			});
 	};
 
-	const styles = {
-		session: {
-			fontFamily: "Special Elite, cursive",
-			paddingTop: 25,
-			paddingLeft: 35,
-			paddingRight: 35,
+  const styles = {
+    session: {
+      fontFamily: "Special Elite, cursive",
+      paddingTop: 25,
+      paddingLeft: 35,
+      paddingRight: 35,
 
-			// color: "#ffffff"
-		},
-	};
+      // color: "#ffffff"
+    },
+  };
 
-	return (
-		<>
-			<tr className="session" style={styles.session}>
-				<td>{tutor?.name}</td>
-				<td>{student}</td>
-				<td>{date}</td>
-				<td>{sessionLength}</td>
+  return (
+    <>
+      <tr className="session" style={styles.session}>
+        <td>{tutor?.name}</td>
+        <td>{student}</td>
+        <td>{date}</td>
+        <td>{sessionLength}</td>
+        <td>{time}</td>
 
-				<td>{time}</td>
+        <td>
+          <button class="fa">
+            <Link to={`/landing/${_id}`}>&#xf044;</Link>
+          </button>
+        </td>
 
 				<td class="fa">
 					<Link to={`/landing/${_id}`}>&#xf044;</Link>
