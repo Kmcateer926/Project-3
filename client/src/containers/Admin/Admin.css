@@ -1,3 +1,10 @@
-td, th {
+td, th, tr, thead {
     font-family: Special Elite, cursive;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+}
+#row {
+    color: white;
+    font-size: larger;
 }

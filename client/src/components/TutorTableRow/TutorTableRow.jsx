@@ -3,6 +3,7 @@ import axios from "axios";
 // import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Switch from "../../components/Switch/Switch";
+
 const TutorTableRow = ({
   _id,
   name,
@@ -42,6 +43,7 @@ const TutorTableRow = ({
       <td>
         <label class="checkbox">
 		<Switch
+    
         isOn={approved}
         handleToggle={() => editTutor(_id, approved)}
       />
