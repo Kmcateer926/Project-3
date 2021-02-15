@@ -61,7 +61,7 @@ router.post("/", (req, res) => {
 			console.log(newSession);
 			//   client.messages
 			//     .create({
-			//       body: `${req.body.student} booked for ${req.body.date} at ${req.body.time}`,
+			//       body: `${req.body.student} booked for ${req.body.date} at ${req.body.time} with ${req.body.tutor}`,
 			//       from: "+15093944876",
 			//       to: "+16787933025",
 			//     })
