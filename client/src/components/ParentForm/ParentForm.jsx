@@ -48,6 +48,7 @@ const parentData = {
   return (
     <>
     <div className="container" style={styles.font}>
+     
     <h1 className="title is-3 has-text-centered" style={styles.heading}>
           Create Your Tutor Hub Account
         </h1>
@@ -58,10 +59,8 @@ const parentData = {
     
      
       <div className="container" style={styles.font}>
-        <form
-          className="column"
-        
-        >
+     
+        <form className="column">
                  <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
               <label className="label" style={styles.link}>Name</label>
