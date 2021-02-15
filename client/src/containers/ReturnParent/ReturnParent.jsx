@@ -18,7 +18,7 @@ const ReturnParent = () => {
           });
       };
     return (
-        <div>
+        <div className="login">
               <LoginForm handleLoginSubmit={handleLoginSubmit} />
         </div>
     );
