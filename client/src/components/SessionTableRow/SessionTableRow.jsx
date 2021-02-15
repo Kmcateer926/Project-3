@@ -8,26 +8,26 @@ import PropTypes from "prop-types";
 // import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
 
 const SessionTableRow = ({
-	_id,
-	tutor,
-	student,
-	date,
-	sessionLength,
-	time,
-	approved,
+  _id,
+  tutor,
+  student,
+  date,
+  sessionLength,
+  time,
+  approved,
 
-	getSessions,
+  getSessions,
 }) => {
-	const deleteSession = (id) => {
-		axios
-			.delete(`/api/sessions/${id}`)
-			.then(() => {
-				getSessions();
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	};
+  const deleteSession = (id) => {
+    axios
+      .delete(`/api/sessions/${id}`)
+      .then(() => {
+        getSessions();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const styles = {
     session: {
@@ -35,8 +35,9 @@ const SessionTableRow = ({
       paddingTop: 25,
       paddingLeft: 35,
       paddingRight: 35,
-
-      // color: "#ffffff"
+      fontSize: 20,
+      // overflow: "scroll",
+      fontWeight: 300
     },
   };
 
@@ -45,39 +46,39 @@ const SessionTableRow = ({
       <tr className="session" style={styles.session}>
         <td>{tutor?.name}</td>
         <td>{student}</td>
-        <td>{date}</td>
+        <td>{new Date(date).toLocaleDateString()}</td>
         <td>{sessionLength}</td>
         <td>{time}</td>
 
         <td>
-          <button class="fa">
+          <button className="fa button is-primary">
             <Link to={`/landing/${_id}`}>&#xf044;</Link>
           </button>
         </td>
 
-				{/* <td class="fa">
+        {/* <td class="fa">
 					<Link to={`/landing/${_id}`}>&#xf044;</Link>
 				</td> */}
 
-				<td>
-					<button
-						class="fas fa-trash-alt"
-						onClick={() => {
-							deleteSession(_id);
-						}}
-					/>
-				</td>
-			</tr>
-		</>
-	);
+        <td>
+          <button
+            className="fas fa-trash-alt button is-warning"
+            onClick={() => {
+              deleteSession(_id);
+            }}
+          />
+        </td>
+      </tr>
+    </>
+  );
 };
 
 SessionTableRow.propTypes = {
-	_id: PropTypes.string.isRequired,
-	student: PropTypes.string.isRequired,
-	time: PropTypes.string.isRequired,
-	sessionLength: PropTypes.number.isRequired,
-	date: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
+  student: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  sessionLength: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 export default SessionTableRow;

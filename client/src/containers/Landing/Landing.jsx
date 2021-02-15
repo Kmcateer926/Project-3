@@ -23,26 +23,38 @@ const Landing = () => {
       fontFamily: "Special Elite, cursive",
       paddingTop: 25,
       paddingLeft: 35,
-      paddingRight: 33,
+	  paddingRight: 33,
       backgroundImage: `url("https://txcatholic.org/wp-content/uploads/2019/03/Chalkboard-books-and-apple-for-web.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center center",
-      // backgroundSize: "cover",
+    //   backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       width: "100%",
       //   maxWidth: "2310vw",
-      height: "100vh",
-      position: "fixed",
-	  backgroundAttachment: "fixed",
+      minHeight: "100vh",
+    //   position: "fixed",
+	//   backgroundAttachment: "fixed",
+	  color: "#ffffff",
+	behavior: "smooth"
+	//   top: 0,
+	//   bottom: 0
+	 
 	
     },
 	heading: {
 	  color: "#FFFFFF",
 	  textAlign: "center",
 	
+	
 	},
 	background: {
-		backgroundBlendMode: "screen",
+		// backgroundColor: "#0000",
+		// color: "#ffffff",
+		opacity: 0.7,
+		fontSize: 24,	
+	},
+	titleHead: {
+		color: "#FFFFFF"
 	}
   };
   
@@ -50,17 +62,16 @@ const Landing = () => {
   return (
     <div class="table-container" style={styles.session}>
 		<h1 className="title is-2" style={styles.heading}>Scheduled Tutor Sessions</h1>
-      <table class="table is-fullwidth is-bordered" style={styles.background}>
+      <table className="table is-fullwidth is-bordered title is-3" style={styles.background}>
         <thead >
-          <tr>
-            <th>Tutor</th>
-            <th>Student</th>
-            <th>Date</th>
-            <th>Session Length</th>
-            <th>Time</th>
-
-            <th></th>
-            <th></th>
+          <tr> 
+            <th>TUTOR</th>
+            <th>STUDENT</th>
+            <th>DATE</th>
+            <th>SESSION LENGTH</th>
+            <th>TIME</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
           </tr>
         </thead>
         <tbody>
