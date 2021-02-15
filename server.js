@@ -48,7 +48,7 @@ app.get("/api/config", (req, res) => {
 app.use("/api/parents", ParentSignUpController);
 app.use("/api/sessions", SessionController);
 app.use("/api/tutors", TutorController);
-app.use("api/auth", AuthController);
+app.use("/api/auth", AuthController);
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
