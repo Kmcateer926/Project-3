@@ -13,8 +13,15 @@ const styles = {
 
     color: "#FFFFFF",
     fontFamily: "Special Elite, cursive",
+    // marginTop: 20,
+    // paddingRight: 35
+  },
+  tab: {
+    color: "#FFFFFF",
+    fontFamily: "Special Elite, cursive",
     marginTop: 20,
-    paddingRight: 35
+    paddingRight: 35,
+   
   }
 }
 
@@ -49,14 +56,19 @@ const Navbar = () => {
 
   
   
-  <div className="navbar-end">
-  
-                {/* <a className="navbar-item">Documentation</a> */}
+  <ul className="navbar-end">
+  <li>
+  <NavLink to="/directory" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Tutors</NavLink>
+  </li>
+       
+       <li>
+       <NavLink to="/loginform" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Sign-in</NavLink>
+       </li>
                 
-                <NavLink to="/directory" className="navbar-item title is-4" activeClassName="active" style={styles.title}>Tutors</NavLink>
-                <NavLink to="/loginform" className="navbar-item title is-4" activeClassName="active" style={styles.title}>Sign-in</NavLink>
+
+
               
-              </div>
+              </ul>
             </div>
           </nav>
         </div>
