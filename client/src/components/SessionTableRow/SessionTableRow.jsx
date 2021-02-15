@@ -36,7 +36,7 @@ const SessionTableRow = ({
       paddingLeft: 35,
       paddingRight: 35,
       fontSize: 20,
-      // color: "#ffffff",
+      // overflow: "scroll",
       fontWeight: 300
     },
   };
@@ -46,7 +46,7 @@ const SessionTableRow = ({
       <tr className="session" style={styles.session}>
         <td>{tutor?.name}</td>
         <td>{student}</td>
-        <td>{date}</td>
+        <td>{new Date(date).toLocaleDateString()}</td>
         <td>{sessionLength}</td>
         <td>{time}</td>
 

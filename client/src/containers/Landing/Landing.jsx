@@ -31,10 +31,13 @@ const Landing = () => {
       backgroundRepeat: "no-repeat",
       width: "100%",
       //   maxWidth: "2310vw",
-      height: "300vh",
+      height: "100vh",
       position: "fixed",
 	  backgroundAttachment: "fixed",
 	  color: "#ffffff",
+	behavior: "smooth"
+	//   top: 0,
+	//   bottom: 0
 	 
 	
     },
@@ -67,9 +70,8 @@ const Landing = () => {
             <th>DATE</th>
             <th>SESSION LENGTH</th>
             <th>TIME</th>
-
-            <th></th>
-            <th></th>
+            <th>EDIT</th>
+            <th>DELETE</th>
           </tr>
         </thead>
         <tbody>
