@@ -57,6 +57,10 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         <div className="row">
           <div className="input-field col s6">
             <input
+              style={{
+                fontFamily: "Special Elite, cursive",
+                fontSize: "15px"
+              }}
               placeholder="Student Name"
               id="student"
               type="text"
@@ -70,6 +74,10 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
           </div>
           <div className="input-field col s6">
             <input
+                style={{
+                  fontFamily: "Special Elite, cursive",
+                  fontSize: "15px"
+               }}
               placeholder="Date"
               id="bulmaCalendar"
               type="date"
@@ -85,6 +93,10 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         <div className="row">
           <div className="input-field col s12">
             <select
+                style={{
+                  fontFamily: "Special Elite, cursive",
+                  fontSize: "15px"
+               }}
               type="text"
               value={sessionLength}
               onChange={(e) => {
@@ -102,6 +114,10 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         <div className="row">
           <div className="input-field col s12">
             <select
+                style={{
+                  fontFamily: "Special Elite, cursive",
+                  fontSize: "15px"
+               }}
               type="text"
               value={time}
               onChange={(e) => {
@@ -148,11 +164,12 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
           </label>
         </div> */}
         {/* </div> */}
-        
-            <button type="submit" className="button is-light is-outlined ">
-              {buttonText}
-            </button>
-          
+
+        <button type="submit" className="button is-light is-outlined"style={{
+              fontFamily: "Special Elite, cursive",
+           }}>
+          {buttonText}
+        </button>
       </form>
     </>
   );
