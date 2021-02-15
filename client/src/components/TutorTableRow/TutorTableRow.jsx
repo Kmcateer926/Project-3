@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import board from "../../components/ChalkBG/chalkBoard.jpg";
+import "./TutorTableRow.css";
 import PropTypes from "prop-types";
 import Switch from "../../components/Switch/Switch";
 
@@ -36,13 +37,13 @@ const TutorTableRow = ({
 	};
 	return (
 		<>
-			<tr>
+			<tr id="data">
 				<td>{name}</td>
 				<td>{education}</td>
 				<td>{subjects}</td>
-				<td>{experience}</td>
-				<td>
-					<label class="checkbox">
+				<td style={{textAlign:"center"}}>{experience}</td>
+				<td style={{textAlign:"center"}}>
+					<label class="checkbox" >
 						<Switch
 							isOn={approved}
 							handleToggle={() => editTutor(_id, approved)}
@@ -54,9 +55,9 @@ const TutorTableRow = ({
         /> */}
 				</td>
 
-				<td>
+				<td style={{textAlign:"center"}}>
 					<button
-						className="fa fa-trash"
+						className="fa fa-trash-alt" style={{fontSize:"24px", marginTop:"8px"}}
 						onClick={() => {
 							deleteTutor(_id);
 						}}

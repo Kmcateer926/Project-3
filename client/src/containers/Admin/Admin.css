@@ -1,10 +1,14 @@
 #admin-table {
-    font-family: Special Elite, cursive;
-    color: white;
-    font-size: 24px;
-    font-weight: 400;
+	font-family: Special Elite, cursive;
+	color: white;
+	font-size: 24px;
+	font-weight: 400;
 }
 #row {
-    color: white;
-    font-size: larger;
+	color: white;
+	font-size: larger;
+}
+#row:hover {
+	background-color: white;
+	color: black;
 }
