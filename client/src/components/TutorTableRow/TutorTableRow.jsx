@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import board from "../../components/ChalkBG/chalkBoard.jpg";
+// import board from "../../components/ChalkBG/chalkBoard.jpg";
 import "./TutorTableRow.css";
 import PropTypes from "prop-types";
 import Switch from "../../components/Switch/Switch";
