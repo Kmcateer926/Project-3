@@ -50,7 +50,7 @@ const Navbar = () => {
             <div id="navbarBasicExample" className="navbar-menu">
               <div className="navbar-start">
                 {/* <a className="navbar-item">Home</a> */}
-  <Link to="/" className="navbar-item title is-1" style={styles.title}>Tutor Hub</Link>
+  <Link to="/" className="navbar-item title is-1" style={styles.title}>Tut<i className="fas fa-apple-alt fa-xs"></i>r Hub</Link>
   
   </div>
 
