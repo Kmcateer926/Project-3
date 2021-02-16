@@ -67,6 +67,12 @@ const TutorCard = ({
 						</strong>
 						{experience}
 					</p>
+          <p>
+						<strong style={{ color: "white" }}>
+							Email:{" "}
+						</strong>
+						{email}
+					</p>
 				</div>
 				<hr />
 				<SessionForm
