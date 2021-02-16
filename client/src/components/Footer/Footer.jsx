@@ -8,9 +8,9 @@ const style = {
     bottom: "0",
     height: "60px",
     width: "100%",
-    backgroundColor: "rgb(102, 102, 102)",
-    color: "rgb(179, 163, 105)",
-    borderTop: "8px solid  #94b8b8",
+    backgroundColor: "#2674DB",
+    color: "white",
+    // borderTop: "8px solid  #94b8b8",
     flexShrink: "0",
     fontFamily: "Special Elite, cursive",
   };
