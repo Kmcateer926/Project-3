@@ -46,7 +46,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
     };
 
     axios
-      .post("/api/auth/login", parentData)
+      .post("/api/auth", parentData)
       .then((response) => {
         history.push("/landing");
         // alert("Successfully Logged in user");
