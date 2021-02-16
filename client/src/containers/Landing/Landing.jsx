@@ -23,48 +23,48 @@ const Landing = () => {
       fontFamily: "Special Elite, cursive",
       paddingTop: 25,
       paddingLeft: 35,
-	  paddingRight: 33,
+      paddingRight: 33,
       backgroundImage: `url("https://txcatholic.org/wp-content/uploads/2019/03/Chalkboard-books-and-apple-for-web.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center center",
-    //   backgroundSize: "cover",
+      //   backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       width: "100%",
       //   maxWidth: "2310vw",
       minHeight: "100vh",
-    //   position: "fixed",
-	//   backgroundAttachment: "fixed",
-	  color: "#ffffff",
-	behavior: "smooth"
-	//   top: 0,
-	//   bottom: 0
-	 
-	
+      // position: "fixed",
+      //   backgroundAttachment: "fixed",
+      color: "#ffffff",
+      behavior: "smooth",
+      //   top: 0,
+      //   bottom: 0
     },
-	heading: {
-	  color: "#FFFFFF",
-	  textAlign: "center",
-	
-	
-	},
-	background: {
-		// backgroundColor: "#0000",
-		// color: "#ffffff",
-		opacity: 0.7,
-		fontSize: 24,	
-	},
-	titleHead: {
-		color: "#FFFFFF"
-	}
+    heading: {
+      color: "#FFFFFF",
+      textAlign: "center",
+    },
+    background: {
+      // backgroundColor: "#0000",
+      // color: "#ffffff",
+      opacity: 0.7,
+      fontSize: 24,
+    },
+    titleHead: {
+      color: "#FFFFFF",
+    },
   };
-  
 
   return (
-    <div class="table-container" style={styles.session}>
-		<h1 className="title is-2" style={styles.heading}>Scheduled Tutor Sessions</h1>
-      <table className="table is-fullwidth is-bordered title is-3" style={styles.background}>
-        <thead >
-          <tr> 
+    <div className="table-container" style={styles.session}>
+      <h1 className="title is-2" style={styles.heading}>
+        Scheduled Tutor Sessions
+      </h1>
+      <table
+        className="table is-fullwidth is-bordered title is-3"
+        style={styles.background}
+      >
+        <thead>
+          <tr>
             <th>TUTOR</th>
             <th>STUDENT</th>
             <th>DATE</th>

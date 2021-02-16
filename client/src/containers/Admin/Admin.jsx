@@ -5,67 +5,91 @@ import board from "../../components/ChalkBG/chalkBoard.jpg";
 import TutorTableRow from "../../components/TutorTableRow/TutorTableRow";
 
 const Admin = () => {
-	// 1. hard code the render
-	// 2. move the values to this.state
-	// 3. make the api call to return the data dynamically.
-	// 3a. Import useEffect - when to go get the data.
-	// 3b. Import axios
-	// 3c. Inside useEffect, make an axios call.
-	// 3d. set the response.data on state (setProducts) NEVER DIRECTLY MUTATE STATE
+  // 1. hard code the render
+  // 2. move the values to this.state
+  // 3. make the api call to return the data dynamically.
+  // 3a. Import useEffect - when to go get the data.
+  // 3b. Import axios
+  // 3c. Inside useEffect, make an axios call.
+  // 3d. set the response.data on state (setProducts) NEVER DIRECTLY MUTATE STATE
 
-	const [tutors, setTutors] = useState([]);
+  const [tutors, setTutors] = useState([]);
 
-	useEffect(() => {
-		getTutors();
-	}, []);
+  useEffect(() => {
+    getTutors();
+  }, []);
 
-	const getTutors = () => {
-		axios
-			.get("/api/tutors")
-			.then((response) => {
-				console.log(response.data);
-				setTutors(response.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	};
+  const getTutors = () => {
+    axios
+      .get("/api/tutors")
+      .then((response) => {
+        console.log(response.data);
+        setTutors(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-	return (
-		<>
-    <body style={{backgroundImage:`url(${board})`}}>
-    <div style={{ height: "50px" }}></div>
-			<div className="column is-12">
-				<h1 style={{textAlign:"center", color:"white",fontSize:"60px", fontFamily:"Special Elite, cursive"}}>Admin View</h1>
-			</div>
-			<div style={{ height: "50px" }}></div>
-<div className="container">
-			<table id="admin-table"className="table is-bordered  is-narrow  is-fullwidth" style={{backgroundImage:`url(${board})`}}>
-				<thead>
-					<tr  >
-						<th id="row">NAME</th>
-						<th id="row">EDUCATION</th>
-						<th id="row">SUBJECTS</th>
-						<th id="row">YEARS</th>
-						<th id="row">APPROVED</th>
-						<th id="row"> DELETE</th>
-					</tr>
-				</thead>
+  return (
+    <>
+      <body style={{ backgroundImage: `url(${board})` }}>
+        <div style={{ height: "50px" }}></div>
+        <div className="column is-12">
+          <h1
+            style={{
+              textAlign: "center",
+              color: "white",
+              fontSize: "60px",
+              fontFamily: "Special Elite, cursive",
+            }}
+          >
+            Admin View
+          </h1>
+          <div>
+            <h4 className="subtitle is-6 has-text-centered" style={{
+              textAlign: "center",
+              color: "white",
+              fontSize: "18px",
+              fontFamily: "Special Elite, cursive",
+            }} >
+              Need a new tutor?<a href="/admin/new-tutor"> New Tutor</a>
+            </h4>
+          </div>
+        </div>
 
-				<tbody>
-					{tutors.map((tutor) => (
-						<TutorTableRow 
-							key={tutor._id}
-							{...tutor}
-							getTutors={getTutors}
-						/>
-					))}
-				</tbody>
-			</table>
-      </div>
+        <div style={{ height: "50px" }}></div>
+        <div className="container">
+          <table
+            id="admin-table"
+            className="table is-bordered  is-narrow  is-fullwidth"
+            style={{ backgroundImage: `url(${board})` }}
+          >
+            <thead>
+              <tr>
+                <th id="row">NAME</th>
+                <th id="row">EDUCATION</th>
+                <th id="row">SUBJECTS</th>
+                <th id="row">YEARS</th>
+                <th id="row">APPROVED</th>
+                <th id="row"> DELETE</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {tutors.map((tutor) => (
+                <TutorTableRow
+                  key={tutor._id}
+                  {...tutor}
+                  getTutors={getTutors}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </body>
-		</>
-	);
+    </>
+  );
 };
 
 export default Admin;
