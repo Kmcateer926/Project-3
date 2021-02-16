@@ -41,6 +41,7 @@ const parentData = {
     link: {
       color: "#FFFFFF",
       fontFamily: "Special Elite, cursive",
+      fontSize: "24px"
       
     }
   };
@@ -121,9 +122,9 @@ const parentData = {
             </div>
           </div>
      
-          <div className="column is-three-fifths is-offset-one-fifth">
+          <div className="column is-three-fifths is-offset-one-fifth has-text-centered">
   
-              <button className="button is-link" style={styles.font} onClick={handleFormSubmit}>
+              <button className="button is-light is-outlined" style={styles.font} onClick={handleFormSubmit}>
                <Link to="/loginform" style={styles.link}>Create New Parent Profile</Link>
               </button>
             
