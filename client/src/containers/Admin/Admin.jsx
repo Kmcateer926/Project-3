@@ -32,6 +32,7 @@ const Admin = () => {
   };
 
 
+
   return (
     <>
       <body style={{ backgroundImage: `url(${board})` }}>
@@ -91,6 +92,7 @@ const Admin = () => {
       </body>
     </>
   );
+
 
 };
 
