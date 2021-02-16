@@ -36,7 +36,7 @@ connection.on("error", (err) => {
 const ParentSignUpController = require("./controllers/parentController");
 const SessionController = require("./controllers/sessionController");
 const TutorController = require("./controllers/tutorController");
-const AuthController = require("./controllers/authController");
+// const AuthController = require("./controllers/authController");
 app.use(express.static("client/build"));
 
 app.get("/api/config", (req, res) => {
@@ -48,7 +48,7 @@ app.get("/api/config", (req, res) => {
 app.use("/api/parents", ParentSignUpController);
 app.use("/api/sessions", SessionController);
 app.use("/api/tutors", TutorController);
-app.use("/api/auth", AuthController);
+// app.use("/api/auth", AuthController);
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
