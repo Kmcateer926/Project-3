@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import LoginForm from "../../components/LoginForm/LoginForm";
+// import LoginForm from "../../components/LoginForm/LoginForm";
 import { Link } from "react-router-dom";
 
 const ParentForm = () => {
@@ -31,6 +31,7 @@ const parentData = {
     font: {
       fontFamily: "Special Elite, cursive",
 
+
      
     },
     heading: {
@@ -47,20 +48,19 @@ const parentData = {
   return (
     <>
     <div className="container" style={styles.font}>
-    <h1 className="title is-3 has-text-centered" style={styles.heading}>
+     
+    <h1 className="title is-2 has-text-centered" style={styles.heading}>
           Create Your Tutor Hub Account
         </h1>
         <h4 className="subtitle is-6 has-text-centered" style={styles.link}>
-          Already Have an Account?<a href="/signin"> Login</a>
+        
         </h4>
     </div>
     
      
       <div className="container" style={styles.font}>
-        <form
-          className="column"
-        
-        >
+     
+        <form className="column">
                  <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
               <label className="label" style={styles.link}>Name</label>

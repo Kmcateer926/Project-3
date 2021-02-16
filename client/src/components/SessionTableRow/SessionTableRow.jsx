@@ -35,28 +35,34 @@ const SessionTableRow = ({
       paddingTop: 25,
       paddingLeft: 35,
       paddingRight: 35,
-      
-      // color: "#ffffff"
+      fontSize: 20,
+      // overflow: "scroll",
+      fontWeight: 300
     },
   };
 
   return (
     <>
       <tr className="session" style={styles.session}>
-        <td>{tutor}</td>
+        <td>{tutor?.name}</td>
         <td>{student}</td>
-        <td>{date}</td>
+        <td>{new Date(date).toLocaleDateString()}</td>
         <td>{sessionLength}</td>
-
         <td>{time}</td>
 
-        <td class="fa">
-          <Link to={`/landing/${_id}`}>&#xf044;</Link>
+        <td>
+          <button className="fa button is-primary">
+            <Link to={`/landing/${_id}`}>&#xf044;</Link>
+          </button>
         </td>
+
+        {/* <td class="fa">
+					<Link to={`/landing/${_id}`}>&#xf044;</Link>
+				</td> */}
 
         <td>
           <button
-            class="fas fa-trash-alt"
+            className="fas fa-trash-alt button is-warning"
             onClick={() => {
               deleteSession(_id);
             }}

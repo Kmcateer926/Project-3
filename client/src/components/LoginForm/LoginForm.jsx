@@ -12,13 +12,30 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
       marginTop: 40,
       marginRight: 50,
       fontFamily: "Special Elite, cursive",
+      align: "center",
+  
+      color: "#ffffff"
     },
     submit: {
       paddingTop: 10,
     },
     button: {
       fontFamily: "Special Elite, cursive",
+      
     },
+    background: {
+    backgroundImage: `url("https://t4.ftcdn.net/jpg/03/67/24/77/360_F_367247734_rml9UJtyflIYwvH5Sp6zQkAoxDOnksSS.jpg")`,
+      backgroundSize: "cover",
+      backgroundPosition: "center center",
+      // backgroundSize: "cover",
+	  backgroundRepeat: "no-repeat",
+	  width: "100%",
+    //   maxWidth: "2310vw",
+      height: "100vh",
+      position: "fixed",
+      minWidth: "100%",
+      backgroundAttachment: "fixed",
+    }
   };
 
   function handleFormSubmit(event) {
@@ -41,11 +58,12 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
   return (
     <>
+    <div className="main" style={styles.background}>
       <div className="container" style={styles.signin}>
         <div className="columns">
           <div className="column has-text-centered">
-            <p className="title is-3">Welcome Back</p>
-            <p>Sign in to find your tutor</p>
+            <h1 className="title is-2" style={{color: "#ffffff", }}>Welcome Back</h1>
+            <div>Sign in to find your tutor</div>
           </div>
         </div>
       </div>
@@ -105,11 +123,12 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
               <div className="column has-text-centered">
                 <div class="control">
                   <button
-                    class="button is-link is-hovered"
+                    class="button"
                     style={styles.button}
                     onClick={handleFormSubmit}
                   >
-                    Sign In
+                      <Link to="/landing">Sign In</Link>
+                  
                   </button>
                 </div>
               </div>
@@ -123,12 +142,13 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
                   <Link>Forgot Password</Link>
                 </p>
                 <p>
-                  New to Tutor Hub? <a href="/parentsignup">Join now</a>
+                  New to Tutor Hub? <Link to="/parentsignup">Join now</Link>
                 </p>
               </div>
             </div>
           </div>
         </form>
+      </div>
       </div>
     </>
   );

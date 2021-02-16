@@ -100,17 +100,22 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
-                <strong>Date: </strong>{" "}
-                <input
-                  className="input"
-                  type="date"
-                  id="date"
-                  style={{ fontFamily: "Special Elite, cursive" }}
-                  value={date}
-                  onChange={(e) => {
-                    setDate(e.target.value);
-                  }}
-                />
+
+
+                <strong>Date: </strong>
+                {" "}
+                      <input
+                        className="input"
+                        type="date"
+                        id="date"
+                        style={{ fontFamily: "Special Elite, cursive" }}
+                        value={date}
+                        onChange={(e) => {
+                          setDate(e.target.value);
+                        }}
+                      />
+
+
                 {/* {teachers.name} */}
                 {/* <input
                   className="input is-danger"

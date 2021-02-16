@@ -40,7 +40,10 @@ const tutorSchema = new Schema({
     trim: true,
     required: "Enter a tutor image URL",
   },
-  
+  approved: {
+    type: Boolean,
+    default: false,
+  },
   
 
    session: [{type: Schema.Types.ObjectId, ref: "Session"}]

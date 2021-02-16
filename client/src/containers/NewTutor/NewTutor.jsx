@@ -18,16 +18,16 @@ const NewTutor = () => {
 			})
 			.catch((err) => {
 				console.log(err);
-				alert.setAlert({
-					message: "Failed to create new tutor.",
-					type: "danger",
-				});
+				// alert.setAlert({
+				// 	message: "Failed to create new tutor.",
+				// 	type: "danger",
+				// });
 			});
 	};
 
 	return (
 		<>
-			<div className="container">
+			<div>
 				<TutorForm
 					handleFormSubmit={handleFormSubmit}
 					buttonText="Create New Tutor"

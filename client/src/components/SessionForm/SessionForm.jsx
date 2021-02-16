@@ -8,10 +8,8 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
   const [sessionLength, setSessionLength] = useState("");
   const [time, setTime] = useState("");
 
-  const [approved, setApproved] = useState(false);
-
+  // const [approved, setApproved] = useState(false);
   const { id } = useParams();
-
   useEffect(() => {
     console.log(id);
     if (id) {
@@ -24,13 +22,13 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             date,
             sessionLength,
             time,
-            approved,
+            // approved,
           } = response.data;
           setStudent(student);
           setDate(date);
           setSessionLength(sessionLength);
           setTime(time);
-          setApproved(approved);
+          // setApproved(approved);
         })
         .catch((err) => {
           console.log(err);
@@ -50,7 +48,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               date,
               sessionLength,
               time,
-              approved,
+              // approved,
             },
             id
           );
@@ -59,6 +57,10 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         <div className="row">
           <div className="input-field col s6">
             <input
+              style={{
+                fontFamily: "Special Elite, cursive",
+                fontSize: "15px"
+              }}
               placeholder="Student Name"
               id="student"
               type="text"
@@ -72,8 +74,12 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
           </div>
           <div className="input-field col s6">
             <input
+                style={{
+                  fontFamily: "Special Elite, cursive",
+                  fontSize: "15px"
+               }}
               placeholder="Date"
-              id="date"
+              id="bulmaCalendar"
               type="date"
               name="date"
               value={date}
@@ -87,6 +93,10 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         <div className="row">
           <div className="input-field col s12">
             <select
+                style={{
+                  fontFamily: "Special Elite, cursive",
+                  fontSize: "15px"
+               }}
               type="text"
               value={sessionLength}
               onChange={(e) => {
@@ -104,6 +114,10 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         <div className="row">
           <div className="input-field col s12">
             <select
+                style={{
+                  fontFamily: "Special Elite, cursive",
+                  fontSize: "15px"
+               }}
               type="text"
               value={time}
               onChange={(e) => {
@@ -137,7 +151,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             {/* <label htmlFor="description">Time</label> */}
           </div>
         </div>
-        <div className="is-3" >
+        {/* <div className="is-3" >
           <label>
             <input
               type="checkbox"
@@ -148,13 +162,14 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             />
             <span style={{fontFamily:"Special Elite, cursive"}}>Approved</span>
           </label>
-        </div>
+        </div> */}
         {/* </div> */}
-        
-            <button type="submit" className="button is-light is-outlined ">
-              {buttonText}
-            </button>
-          
+
+        <button type="submit" className="button is-light is-outlined"style={{
+              fontFamily: "Special Elite, cursive",
+           }}>
+          {buttonText}
+        </button>
       </form>
     </>
   );

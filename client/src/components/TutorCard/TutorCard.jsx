@@ -17,7 +17,8 @@ const TutorCard = ({
 	const history = useHistory();
 
 	const handleFormSubmit = (event, formData) => {
-		event.preventDefault();
+    event.preventDefault();
+    formData.tutor = _id;
 		axios.post("/api/sessions", formData).then((response) => {
 			console.log(response);
 			history.push("/landing");

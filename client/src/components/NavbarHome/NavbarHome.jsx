@@ -13,16 +13,21 @@ const styles = {
 
     color: "#FFFFFF",
     fontFamily: "Special Elite, cursive",
+    // marginTop: 20,
+    // paddingRight: 35
+  },
+  tab: {
+    color: "#FFFFFF",
+    fontFamily: "Special Elite, cursive",
     marginTop: 20,
-    paddingRight: 35
+    paddingRight: 35,
+   
   }
 }
 
 const Navbar = () => {
-    return (
-
-      
-      
+  
+    return (      
         <>
         <div>
           <nav className="navbar is-mobile" role="navigation" aria-label="main navigation" style={styles.navbar}>
@@ -45,17 +50,25 @@ const Navbar = () => {
             <div id="navbarBasicExample" className="navbar-menu">
               <div className="navbar-start">
                 {/* <a className="navbar-item">Home</a> */}
-  <Link to="Home" className="navbar-item title is-1" style={styles.title}>Tutor Hub</Link>
+  <Link to="/" className="navbar-item title is-1" style={styles.title}>Tut<i className="fas fa-apple-alt fa-xs" style={{paddingBottom: "12px"}}></i>r Hub</Link>
   
   </div>
+
   
-  <div className="navbar-end">
   
-                {/* <a className="navbar-item">Documentation</a> */}
-                <NavLink to="/directory" className="navbar-item title is-3" activeClassName="active"><button class="button is-link is-rounded is-large" style={styles.title} >Tutors</button></NavLink>
-                <NavLink to="/parentsignup" className="navbar-item title is-3" activeClassName="active" style={styles.title}>Parent</NavLink>
+  <ul className="navbar-end">
+  <li>
+  <NavLink to="/directory" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Tutors</NavLink>
+  </li>
+       
+       <li>
+       <NavLink to="/loginform" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Sign-in</NavLink>
+       </li>
+                
+
+
               
-              </div>
+              </ul>
             </div>
           </nav>
         </div>
