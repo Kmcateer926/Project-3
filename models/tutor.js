@@ -32,6 +32,7 @@ const tutorSchema = new Schema({
   email: {
     type: String,
     unique: true,
+    sparse: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
  

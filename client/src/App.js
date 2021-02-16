@@ -32,7 +32,7 @@ function App() {
         <Router>
           <Navbar />
           <Route exact path="/" component={Home} />
-          <ProtectedRoute exact path="/landing/:id" component={EditSessionTest} token={token} />
+          <ProtectedRoute exact path="/landing/:id" component={Landing} token={token} />
           <Route exact path="/directory" component={Directory} />
           {/* <Route exact path="/session" component={Session} /> */}
           <Route exact path="/parentsignup" component={ParentSignUp} />
