@@ -21,6 +21,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
     },
     button: {
       fontFamily: "Special Elite, cursive",
+      color: "#ffffff"
       
     },
     background: {
@@ -81,7 +82,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
             <div className="columns">
               <div className="column is-three-fifths is-offset-one-fifth">
                 <div className="field">
-                  <label className="label" style={{color: "#ffffff"}}>Email</label>
+                  <label className="label" style={{color: "#ffffff", fontSize: "24px"}}>Email</label>
                   <div className="control">
                     <input
                     style={{ fontFamily: "Special Elite, cursive"}}
@@ -101,8 +102,8 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
             <div className="columns">
               <div className="column  is-three-fifths is-offset-one-fifth">
-                <div className="field">
-                  <label className="label" style={{color: "#ffffff"}}>Password</label>
+                <div className="field" >
+                  <label className="label" style={{color: "#ffffff", fontSize: "24px"}}>Password</label>
                   <div className="control">
                     <input
                       style={{ fontFamily: "Special Elite, cursive"}}
@@ -125,11 +126,11 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
               <div className="column has-text-centered">
                 <div class="control">
                   <button
-                    class="button"
+                    class="button is-light is-outlined"
                     style={styles.button}
                     onClick={handleFormSubmit}
                   >
-                      <Link to="/landing">Sign In</Link>
+                      <Link to="/landing" style={{color: "#ffffff", fontSize: "24px"}}>Sign In</Link>
                   
                   </button>
                 </div>
