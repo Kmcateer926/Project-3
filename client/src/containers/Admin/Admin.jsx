@@ -89,7 +89,9 @@ const Admin = () => {
             </tbody>
           </table>
         </div>
+        
       </body>
+      <div style={{height:"200px",backgroundImage: `url(${board})`}}></div>
     </>
   );
 

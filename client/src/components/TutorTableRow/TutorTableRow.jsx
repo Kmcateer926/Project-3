@@ -14,6 +14,7 @@ const TutorTableRow = ({
   approved,
   getTutors,
 }) => {
+
   const deleteTutor = (id) => {
     axios
       .delete(`/api/tutors/${id}`)
@@ -56,6 +57,7 @@ const TutorTableRow = ({
         /> */}
         </td>
 
+
         <td style={{ textAlign: "center" }}>
           <button
             className="fa fa-trash-alt"
@@ -68,6 +70,7 @@ const TutorTableRow = ({
       </tr>
     </>
   );
+
 };
 
 TutorTableRow.propTypes = {
