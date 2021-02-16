@@ -16,6 +16,7 @@ import EditSessionTest from "./containers/EditSessionTest/EditSessionTest"
 import Admin from "./containers/Admin/Admin";
 import NewSession from "./containers/NewSession/NewSession";
 import NewTutor from "./containers/NewTutor/NewTutor";
+import About from "./containers/About/About.jsx"
 // import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx"
 function App() {
   useEffect(() => {
@@ -35,6 +36,7 @@ function App() {
           {/* <ProtectedRoute exact path="/landing/:id" component={EditSessionTest} token={token} /> */}
 		  <Route exact path="/landing/:id" component={EditSessionTest} />
           <Route exact path="/directory" component={Directory} />
+          <Route exact path="/about" component={About} />
           {/* <Route exact path="/session" component={Session} /> */}
           <Route exact path="/parentsignup" component={ParentSignUp} />
           {/* <Route exact path="/editsession" component={EditSession} /> */}
