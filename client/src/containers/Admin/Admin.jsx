@@ -33,37 +33,51 @@ const Admin = () => {
 
 	return (
 		<>
-    <body style={{backgroundImage:`url(${board})`}}>
-    <div style={{ height: "50px" }}></div>
-			<div className="column is-12">
-				<h1 style={{textAlign:"center", color:"white",fontSize:"60px", fontFamily:"Special Elite, cursive"}}>Admin View</h1>
-			</div>
-			<div style={{ height: "50px" }}></div>
-<div className="container">
-			<table id="admin-table"className="table is-bordered  is-narrow  is-fullwidth" style={{backgroundImage:`url(${board})`}}>
-				<thead>
-					<tr  >
-						<th id="row">NAME</th>
-						<th id="row">EDUCATION</th>
-						<th id="row">SUBJECTS</th>
-						<th id="row">YEARS</th>
-						<th id="row">APPROVED</th>
-						<th id="row"> DELETE</th>
-					</tr>
-				</thead>
+			<body style={{ backgroundImage: `url(${board})` }}>
+				<div style={{ height: "60px" }}>
+				</div>
+				<div className="column is-12">
+					<h1
+						style={{
+							textAlign: "center",
+							color: "white",
+							fontSize: "60px",
+							fontFamily: "Special Elite, cursive",
+						}}
+					>
+						Admin View
+					</h1>
+				</div>
+				<div style={{ height: "50px" }}></div>
+				<div className="container">
+					<table
+						id="admin-table"
+						className="table is-bordered  is-narrow  is-fullwidth"
+						style={{ backgroundImage: `url(${board})` }}
+					>
+						<thead>
+							<tr>
+								<th id="row">NAME</th>
+								<th id="row">EDUCATION</th>
+								<th id="row">SUBJECTS</th>
+								<th id="row">YEARS</th>
+								<th id="row">APPROVED</th>
+								<th id="row"> DELETE</th>
+							</tr>
+						</thead>
 
-				<tbody>
-					{tutors.map((tutor) => (
-						<TutorTableRow 
-							key={tutor._id}
-							{...tutor}
-							getTutors={getTutors}
-						/>
-					))}
-				</tbody>
-			</table>
-      </div>
-      </body>
+						<tbody>
+							{tutors.map((tutor) => (
+								<TutorTableRow
+									key={tutor._id}
+									{...tutor}
+									getTutors={getTutors}
+								/>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</body>
 		</>
 	);
 };
