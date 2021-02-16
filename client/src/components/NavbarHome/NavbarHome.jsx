@@ -5,7 +5,7 @@ const styles = {
 
   navbar: {
     fontFamily: "Special Elite, cursive",
-    background: " #94b8b8",
+    background: " #2674DB",
    
   },
 
@@ -50,13 +50,18 @@ const Navbar = () => {
             <div id="navbarBasicExample" className="navbar-menu">
               <div className="navbar-start">
                 {/* <a className="navbar-item">Home</a> */}
-  <Link to="/" className="navbar-item title is-1" style={styles.title}>Tut<i className="fas fa-apple-alt fa-xs" style={{paddingBottom: "12px"}}></i>r Hub</Link>
+  <Link to="/" className="navbar-item title is-1" style={styles.title}>Tut<i className="fas fa-apple-alt fa-xs" style={{paddingBottom: "12px", color:"red"}}></i>r Hub</Link>
   
   </div>
 
   
   
   <ul className="navbar-end">
+  <li>
+
+  <NavLink to="/landing" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Sessions</NavLink>
+
+  </li>
   <li>
   <NavLink to="/directory" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Tutors</NavLink>
   </li>

@@ -22,6 +22,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
     },
     button: {
       fontFamily: "Special Elite, cursive",
+      color: "#ffffff",
     },
     background: {
       backgroundImage: `url("https://t4.ftcdn.net/jpg/03/67/24/77/360_F_367247734_rml9UJtyflIYwvH5Sp6zQkAoxDOnksSS.jpg")`,
@@ -55,7 +56,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
         setToken(response.data.token);
         console.log(setToken);
         alert("Successfully Logged in user");
-        
+
         console.log(response.data.token);
       })
       .catch((err) => console.log(err));
@@ -88,9 +89,15 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
               <div className="columns">
                 <div className="column is-three-fifths is-offset-one-fifth">
                   <div className="field">
-                    <label className="label">Email</label>
+                    <label
+                      className="label"
+                      style={{ color: "#ffffff", fontSize: "24px" }}
+                    >
+                      Email
+                    </label>
                     <div className="control">
                       <input
+                        style={{ fontFamily: "Special Elite, cursive" }}
                         className="input"
                         type="text"
                         placeholder="email@email.com"
@@ -104,13 +111,18 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
                   </div>
                 </div>
               </div>
-
               <div className="columns">
                 <div className="column  is-three-fifths is-offset-one-fifth">
                   <div className="field">
-                    <label className="label">Password</label>
+                    <label
+                      className="label"
+                      style={{ color: "#ffffff", fontSize: "24px" }}
+                    >
+                      Password
+                    </label>
                     <div className="control">
                       <input
+                        style={{ fontFamily: "Special Elite, cursive" }}
                         className="input"
                         type="password"
                         placeholder="password"
@@ -130,24 +142,28 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
                 <div className="column has-text-centered">
                   <div class="control">
                     <button
-                      class="button"
+                      class="button is-light is-outlined"
                       style={styles.button}
                       onClick={handleFormSubmit}
                     >
-                      <Link to="/landing">Sign In</Link>
+                      <Link
+                        to="/landing"
+                        style={{ color: "#ffffff", fontSize: "24px" }}
+                      >
+                        Sign In
+                      </Link>
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-
             <div className="container">
               <div className="columns">
                 <div className="column has-text-centered" style={styles.button}>
                   <p>
                     <Link>Forgot Password</Link>
                   </p>
-                  <p>
+                  <p style={{ color: "#ffffff" }}>
                     New to Tutor Hub? <Link to="/parentsignup">Join now</Link>
                   </p>
                 </div>
@@ -159,5 +175,4 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
     </>
   );
 };
-
 export default LoginForm;
