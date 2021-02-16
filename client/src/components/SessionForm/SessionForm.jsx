@@ -108,7 +108,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               <option>60</option>
               <option>90</option>
             </select>
-            {/* <label htmlFor="description">Session Length</label> */}
+    
           </div>
         </div>
         <div className="row">
@@ -138,32 +138,12 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               <option>8:00 PM</option>
             </select>
 
-            {/* <input
-              placeholder="SessionLength"
-              id="time"
-              type="text"
-              name="time"
-              value={time}
-              onChange={(e) => {
-                setTime(e.target.value);
-              }}
-            /> */}
-            {/* <label htmlFor="description">Time</label> */}
+            
+            
           </div>
         </div>
-        {/* <div className="is-3" >
-          <label>
-            <input
-              type="checkbox"
-              checked={approved}
-              onChange={() => {
-                setApproved(!approved);
-              }}
-            />
-            <span style={{fontFamily:"Special Elite, cursive"}}>Approved</span>
-          </label>
-        </div> */}
-        {/* </div> */}
+       
+        
 
         <button type="submit" className="button is-light is-outlined"style={{
               fontFamily: "Special Elite, cursive",
