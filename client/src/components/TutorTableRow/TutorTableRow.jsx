@@ -64,7 +64,9 @@ const TutorTableRow = ({
 					/>
 				</td>
 			</tr>
+      
 		</>
+    
 	);
 };
 
