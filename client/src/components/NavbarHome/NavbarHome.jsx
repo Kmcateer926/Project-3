@@ -58,7 +58,9 @@ const Navbar = () => {
   
   <ul className="navbar-end">
   <li>
-  <NavLink to="/landing" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Session</NavLink>
+
+  <NavLink to="/landing" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Sessions</NavLink>
+
   </li>
   <li>
   <NavLink to="/directory" className="navbar-item title is-4" activeClassName="active" style={styles.tab}>Tutors</NavLink>
