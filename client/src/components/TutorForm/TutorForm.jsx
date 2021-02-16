@@ -109,12 +109,13 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 									setName(e.target.value);
 								}}
 								style={{
-									marginBottom: "5px",
+									marginBottom: "5px", fontFamily: "Special Elite, cursive"
 								}}
 							/>
 							<input
 								className="input is-normal is-link"
 								placeholder="Tutor Image"
+								style={{fontFamily: "Special Elite, cursive"}} 
 								id="imageURL"
 								type="text"
 								name="imageURL"
@@ -123,7 +124,7 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 									setImageURL(e.target.value);
 								}}
 								style={{
-									marginBottom: "5px",
+									marginBottom: "5px", fontFamily: "Special Elite, cursive"
 								}}
 							/>
 							<input
@@ -137,7 +138,7 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 									setEducation(e.target.value);
 								}}
 								style={{
-									marginBottom: "5px",
+									marginBottom: "5px", fontFamily: "Special Elite, cursive"
 								}}
 							/>
 							<input
@@ -151,7 +152,7 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 									setSubjects(e.target.value);
 								}}
 								style={{
-									marginBottom: "5px",
+									marginBottom: "5px", fontFamily: "Special Elite, cursive"
 								}}
 							/>
 							<input
@@ -165,7 +166,7 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 									setExperience(e.target.value);
 								}}
 								style={{
-									marginBottom: "5px",
+									marginBottom: "5px", fontFamily: "Special Elite, cursive"
 								}}
 							/>
 							<div></div>{" "}
@@ -180,6 +181,9 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 										name="email"
 										onChange={(e) => {
 											setEmail(e.target.value);
+										}}
+										style={{
+											marginBottom: "5px", fontFamily: "Special Elite, cursive"
 										}}
 									/>
 									<span className="icon is-small is-left">
