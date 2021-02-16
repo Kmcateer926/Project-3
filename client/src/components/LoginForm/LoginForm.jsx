@@ -21,6 +21,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
     },
     button: {
       fontFamily: "Special Elite, cursive",
+      color: "#ffffff"
       
     },
     background: {
@@ -81,9 +82,10 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
             <div className="columns">
               <div className="column is-three-fifths is-offset-one-fifth">
                 <div className="field">
-                  <label className="label">Email</label>
+                  <label className="label" style={{color: "#ffffff", fontSize: "24px"}}>Email</label>
                   <div className="control">
                     <input
+                    style={{ fontFamily: "Special Elite, cursive"}}
                       className="input"
                       type="text"
                       placeholder="email@email.com"
@@ -100,10 +102,11 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
             <div className="columns">
               <div className="column  is-three-fifths is-offset-one-fifth">
-                <div className="field">
-                  <label className="label">Password</label>
+                <div className="field" >
+                  <label className="label" style={{color: "#ffffff", fontSize: "24px"}}>Password</label>
                   <div className="control">
                     <input
+                      style={{ fontFamily: "Special Elite, cursive"}}
                       className="input"
                       type="password"
                       placeholder="password"
@@ -123,11 +126,11 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
               <div className="column has-text-centered">
                 <div class="control">
                   <button
-                    class="button"
+                    class="button is-light is-outlined"
                     style={styles.button}
                     onClick={handleFormSubmit}
                   >
-                      <Link to="/landing">Sign In</Link>
+                      <Link to="/landing" style={{color: "#ffffff", fontSize: "24px"}}>Sign In</Link>
                   
                   </button>
                 </div>
@@ -141,7 +144,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
                 <p>
                   <Link>Forgot Password</Link>
                 </p>
-                <p>
+                <p style={{color: "#ffffff"}}>
                   New to Tutor Hub? <Link to="/parentsignup">Join now</Link>
                 </p>
               </div>
