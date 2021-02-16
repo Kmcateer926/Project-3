@@ -66,18 +66,21 @@ const Admin = () => {
 							</tr>
 						</thead>
 
-						<tbody>
-							{tutors.map((tutor) => (
-								<TutorTableRow
-									key={tutor._id}
-									{...tutor}
-									getTutors={getTutors}
-								/>
-							))}
-						</tbody>
-					</table>
-				</div>
-			</body>
+
+				<tbody>
+					{tutors.map((tutor) => (
+						<TutorTableRow 
+							key={tutor._id}
+							{...tutor}
+							getTutors={getTutors}
+						/>
+					))}
+				</tbody>
+			</table>
+      </div>
+      </body>
+      <div style={{height:"200px",backgroundImage:`url(${board})`}}></div>
+
 		</>
 	);
 };
