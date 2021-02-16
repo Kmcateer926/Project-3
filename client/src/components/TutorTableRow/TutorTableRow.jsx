@@ -41,9 +41,9 @@ const TutorTableRow = ({
 				<td>{name}</td>
 				<td>{education}</td>
 				<td>{subjects}</td>
-				<td style={{textAlign:"center"}}>{experience}</td>
-				<td style={{textAlign:"center"}}>
-					<label class="checkbox" >
+				<td style={{ textAlign: "center" }}>{experience}</td>
+				<td style={{ textAlign: "center" }}>
+					<label class="checkbox">
 						<Switch
 							isOn={approved}
 							handleToggle={() => editTutor(_id, approved)}
@@ -55,20 +55,18 @@ const TutorTableRow = ({
         /> */}
 				</td>
 
-				<td style={{textAlign:"center"}}>
+				<td style={{ textAlign: "center" }}>
 					<button
-						className="fa fa-trash-alt" style={{fontSize:"24px", marginTop:"8px"}}
+						className="fa fa-trash-alt"
+						style={{ fontSize: "24px", marginTop: "8px" }}
 						onClick={() => {
 							deleteTutor(_id);
 						}}
 					/>
 				</td>
 			</tr>
-
-      <div style={{height:"100px"}}></div>
-
+      
 		</>
-    
 	);
 };
 
