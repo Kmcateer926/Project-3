@@ -3,17 +3,17 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const parentSchema = new Schema({
-  name: {
-    type: String,
-    trim: true,
-    required: "First name is Required"
-  },
+  // name: {
+  //   type: String,
+  //   trim: true,
+  //   required: "name"
+  // },
 
-//   lastName: {
-//     type: String,
-//     trim: true,
-//     required: "Last name is Required"
-//   },
+  //   lastName: {
+  //     type: String,
+  //     trim: true,
+  //     required: "Last name is Required"
+  //   },
 
   password: {
     type: String,
@@ -27,7 +27,7 @@ const parentSchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
-//may or may not need userCreated
+  //may or may not need userCreated
   // userCreated: {
   //   type: Date,
   //   default: Date.now
@@ -40,12 +40,17 @@ const parentSchema = new Schema({
   //   }
   // ],
 
-//   status: null,
+  //   status: null,
 
   // id: {
   //   type: Number,
   //   required: true
   // }
+});
+
+parentSchema.pre("save", function (next) {
+  this.email = this.email.toLowerCase();
+  next();
 });
 
 const Parent = mongoose.model("SignUp", parentSchema);
