@@ -81,9 +81,10 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
             <div className="columns">
               <div className="column is-three-fifths is-offset-one-fifth">
                 <div className="field">
-                  <label className="label">Email</label>
+                  <label className="label" style={{color: "#ffffff"}}>Email</label>
                   <div className="control">
                     <input
+                    style={{ fontFamily: "Special Elite, cursive"}}
                       className="input"
                       type="text"
                       placeholder="email@email.com"
@@ -101,9 +102,10 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
             <div className="columns">
               <div className="column  is-three-fifths is-offset-one-fifth">
                 <div className="field">
-                  <label className="label">Password</label>
+                  <label className="label" style={{color: "#ffffff"}}>Password</label>
                   <div className="control">
                     <input
+                      style={{ fontFamily: "Special Elite, cursive"}}
                       className="input"
                       type="password"
                       placeholder="password"
@@ -141,7 +143,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
                 <p>
                   <Link>Forgot Password</Link>
                 </p>
-                <p>
+                <p style={{color: "#ffffff"}}>
                   New to Tutor Hub? <Link to="/parentsignup">Join now</Link>
                 </p>
               </div>
