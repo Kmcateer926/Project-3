@@ -33,8 +33,12 @@ function App() {
         <Router>
           <Navbar />
           <Route exact path="/" component={Home} />
+<<<<<<< HEAD
           {/* <ProtectedRoute exact path="/landing/:id" component={EditSessionTest} token={token} /> */}
 		  <Route exact path="/landing/:id" component={EditSessionTest} />
+=======
+          <ProtectedRoute exact path="/landing/:id" component={Landing} token={token} />
+>>>>>>> 34d5a11444ae97f0b6880322dea97b905eb16e41
           <Route exact path="/directory" component={Directory} />
           <Route exact path="/about" component={About} />
           {/* <Route exact path="/session" component={Session} /> */}
