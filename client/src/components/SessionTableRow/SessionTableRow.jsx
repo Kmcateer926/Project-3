@@ -50,7 +50,7 @@ const SessionTableRow = ({
         <td>{sessionLength}</td>
         <td>{time}</td>
 
-        <td>
+        <td style={{textAlign: "center"}}>
           <button className="fa button is-primary">
             <Link to={`/landing/${_id}`}>&#xf044;</Link>
           </button>
@@ -60,9 +60,10 @@ const SessionTableRow = ({
 					<Link to={`/landing/${_id}`}>&#xf044;</Link>
 				</td> */}
 
-        <td>
+        <td style={{textAlign: "center"}}>
           <button
-            className="fas fa-trash-alt button is-warning"
+            className="fa fa-trash-alt button is-warning"
+            style={{opacity: "1"}}
             onClick={() => {
               deleteSession(_id);
             }}
