@@ -73,29 +73,42 @@ const Navbar = ({setToken, token}) => {
 
 						<ul className="navbar-end">
 							<li>
-								<NavLink
+                {token ? (
+                  <a onClick={() => {setToken("")}} style={{color: "#ffffff", fontSize: "24px", marginRight: "25px"}}>Sessions</a>
+                ) : (
+                  <NavLink
 									to="/landing"
 									className="navbar-item title is-4"
 									activeClassName="active"
 									style={styles.tab}
 								>
-									Sessions
+							
 								</NavLink>
+                )}
+							
 							</li>
 							<li>
-								<NavLink
+                {token ? (
+                  <a onClick={() => {setToken("")}} style={{color: "#ffffff", fontSize: "24px", marginRight: "25px", margin: "25px"}}>Tutors</a>
+                ) : (
+                  <NavLink
 									to="/directory"
 									className="navbar-item title is-4"
 									activeClassName="active"
 									style={styles.tab}
 								>
-									Tutors
+						
 								</NavLink>
+                )}
+							
 							</li>
 
 							<li>
                 {token ? (
-                  <a onClick={() => {setToken("")}} style={{color: "#ffffff"}}>Sign-out</a>
+       <a onClick={() => {setToken("")}} style={{color: "#ffffff", fontSize: "24px", marginBottom: "25px", margin: "25px"}}>Sign-out</a>          
+
+                    
+             
                 ) : (
 
                   <NavLink
