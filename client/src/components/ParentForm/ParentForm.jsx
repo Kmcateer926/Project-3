@@ -18,7 +18,7 @@ const parentData = {
   email,
   password
 }
-      axios.post("/api/parents", parentData)({email, password})
+      axios.post("/api/parents", parentData)
         .then(() => {
           
           alert("Successfully Created user");

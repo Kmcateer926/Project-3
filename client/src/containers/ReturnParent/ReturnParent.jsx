@@ -9,7 +9,7 @@ const ReturnParent = () => {
     const handleLoginSubmit = (e, parentData) => {
         e.preventDefault();
         axios
-          .post("/api/parents", parentData)
+          .post("/api/login", parentData)
           .then((response) => {
             console.log(response.data);
           })
