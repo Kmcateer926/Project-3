@@ -103,6 +103,23 @@ const Navbar = ({setToken, token}) => {
 							
 							</li>
 
+              <li>
+                {token ? (
+                  <a onClick={()=> {setToken("")}}></a>
+                ) : (
+                  <NavLink
+									to="/about"
+									className="navbar-item title is-4"
+									activeClassName="active"
+									style={styles.tab}
+								>
+							About
+								</NavLink>
+                )}
+           
+
+              </li>
+
 							<li>
                 {token ? (
        <a onClick={() => {setToken("")}} style={{color: "#ffffff", fontSize: "24px", marginBottom: "25px", margin: "25px"}}>Sign-out</a>          
