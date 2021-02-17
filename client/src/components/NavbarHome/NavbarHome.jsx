@@ -24,7 +24,7 @@ const styles = {
 	},
 };
 
-const Navbar = () => {
+const Navbar = ({setToken, token}) => {
 	return (
 		<>
 			<div>
@@ -94,7 +94,11 @@ const Navbar = () => {
 							</li>
 
 							<li>
-								<NavLink
+                {token ? (
+                  <a onClick={() => {setToken("")}} style={{color: "#ffffff"}}>Sign-out</a>
+                ) : (
+
+                  <NavLink
 									to="/loginform"
 									className="navbar-item title is-4"
 									activeClassName="active"
@@ -102,6 +106,8 @@ const Navbar = () => {
 								>
 									Sign-in
 								</NavLink>
+                )}
+							
 							</li>
 						</ul>
 					</div>
