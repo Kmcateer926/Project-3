@@ -41,6 +41,7 @@ router.post("/", (req, res) => {
 });
 
 router.post("/loginform", (req, res) => {
+  console.log(req.body);
   Parent.findOne({email: req.body.email.toLowerCase() }).then((foundParent) => {
       console.log(foundParent);
       bcrypt.compare(req.body.password, foundParent.password).then((result) => {

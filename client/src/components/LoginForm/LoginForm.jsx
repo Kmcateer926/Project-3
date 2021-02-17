@@ -49,16 +49,17 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
     axios
 
-      .post("/api/login", parentData)
+      .post("/api/parents/loginform", parentData)
       .then((response) => {
         // console.log("just checking");
 
-        history.push("/landing");
+      
         setToken(response.data.token);
         console.log(setToken);
       
 
         console.log(response.data.token);
+        history.push("/landing");
       })
       .catch((err) => console.log(err));
   }
