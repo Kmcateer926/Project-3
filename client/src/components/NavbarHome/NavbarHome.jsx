@@ -94,6 +94,7 @@ const Navbar = ({ setToken, token }) => {
                       fontSize: "24px",
                       marginRight: "25px",
                     }}
+                    href="/"
                   >
                    
                   </a>)}
