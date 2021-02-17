@@ -6,20 +6,22 @@ import LoginForm from "../../components/LoginForm/LoginForm"
 
 const ReturnParent = () => {
 
-    const handleLoginSubmit = (e, parentData) => {
-        e.preventDefault();
-        axios
-          .post("/api/parents", parentData)
-          .then((response) => {
-            console.log(response.data);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      };
+    // const handleLoginSubmit = (e, parentData) => {
+    //     e.preventDefault();
+    //     axios
+    //       .post("/api/login", parentData)
+    //       .then((response) => {
+    //         console.log(response.data);
+    //       })
+    //       .catch((err) => {
+    //         console.log(err);
+    //       });
+    //   };
     return (
         <div className="login">
-              <LoginForm handleLoginSubmit={handleLoginSubmit} />
+              <LoginForm 
+            //   handleLoginSubmit={handleLoginSubmit} 
+              />
         </div>
     );
 };

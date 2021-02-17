@@ -18,7 +18,7 @@ const parentData = {
   email,
   password
 }
-      axios.post("/api/parents", parentData)({email, password})
+      axios.post("/api/parents", parentData)
         .then(() => {
           
           alert("Successfully Created user");
@@ -66,7 +66,7 @@ const parentData = {
             <div className="field">
               <label className="label" style={styles.link}>Name</label>
               <div className="control">
-                <input className="input" type="text" id="name" placeholder="Name"   name="name" value={name}
+                <input className="input" type="text" id="name" placeholder="Name"  style={{fontFamily: "Special Elite, cursive",}} name="name" value={name}
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
@@ -79,10 +79,11 @@ const parentData = {
 
 <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
-              <label className="label"   style={styles.link}>Email</label>
+              <label className="label" style={styles.link}>Email</label>
               <div className="control has-icons-left has-icons-right">
                 <input
                   className="input"
+                  style={{fontFamily: "Special Elite, cursive",}} 
                   type="email"
                   placeholder="Parent Email"
                   id="email"
@@ -108,6 +109,7 @@ const parentData = {
               <div className="control">
                 <input
                   className="input"
+                  style={{fontFamily: "Special Elite, cursive",}} 
                   type="password"
                   placeholder="Password"
                   id="password"

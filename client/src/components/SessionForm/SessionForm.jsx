@@ -59,7 +59,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             <input
               style={{
                 fontFamily: "Special Elite, cursive",
-                fontSize: "15px"
+                fontSize: "18px"
               }}
               placeholder="Student Name"
               id="student"
@@ -76,7 +76,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             <input
                 style={{
                   fontFamily: "Special Elite, cursive",
-                  fontSize: "15px"
+                  fontSize: "18px"
                }}
               placeholder="Date"
               id="bulmaCalendar"
@@ -95,7 +95,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             <select
                 style={{
                   fontFamily: "Special Elite, cursive",
-                  fontSize: "15px"
+                  fontSize: "18px"
                }}
               type="text"
               value={sessionLength}
@@ -116,7 +116,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             <select
                 style={{
                   fontFamily: "Special Elite, cursive",
-                  fontSize: "15px"
+                  fontSize: "18px"
                }}
               type="text"
               value={time}
@@ -147,6 +147,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
 
         <button type="submit" className="button is-light is-outlined"style={{
               fontFamily: "Special Elite, cursive",
+              fontSize: "20px"
            }}>
           {buttonText}
         </button>

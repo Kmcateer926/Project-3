@@ -48,7 +48,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
     axios
 
-      .post("/api/parents", parentData)
+      .post("/api/login", parentData)
       .then((response) => {
         // console.log("just checking");
 
