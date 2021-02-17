@@ -45,12 +45,12 @@ app.get("/api/config", (req, res) => {
   });
 });
 
-app.post("/api/login", (req, res) => {
-  res.json({
-    message: "Successfully signed in",
-    token: "banana"
-  })
-})
+// app.post("/api/login", (req, res) => {
+//   res.json({
+//     message: "Successfully signed in",
+//     token: "banana"
+//   })
+// })
 
 app.use("/api/parents", ParentSignUpController);
 app.use("/api/sessions", SessionController);
