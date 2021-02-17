@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <>
         <Router>
-          <Navbar />
+          <Navbar token={token} setToken={setToken}/>
           <Route exact path="/" component={Home} />
           <ProtectedRoute exact path="/landing" component={Landing} token={token} />
           <Route exact path="/directory" component={Directory} />

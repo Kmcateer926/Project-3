@@ -33,9 +33,10 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
       width: "100%",
       //   maxWidth: "2310vw",
       height: "100vh",
-      position: "fixed",
+    //   position: "fixed",
       minWidth: "100%",
-      backgroundAttachment: "fixed",
+    //   backgroundAttachment: "fixed",
+      margin: "0"
     },
   };
 
@@ -55,7 +56,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
         history.push("/landing");
         setToken(response.data.token);
         console.log(setToken);
-        alert("Successfully Logged in user");
+      
 
         console.log(response.data.token);
       })
@@ -64,6 +65,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
   return (
     <>
+    	<html style={{ margin: "0" }}>
       <div className="main" style={styles.background}>
         <div className="container" style={styles.signin}>
           <div className="columns">
@@ -75,7 +77,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
             </div>
           </div>
         </div>
-        <div className="container" style={styles.font}>
+        <div className="container">
           <form
             className="column"
             onSubmit={(e) => {
@@ -172,6 +174,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
           </form>
         </div>
       </div>
+      </html>
     </>
   );
 };
