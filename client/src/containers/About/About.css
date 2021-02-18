@@ -1,3 +1,4 @@
-.vid {
-  height: 400px;
+.video {
+  display: block;
+  margin: 0 auto;
 }
