@@ -33,7 +33,7 @@
   ### Contributors
   Estefania Lupo, Geoff Nix, Andrew Amerson, Kevin McAteer
    ### Github 
-  kmcateerKmcateer926
+  Kmcateer926
   ### Email
   kmcateer926@gmail.com, nialupo87@gmail.com, aamerson198@gmail.com,
   ### Phone
