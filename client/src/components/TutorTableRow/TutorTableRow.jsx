@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-// import board from "../../components/ChalkBG/chalkBoard.jpg";
 import "./TutorTableRow.css";
 import PropTypes from "prop-types";
 import Switch from "../../components/Switch/Switch";
@@ -14,7 +13,6 @@ const TutorTableRow = ({
   approved,
   getTutors,
 }) => {
-
   const deleteTutor = (id) => {
     axios
       .delete(`/api/tutors/${id}`)
@@ -46,17 +44,12 @@ const TutorTableRow = ({
         <td style={{ textAlign: "center" }}>
           <label>
             <Switch
-			id={_id}
+              id={_id}
               isOn={approved}
               handleToggle={() => editTutor(_id)}
             />
           </label>
-          {/* <button
-          icon={approved}
-         
-        /> */}
         </td>
-
 
         <td style={{ textAlign: "center" }}>
           <button
@@ -70,7 +63,6 @@ const TutorTableRow = ({
       </tr>
     </>
   );
-
 };
 
 TutorTableRow.propTypes = {

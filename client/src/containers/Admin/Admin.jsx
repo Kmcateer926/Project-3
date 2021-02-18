@@ -5,16 +5,7 @@ import board from "../../components/ChalkBG/chalkBoard.jpg";
 import TutorTableRow from "../../components/TutorTableRow/TutorTableRow";
 
 const Admin = () => {
-  // 1. hard code the render
-  // 2. move the values to this.state
-  // 3. make the api call to return the data dynamically.
-  // 3a. Import useEffect - when to go get the data.
-  // 3b. Import axios
-  // 3c. Inside useEffect, make an axios call.
-  // 3d. set the response.data on state (setProducts) NEVER DIRECTLY MUTATE STATE
-
   const [tutors, setTutors] = useState([]);
-
   useEffect(() => {
     getTutors();
   }, []);
@@ -30,8 +21,6 @@ const Admin = () => {
         console.log(err);
       });
   };
-
-
 
   return (
     <>
@@ -49,12 +38,15 @@ const Admin = () => {
             Admin View
           </h1>
           <div>
-            <h4 className="subtitle is-6 has-text-centered" style={{
-              textAlign: "center",
-              color: "white",
-              fontSize: "18px",
-              fontFamily: "Special Elite, cursive",
-            }} >
+            <h4
+              className="subtitle is-6 has-text-centered"
+              style={{
+                textAlign: "center",
+                color: "white",
+                fontSize: "18px",
+                fontFamily: "Special Elite, cursive",
+              }}
+            >
               Need a new tutor?<a href="/admin/new-tutor"> New Tutor</a>
             </h4>
           </div>
@@ -77,7 +69,6 @@ const Admin = () => {
                 <th id="row"> DELETE</th>
               </tr>
             </thead>
-
             <tbody>
               {tutors.map((tutor) => (
                 <TutorTableRow
@@ -89,13 +80,10 @@ const Admin = () => {
             </tbody>
           </table>
         </div>
-        
       </body>
-      <div style={{height:"200px",backgroundImage: `url(${board})`}}></div>
+      <div style={{ height: "200px", backgroundImage: `url(${board})` }}></div>
     </>
   );
-
-
 };
 
 export default Admin;

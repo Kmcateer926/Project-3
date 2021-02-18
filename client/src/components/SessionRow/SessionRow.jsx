@@ -3,7 +3,15 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessions }) => {
+const SessionRow = ({
+  _id,
+  tutor,
+  date,
+  sessionLength,
+  time,
+  approved,
+  getSessions,
+}) => {
   const deleteSession = (id) => {
     console.log(id, "test");
     axios
@@ -58,77 +66,50 @@ const SessionRow = ({ _id, tutor, date, sessionLength, time, approved, getSessio
                 Tutor Sessions
               </h1>
               <div>
-                {/* <p
-                  style={{
-                    fontFamily: "Special Elite, cursive",
-                  }}
-                > */}
-                  <table className="table is-bordered is-striped is-fullwidth is-hoverable">
-                    {/* <thead>
-                      <tr>
-                        <th>Tutor</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Minutes</th>
-                      </tr>
-                    </thead> */}
-                    <tbody>
-                      <tr>
-                        <th>{tutor}</th>
-						<th>{new Date(date).toLocaleString()}</th>
-                        <th>{new Date(time).toTimeString()}</th>
-                        <th>{sessionLength}</th>
-                        <td
-                          class="fa"
-                          // href="/admin/:id"
-                          // style={{ margin: "5px" }}
-                        >
-                          <Link to={`/landing/${_id}`}>&#xf044;</Link>
-
-													{/* // 	className="fa"
-												// 	onClick={() => {}}
-												// 	style={{ */}
-													{/* // 		margin: "10px",
-												// 		marginBottom: "5px",
-												// 	}}
-												// > */}
-													{/* // 	&#xf044; */}
-												</td>
-												<td
-													class="fa "
-													onClick={() => {}}
-													style={{ margin: "10px" }}
-												>
-													&#xf03a;
-												</td>
-												<td
-													class="fa"
-													onClick={() => {
-														deleteSession(_id);
-													}}
-													style={{ margin: "10px" }}
-												>
-													&#xf1f8;
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+                <table className="table is-bordered is-striped is-fullwidth is-hoverable">
+                  <tbody>
+                    <tr>
+                      <th>{tutor}</th>
+                      <th>{new Date(date).toLocaleString()}</th>
+                      <th>{new Date(time).toTimeString()}</th>
+                      <th>{sessionLength}</th>
+                      <td class="fa">
+                        <Link to={`/landing/${_id}`}>&#xf044;</Link>
+                      </td>
+                      <td
+                        class="fa "
+                        onClick={() => {}}
+                        style={{ margin: "10px" }}
+                      >
+                        &#xf03a;
+                      </td>
+                      <td
+                        class="fa"
+                        onClick={() => {
+                          deleteSession(_id);
+                        }}
+                        style={{ margin: "10px" }}
+                      >
+                        &#xf1f8;
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 SessionRow.propTypes = {
-	_id: PropTypes.string.isRequired,
-	tutor: PropTypes.string.isRequired,
-	time: PropTypes.string.isRequired,
-	sessionLength: PropTypes.number.isRequired,
-	date: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
+  tutor: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  sessionLength: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 export default SessionRow;

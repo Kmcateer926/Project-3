@@ -22,13 +22,13 @@ router.get("/approved", (req, res) => {
     });
 });
 
-
 router.get("/:id", (req, res) => {
   Tutor.find({
     where: {
       id: req.params.id,
     },
-  }).populate("session")
+  })
+    .populate("session")
     .then((tutors) => {
       res.json(tutors);
     })
@@ -63,15 +63,5 @@ router.delete("/:id", (req, res) => {
     res.json(result);
   });
 });
-// // FOUND THE CREATED SIGNUP TO ENABLE LOGIN
-// router.post("/login", (req,res) => {
-//   console.log(req.body);
-//   Tutor.find(req.body).then((Tutor) => {
-//     console.log(Tutor);
-//     res.json(Tutor);
-//   }).catch((err) => {
-//     console.log(err);
-//   });
-// });
 
 module.exports = router;

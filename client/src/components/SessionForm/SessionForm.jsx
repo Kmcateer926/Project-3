@@ -8,7 +8,6 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
   const [sessionLength, setSessionLength] = useState("");
   const [time, setTime] = useState("");
 
-  // const [approved, setApproved] = useState(false);
   const { id } = useParams();
   useEffect(() => {
     console.log(id);
@@ -17,18 +16,11 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         .get(`/api/sessions/${id}`)
         .then((response) => {
           console.log(response.data);
-          const {
-            student,
-            date,
-            sessionLength,
-            time,
-            // approved,
-          } = response.data;
+          const { student, date, sessionLength, time } = response.data;
           setStudent(student);
           setDate(date);
           setSessionLength(sessionLength);
           setTime(time);
-          // setApproved(approved);
         })
         .catch((err) => {
           console.log(err);
@@ -48,7 +40,6 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               date,
               sessionLength,
               time,
-              // approved,
             },
             id
           );
@@ -59,7 +50,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             <input
               style={{
                 fontFamily: "Special Elite, cursive",
-                fontSize: "18px"
+                fontSize: "18px",
               }}
               placeholder="Student Name"
               id="student"
@@ -70,14 +61,13 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setStudent(e.target.value);
               }}
             />
-            {/* <label htmlFor="title">Student Name</label> */}
           </div>
           <div className="input-field col s6">
             <input
-                style={{
-                  fontFamily: "Special Elite, cursive",
-                  fontSize: "18px"
-               }}
+              style={{
+                fontFamily: "Special Elite, cursive",
+                fontSize: "18px",
+              }}
               placeholder="Date"
               id="bulmaCalendar"
               type="date"
@@ -87,16 +77,15 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setDate(e.target.value);
               }}
             />
-            {/* <label htmlFor="price">Date</label> */}
           </div>
         </div>
         <div className="row">
           <div className="input-field col s12">
             <select
-                style={{
-                  fontFamily: "Special Elite, cursive",
-                  fontSize: "18px"
-               }}
+              style={{
+                fontFamily: "Special Elite, cursive",
+                fontSize: "18px",
+              }}
               type="text"
               value={sessionLength}
               onChange={(e) => {
@@ -108,16 +97,15 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               <option>60</option>
               <option>90</option>
             </select>
-    
           </div>
         </div>
         <div className="row">
           <div className="input-field col s12">
             <select
-                style={{
-                  fontFamily: "Special Elite, cursive",
-                  fontSize: "18px"
-               }}
+              style={{
+                fontFamily: "Special Elite, cursive",
+                fontSize: "18px",
+              }}
               type="text"
               value={time}
               onChange={(e) => {
@@ -137,22 +125,21 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               <option>7:30 PM</option>
               <option>8:00 PM</option>
             </select>
-
-            
-            
           </div>
         </div>
-       
-        
-
-        <button type="submit" className="button is-light is-outlined"style={{
-              fontFamily: "Special Elite, cursive",
-              fontSize: "20px"
-           }}>
+        <button
+          type="submit"
+          className="button is-light is-outlined"
+          style={{
+            fontFamily: "Special Elite, cursive",
+            fontSize: "20px",
+          }}
+        >
           {buttonText}
         </button>
       </form>
     </>
   );
 };
+
 export default SessionForm;

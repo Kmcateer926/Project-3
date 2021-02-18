@@ -9,8 +9,6 @@ const tutorSchema = new Schema({
     required: "First name is Required",
   },
 
- 
-
   education: {
     type: String,
     trim: true,
@@ -27,15 +25,13 @@ const tutorSchema = new Schema({
     required: "years of experience required",
   },
 
- 
-
   email: {
     type: String,
     unique: true,
     sparse: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
   },
- 
+
   imageURL: {
     type: String,
     trim: true,
@@ -45,9 +41,8 @@ const tutorSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  
 
-   session: [{type: Schema.Types.ObjectId, ref: "Session"}]
+  session: [{ type: Schema.Types.ObjectId, ref: "Session" }],
 });
 
 const Tutor = mongoose.model("Tutor", tutorSchema);

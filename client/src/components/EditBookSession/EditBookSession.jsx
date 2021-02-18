@@ -2,20 +2,17 @@ import React, { useState, useEffect } from "react";
 
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-// import ChalkBG from "../ChalkBG/ChalkBG";
 const EditBookSession = ({ buttonText, handleFormSubmit }) => {
   const [student, setStudent] = useState("");
   const [sessionLength, setSessionLength] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const { id } = useParams();
-  // const history = useHistory();
   const styles = {
     font: {
       fontFamily: "Special Elite, cursive",
     },
     heading: {
-      //   paddingTop: 40,
     },
   };
   useEffect(() => {
@@ -30,8 +27,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           setDate(date);
           setTime(time);
           setSessionLength(sessionLength);
-          // history.push("/landing")
-          // alert("Successfully added session")
         })
         .catch((err) => {
           console.log(err);
@@ -40,7 +35,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
   }, [id]);
   return (
     <>
-      {/* <div className="spacer"></div> */}
       <div>
         <h1
           style={{
@@ -51,7 +45,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
         >
           Edit Session
         </h1>
-        {/* <div className="spacer" style={{ height: "50px" }}></div> */}
       </div>
       <div
         className="card "
@@ -66,15 +59,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           borderRadius: "15px",
         }}
       >
-        {/* <div className="card-image">
-          <figure className="image is-128x128">
-            <img
-              // src={teachers.image}
-              // alt={teachers.name}
-              style={{ borderRadius: "15px" }}
-            />
-          </figure>
-        </div> */}
         <div className="card">
           <div className="card-content">
             <form className="column">
@@ -83,7 +67,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
                 <strong>Name: </strong>
-
                 <input
                   className="input"
                   type="text"
@@ -100,8 +83,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                 className="content"
                 style={{ fontFamily: "Special Elite, cursive" }}
               >
-
-
                 <strong>Date: </strong>
                 {" "}
                       <input
@@ -114,70 +95,9 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                           setDate(e.target.value);
                         }}
                       />
-
-
-                {/* {teachers.name} */}
-                {/* <input
-                  className="input is-danger"
-                  type="text"
-                  id="date"
-                  value={date}
-                  onChange={(e) => {
-                    setDate(e.target.value);
-                  }}
-                /> */}
                 <br />
               </div>
-              {/* <p>
-                  <strong>
-                    Session Length:{" "}
-                    <input
-                      className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
-                      value={sessionLength}
-                      onChange={(e) => {
-                        setSessionLength(e.target.value);
-                      }}
-                    />
-                  </strong>
-                </p> */}
-              {/* </div> */}
               <div className="booking-deets">
-                {/* <p>
-                  <strong>
-                    Date:{" "}
-                    <input
-                      className="input is-danger"
-                      type="date"
-                      // id="email"
-                      value={date}
-                      onChange={(e) => {
-                        setDate(e.target.value);
-                      }}
-                    />
-                  </strong>
-                </p> */}
-                {/* TESTED THESE INPUTS TO MATCH THE NEW-SESSION */}
-                {/* <input
-                        className="input is-danger"
-                        type="text"
-                        id="time"
-                        value={time}
-                        onChange={(e) => {
-                          setTime(e.target.value);
-                        }}
-                      />
-                       <input
-                        className="input is-danger"
-                        type="text"
-                        id="sessionLength"
-                        value={sessionLength}
-                        onChange={(e) => {
-                          setSessionLength(e.target.value);
-                        }}
-                      /> */}
                 <p>
                   <strong style={{ fontFamily: "Special Elite, cursive" }}>
                     Time:{" "}
@@ -234,16 +154,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         </div>
                       </div>
                     </div>
-                    {/* <input
-                      className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
-                      value={time}
-                      onChange={(e) => {
-                        setTime(e.target.value);
-                      }}
-                    /> */}
                   </strong>
                 </p>
                 <button
@@ -263,9 +173,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
                         date,
                         time,
                         sessionLength,
-                        // userCreated,
-                        // subjects,
-                        // id,
                       },
                       id
                     );

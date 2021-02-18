@@ -12,7 +12,6 @@ const styles = {
 
 const ParentLogin = () => {
   const [subject, setSubject] = useState({});
-
   useEffect(() => {
     console.log(subject);
     setSubject(parentSubject);
@@ -30,7 +29,6 @@ const ParentLogin = () => {
               Already Have an Account?<a href="/signin"> Login</a>
             </h4>
           </div>
-
           <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
               <label className="label ">Name</label>
@@ -39,20 +37,6 @@ const ParentLogin = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className="field">
-  <label className="label">Username</label>
-  <div className="control has-icons-left has-icons-right">
-    <input className="input is-success" type="text" placeholder="Text input"/>
-    <span className="icon is-small is-left">
-      <i className="fas fa-user"></i>
-    </span>
-    <span className="icon is-small is-right">
-      <i className="fas fa-check"></i>
-    </span>
-  </div>
-  <p className="help is-success">This username is available</p>
-</div> */}
           <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
               <label className="label">Email</label>
@@ -72,7 +56,6 @@ const ParentLogin = () => {
               <p className="help is-danger">This email is invalid</p>
             </div>
           </div>
-
           <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
               <label className="label">Password</label>
@@ -85,7 +68,6 @@ const ParentLogin = () => {
               </div>
             </div>
           </div>
-
           <>
             <div className="column is-three-fifths is-offset-one-fifth">
               <div className="field">
@@ -96,14 +78,12 @@ const ParentLogin = () => {
                       {parentSubject.map((subject) => (
                         <option>{subject.subjects[0]}</option>
                       ))}
-                      {/* <option>With options</option> */}
                     </select>
                   </div>
                 </div>
               </div>
             </div>
           </>
-
           <div className="column is-three-fifths is-offset-one-fifth">
             <div className="field">
               <label className="label">Message</label>
@@ -114,7 +94,6 @@ const ParentLogin = () => {
                 ></textarea>
               </div>
             </div>
-
             <div className="field">
               <div className="control">
                 <label className="checkbox">
@@ -123,7 +102,6 @@ const ParentLogin = () => {
                 </label>
               </div>
             </div>
-
             <div className="field is-grouped">
               <div className="control">
                 <button className="button is-link" style={styles.font}>
@@ -137,19 +115,6 @@ const ParentLogin = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className="field">
-  <div className="control">
-    <label className="radio">
-      <input type="radio" name="question"/>
-      Yes
-    </label>
-    <label className="radio">
-      <input type="radio" name="question"/>
-      No
-    </label>
-  </div>
-</div> */}
         </div>
       </div>
     </>

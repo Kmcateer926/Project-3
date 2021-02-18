@@ -5,15 +5,11 @@ import "./style.css";
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
-  useEffect(() =>{
-setDate(date);
-console.log(date)
-  },[])
-  // const [tutor, setTutor] = useState("");
-  // const [sessionLength, setSessionLength] = useState("");
+  useEffect(() => {
+    setDate(date);
+    console.log(date);
+  }, []);
 
-  // const [date, setDate] = useState("");
-  // const [time, setTime] = useState("");
   return (
     <DatePicker
       selected={date}

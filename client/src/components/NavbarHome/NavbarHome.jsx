@@ -10,17 +10,12 @@ const styles = {
   title: {
     color: "#FFFFFF",
     fontFamily: "Special Elite, cursive",
-    // marginTop: 20,
-    // paddingRight: 35
   },
   tab: {
     color: "#FFFFFF",
     fontFamily: "Special Elite, cursive",
     marginTop: 20,
     paddingRight: 35,
-    // "&:hover": {
-    // 	backgroundColor: "black",
-    // },
   },
 };
 
@@ -52,7 +47,6 @@ const Navbar = ({ setToken, token }) => {
 
           <div id="navbarBasicExample" className="navbar-menu">
             <div id="top" className="navbar-start">
-              {/* <a className="navbar-item">Home</a> */}
               <Link
                 id="top"
                 to="/"
@@ -73,8 +67,7 @@ const Navbar = ({ setToken, token }) => {
 
             <ul className="navbar-end">
               <li>
-                {token ? 
-                 (
+                {token ? (
                   <NavLink
                     to="/landing"
                     className="navbar-item title is-4"
@@ -83,9 +76,8 @@ const Navbar = ({ setToken, token }) => {
                   >
                     Sessions
                   </NavLink>
-                ) : 
-                (
-                  <a
+                ) : (
+                  <div
                     onClick={() => {
                       setToken("");
                     }}
@@ -94,9 +86,8 @@ const Navbar = ({ setToken, token }) => {
                       fontSize: "24px",
                       marginRight: "25px",
                     }}
-                  >
-                   
-                  </a>)}
+                  ></div>
+                )}
               </li>
               <li>
                 {token ? (
@@ -109,7 +100,7 @@ const Navbar = ({ setToken, token }) => {
                     Tutors
                   </NavLink>
                 ) : (
-                  <a
+                  <div
                     onClick={() => {
                       setToken("");
                     }}
@@ -119,17 +110,17 @@ const Navbar = ({ setToken, token }) => {
                       marginRight: "25px",
                       margin: "25px",
                     }}
-                  ></a>
+                  ></div>
                 )}
               </li>
 
               <li>
                 {token ? (
-                  <a
+                  <div
                     onClick={() => {
                       setToken("");
                     }}
-                  ></a>
+                  ></div>
                 ) : (
                   <NavLink
                     to="/about"
@@ -144,7 +135,7 @@ const Navbar = ({ setToken, token }) => {
 
               <li>
                 {token ? (
-                  <a
+                  <div
                     onClick={() => {
                       setToken("");
                     }}
@@ -157,7 +148,7 @@ const Navbar = ({ setToken, token }) => {
                     }}
                   >
                     Sign-out
-                  </a>
+                  </div>
                 ) : (
                   <NavLink
                     to="/loginform"
