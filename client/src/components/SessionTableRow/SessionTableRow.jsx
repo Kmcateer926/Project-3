@@ -3,10 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faEdit, faTrash, faStar } from "@fortawesome/free-solid-svg-icons";
-// import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
-
 const SessionTableRow = ({
   _id,
   tutor,
@@ -35,7 +31,6 @@ getSessions,
       paddingLeft: 35,
       paddingRight: 35,
       fontSize: 20,
-      // overflow: "scroll",
       fontWeight: 300
     },
   };
@@ -57,10 +52,6 @@ getSessions,
             <Link to={`/landing/${_id}`}>&#xf044;</Link>
           </button>
         </td>
-
-        {/* <td class="fa">
-					<Link to={`/landing/${_id}`}>&#xf044;</Link>
-				</td> */}
 
         <td style={{textAlign: "center"}}>
           <button

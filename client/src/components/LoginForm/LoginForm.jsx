@@ -6,7 +6,6 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
-  // const [token, setToken] = useState("");
 
   const styles = {
     signin: {
@@ -28,14 +27,10 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
       backgroundImage: `url("https://t4.ftcdn.net/jpg/03/67/24/77/360_F_367247734_rml9UJtyflIYwvH5Sp6zQkAoxDOnksSS.jpg")`,
       backgroundSize: "cover",
       backgroundPosition: "center center",
-      // backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       width: "100%",
-      //   maxWidth: "2310vw",
       height: "100vh",
-    //   position: "fixed",
       minWidth: "100%",
-    //   backgroundAttachment: "fixed",
       margin: "0"
     },
   };
@@ -51,7 +46,6 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
       .post("/api/parents/loginform", parentData)
       .then((response) => {
-        // console.log("just checking");
 
       
         setToken(response.data.token);
