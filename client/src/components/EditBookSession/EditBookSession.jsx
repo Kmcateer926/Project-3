@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-// import ChalkBG from "../ChalkBG/ChalkBG";
+
 const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 	const [student, setStudent] = useState("");
 	const [sessionLength, setSessionLength] = useState("");
 	const [date, setDate] = useState("");
 	const [time, setTime] = useState("");
 	const { id } = useParams();
-	// const history = useHistory();
+	
 	const styles = {
 		font: {
 			fontFamily: "Special Elite, cursive",
@@ -37,8 +37,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 					setDate(date);
 					setTime(time);
 					setSessionLength(sessionLength);
-					// history.push("/landing")
-					// alert("Successfully added session")
 				})
 				.catch((err) => {
 					console.log(err);
@@ -59,7 +57,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 				>
 					Edit Session
 				</h1>
-				{/* <div className="spacer" style={{ height: "50px" }}></div> */}
 			</div>
 
 			<div
@@ -71,19 +68,9 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 					width: "30%",
 					display: "inline-block",
 					flexDirection: "row",
-					// boxShadow: "5px 2px 2px grey",
 					borderRadius: "15px",
 				}}
 			>
-				{/* <div className="card-image">
-          <figure className="image is-128x128">
-            <img
-              // src={tutor.image}
-              // alt={tutor.name}
-              style={{ borderRadius: "15px" }}
-            />
-          </figure>
-        </div> */}
 
 				<form className="column">
           <p>
@@ -130,42 +117,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 							}}
 						/>
 						</p>
-					
-
 					<div className="booking-dates">
-						{/* <p>
-                  <strong>
-                    Date:{" "}
-                    <input
-                      className="input is-danger"
-                      type="date"
-                      // id="email"
-                      value={date}
-                      onChange={(e) => {
-                        setDate(e.target.value);
-                      }}
-                    />
-                  </strong>
-                </p> */}
-						{/* TESTED THESE INPUTS TO MATCH THE NEW-SESSION */}
-						{/* <input
-                        className="input is-danger"
-                        type="text"
-                        id="time"
-                        value={time}
-                        onChange={(e) => {
-                          setTime(e.target.value);
-                        }}
-                      />
-                       <input
-                        className="input is-danger"
-                        type="text"
-                        id="sessionLength"
-                        value={sessionLength}
-                        onChange={(e) => {
-                          setSessionLength(e.target.value);
-                        }}
-                      /> */}
 						<p>
 							<strong
 								style={{
@@ -239,16 +191,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 										</div>
 									</div>
 								</div>
-								{/* <input
-                      className="input is-danger"
-                      type="integer"
-                      placeholder="Session Length"
-                      id="email"
-                      value={time}
-                      onChange={(e) => {
-                        setTime(e.target.value);
-                      }}
-                    /> */}
 							</strong>
 						</p>
 						<button
@@ -269,9 +211,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 										date,
 										time,
 										sessionLength,
-										// userCreated,
-										// subjects,
-										// id,
 									},
 									id
 								);

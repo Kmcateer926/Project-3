@@ -9,11 +9,7 @@ const Calendar = () => {
 setDate(date);
 console.log(date)
   },[])
-  // const [tutor, setTutor] = useState("");
-  // const [sessionLength, setSessionLength] = useState("");
-
-  // const [date, setDate] = useState("");
-  // const [time, setTime] = useState("");
+  
   return (
     <DatePicker
       selected={date}
