@@ -29,7 +29,9 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 						student,
 						date,
 						time,
-						sessionLength,
+            sessionLength,
+            tutor,
+          
 					} = response.data;
 					setStudent(student);
 					setDate(date);
@@ -76,8 +78,8 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 				{/* <div className="card-image">
           <figure className="image is-128x128">
             <img
-              // src={teachers.image}
-              // alt={teachers.name}
+              // src={tutor.image}
+              // alt={tutor.name}
               style={{ borderRadius: "15px" }}
             />
           </figure>

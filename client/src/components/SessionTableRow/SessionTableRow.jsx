@@ -15,8 +15,7 @@ const SessionTableRow = ({
   sessionLength,
   time,
   approved,
-
-  getSessions,
+getSessions,
 }) => {
   const deleteSession = (id) => {
     axios

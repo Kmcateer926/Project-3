@@ -1,0 +1,16 @@
+.navbar-item,
+.navbar-link {
+	color: #ffffff;
+}
+
+.navbar-link.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+a.navbar-item.is-active,
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover {
+	background-color: rgb(38, 116, 219);
+	color: red;
+}
