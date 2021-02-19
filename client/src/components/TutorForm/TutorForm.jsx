@@ -11,7 +11,6 @@ const TutorForm = ({ buttonText, handleFormSubmit }) => {
 	const [imageURL, setImageURL] = useState("");
 	const [approved, setApproved] = useState(false);
 	const [email, setEmail] = useState("");
-	//   const [password, setPassword] = useState("");
 	const { id } = useParams();
 
 	useEffect(() => {

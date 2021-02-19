@@ -8,7 +8,6 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
   const [sessionLength, setSessionLength] = useState("");
   const [time, setTime] = useState("");
 
-  // const [approved, setApproved] = useState(false);
   const { id } = useParams();
   useEffect(() => {
     console.log(id);
@@ -22,13 +21,11 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
             date,
             sessionLength,
             time,
-            // approved,
           } = response.data;
           setStudent(student);
           setDate(date);
           setSessionLength(sessionLength);
           setTime(time);
-          // setApproved(approved);
         })
         .catch((err) => {
           console.log(err);
@@ -48,7 +45,6 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               date,
               sessionLength,
               time,
-              // approved,
             },
             id
           );
@@ -70,7 +66,6 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setStudent(e.target.value);
               }}
             />
-            {/* <label htmlFor="title">Student Name</label> */}
           </div>
           <div className="input-field col s6">
             <input
@@ -87,7 +82,6 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
                 setDate(e.target.value);
               }}
             />
-            {/* <label htmlFor="price">Date</label> */}
           </div>
         </div>
         <div className="row">
