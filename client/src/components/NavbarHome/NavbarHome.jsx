@@ -136,12 +136,12 @@ const Navbar = ({ setToken, token }) => {
 
               <li>
                 {token ? (
-                  <a
+                  <a 
+                  className = "navbar-item title is-4"
                     onClick={() => {
                       setToken("");
                     }}
                     style={{
-                      color: "#ffffff",
                       fontSize: "24px",
                       marginBottom: "25px",
                       margin: "25px",
