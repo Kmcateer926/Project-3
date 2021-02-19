@@ -2,8 +2,9 @@
 import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import EditBookSession from "../../components/EditBookSession/EditBookSession";
 import board from "../../components/ChalkBG/chalkBoard.jpg";
+import EditBookSession from "../../components/EditBookSession/EditBookSession";
+
 
 const EditSessionTest = () => {
 	const history = useHistory();

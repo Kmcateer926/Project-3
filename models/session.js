@@ -11,17 +11,18 @@ const SessionSchema = new Schema({
 	sessionLength: {
 		type: Number,
 		trim: true,
+		required: [true,'please enter session length']
+		
 	},
 	date: {
 		type: String,
+		required: [true, 'please pick a date']
+		
 	},
 	time: {
 		type: String,
 		trim: true,
-	},
-	approved: {
-		type: Boolean,
-		default: false,
+		required: [true, 'please pick a time']
 	},
 
 	tutor: {
