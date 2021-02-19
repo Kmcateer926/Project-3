@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
 	console.log(req.params.id);
 	Session.findById(req.params.id)
-		// .populate("tutor")
+		.populate("tutor")
 		.then((foundSession) => {
 			res.json(foundSession);
 		})
