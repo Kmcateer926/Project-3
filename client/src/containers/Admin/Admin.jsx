@@ -5,14 +5,6 @@ import board from "../../components/ChalkBG/chalkBoard.jpg";
 import TutorTableRow from "../../components/TutorTableRow/TutorTableRow";
 
 const Admin = () => {
-  // 1. hard code the render
-  // 2. move the values to this.state
-  // 3. make the api call to return the data dynamically.
-  // 3a. Import useEffect - when to go get the data.
-  // 3b. Import axios
-  // 3c. Inside useEffect, make an axios call.
-  // 3d. set the response.data on state (setProducts) NEVER DIRECTLY MUTATE STATE
-
   const [tutors, setTutors] = useState([]);
 
   useEffect(() => {

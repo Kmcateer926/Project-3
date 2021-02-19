@@ -77,7 +77,7 @@ const Navbar = ({ setToken, token }) => {
                     Sessions
                   </NavLink>
                 ) : (
-                  <a
+                  <div
                     onClick={() => {
                       setToken("");
                     }}
@@ -87,7 +87,7 @@ const Navbar = ({ setToken, token }) => {
                       marginRight: "25px",
                     }}
                     href="/"
-                  ></a>
+                  ></div>
                 )}
               </li>
               <li>
@@ -101,7 +101,7 @@ const Navbar = ({ setToken, token }) => {
                     Tutors
                   </NavLink>
                 ) : (
-                  <a
+                  <div
                     onClick={() => {
                       setToken("");
                     }}
@@ -111,17 +111,17 @@ const Navbar = ({ setToken, token }) => {
                       marginRight: "25px",
                       margin: "25px",
                     }}
-                  ></a>
+                  ></div>
                 )}
               </li>
 
               <li>
                 {token ? (
-                  <a
+                  <div
                     onClick={() => {
                       setToken("");
                     }}
-                  ></a>
+                  ></div>
                 ) : (
                   <NavLink
                     to="/about"
@@ -136,7 +136,7 @@ const Navbar = ({ setToken, token }) => {
 
               <li>
                 {token ? (
-                  <a 
+                  <div
                   className = "navbar-item title is-4"
                     onClick={() => {
                       setToken("");
@@ -149,7 +149,7 @@ const Navbar = ({ setToken, token }) => {
                     }}
                   >
                     Sign-out
-                  </a>
+                  </div>
                 ) : (
                   <NavLink
                     to="/loginform"
