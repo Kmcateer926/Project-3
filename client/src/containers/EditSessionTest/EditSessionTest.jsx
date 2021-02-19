@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 import board from "../../components/ChalkBG/chalkBoard.jpg";
 import { useHistory } from "react-router-dom";
@@ -7,7 +7,15 @@ import EditBookSession from "../../components/EditBookSession/EditBookSession";
 // import ChalkBG from "../../components/ChalkBG/ChalkBG";
 
 const EditSessionTest = () => {
-	const history = useHistory();
+  const history = useHistory();
+  
+  //
+// const [session, setSession] = useState([]);
+
+// useEffect(() => {
+// handleFormSubmit();
+// },[])
+
 
 	const handleFormSubmit = (e, sessionData, id) => {
 		console.log(sessionData);
@@ -16,7 +24,8 @@ const EditSessionTest = () => {
 		axios
 			.put(`/api/sessions/${id}`, sessionData)
 			.then((response) => {
-				console.log(response.data);
+        console.log(response.data);
+        // setSession(response.data);
 				history.push("/landing");
 			})
 			.catch((err) => {
