@@ -54,7 +54,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
       <div
         className="is-6 is-offset-3"
         style={{
-          margin: "10px",
+          // marginBottom: "250px ",
           border: "1px solid",
           padding: "5px",
           width: "30%",
@@ -204,6 +204,7 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           </div>
         </form>
       </div>
+      
     </>
   );
 };
