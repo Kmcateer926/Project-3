@@ -20,8 +20,12 @@
 ### Title
 
 Tutor-Hub
-<img src="assets\admin.png">
-<img src="assets\2021-02-17 (1).png">
+<img src="assets\home.png">
+<img src="assets\login.png">
+<img src="assets\landing.png">
+<img src="assets\directory.png">
+<img src="assets\adminpage.png">
+<img src="assets\video.png">
 
 ### Description
 

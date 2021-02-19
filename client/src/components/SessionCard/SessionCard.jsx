@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+// cards for tutor data with deconstructed props
+// session cards are to be viewable in future development with details/feedback about the session that took place
 const SessionCard = ({ student, date, sessionLength, time, _id }) => {
   return (
     <div className="col s4">
@@ -9,7 +10,6 @@ const SessionCard = ({ student, date, sessionLength, time, _id }) => {
         <div className="col s12 m7">
           <div className="card">
             <div className="card-image">
-              
               <span className="card-title">
                 {student} - {date}
               </span>
@@ -26,7 +26,7 @@ const SessionCard = ({ student, date, sessionLength, time, _id }) => {
     </div>
   );
 };
-
+//prototypes for sessionCard
 SessionCard.propTypes = {
   _id: PropTypes.string.isRequired,
   student: PropTypes.string.isRequired,
