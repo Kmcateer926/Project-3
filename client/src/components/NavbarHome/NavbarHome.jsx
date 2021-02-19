@@ -143,9 +143,9 @@ const Navbar = ({ setToken, token }) => {
                     }}
                     style={{
                       fontSize: "24px",
-                      marginBottom: "25px",
-                      margin: "25px",
+                    
                       marginTop: 20,
+                      paddingRight: 35,
                     }}
                   >
                     Sign-out

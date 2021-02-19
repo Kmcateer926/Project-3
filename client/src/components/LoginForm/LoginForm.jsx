@@ -13,7 +13,6 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
       marginRight: 50,
       fontFamily: "Special Elite, cursive",
       align: "center",
-
       color: "#ffffff",
     },
     submit: {
