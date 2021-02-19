@@ -7,7 +7,8 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 	const [student, setStudent] = useState("");
 	const [sessionLength, setSessionLength] = useState("");
 	const [date, setDate] = useState("");
-	const [time, setTime] = useState("");
+  const [time, setTime] = useState("");
+  const [tutor, setTutor] = useState("");
 	const { id } = useParams();
 	// const history = useHistory();
 	const styles = {
@@ -36,7 +37,8 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 					setStudent(student);
 					setDate(date);
 					setTime(time);
-					setSessionLength(sessionLength);
+          setSessionLength(sessionLength);
+          setTutor(tutor);
 					// history.push("/landing")
 					// alert("Successfully added session")
 				})
@@ -75,15 +77,15 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
 					borderRadius: "15px",
 				}}
 			>
-				{/* <div className="card-image">
+				<div className="card-image">
           <figure className="image is-128x128">
             <img
-              // src={tutor.image}
-              // alt={tutor.name}
+              src={tutor.image}
+              alt={tutor.name}
               style={{ borderRadius: "15px" }}
             />
           </figure>
-        </div> */}
+        </div>
 
 				<form className="column">
           <p>

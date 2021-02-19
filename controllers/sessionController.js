@@ -1,14 +1,11 @@
 const express = require("express");
-
 const router = express.Router();
 const Session = require("../models/session");
 const theOther = require("../models");
-
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 // console.log(accountSid);
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require("twilio")(accountSid, authToken);
-
 router.get("/", (req, res) => {
 	Session.find({})
 		.populate("tutor")
@@ -25,9 +22,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
 	console.log(req.params.id);
 	Session.findById(req.params.id)
-
 		// .populate("tutor")
-
 		.then((foundSession) => {
 			res.json(foundSession);
 		})
@@ -36,7 +31,6 @@ router.get("/:id", (req, res) => {
 			res.status(404).end();
 		});
 });
-
 router.get("/:id", (req, res) => {
 	Session.find({
 		where: {
@@ -52,7 +46,6 @@ router.get("/:id", (req, res) => {
 			res.status(500).end();
 		});
 });
-
 router.post("/", (req, res) => {
 	console.log(req.body);
 	Session.create(req.body)
@@ -73,7 +66,6 @@ router.post("/", (req, res) => {
 			console.log(err);
 		});
 });
-
 router.put("/:id", (req, res) => {
 	Session.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
 		(updatedObject) => {
@@ -81,13 +73,11 @@ router.put("/:id", (req, res) => {
 		}
 	);
 });
-
 router.delete("/:id", (req, res) => {
 	Session.findByIdAndDelete(req.params.id).then((result) => {
 		res.json(result);
 	});
 });
-
 // Tester Router
 router.get("/apple/:id", (req, res) => {
 	theOther.Tutor.findOne({
@@ -102,7 +92,6 @@ router.get("/apple/:id", (req, res) => {
 			console.log(err);
 		});
 });
-
 //testing post method with specifc id's to later render object
 router.post("/applepie/:id", (req, res) => {
 	theOther.Session.create(req.body)
@@ -120,5 +109,4 @@ router.post("/applepie/:id", (req, res) => {
 			res.json(err);
 		});
 });
-
 module.exports = router;
