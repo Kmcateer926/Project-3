@@ -65,6 +65,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
         <div className="container" style={styles.signin}>
           <div className="columns">
             <div className="column has-text-centered">
+              <div style={{height:"60px"}}></div>
               <h1 className="title is-2" style={{ color: "#ffffff" }}>
                 Welcome Back
               </h1>

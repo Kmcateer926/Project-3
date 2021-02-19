@@ -4,90 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const EditBookSession = ({ buttonText, handleFormSubmit }) => {
-<<<<<<< HEAD
-	const [student, setStudent] = useState("");
-	const [sessionLength, setSessionLength] = useState("");
-	const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [tutor, setTutor] = useState("");
-	const { id } = useParams();
-	// const history = useHistory();
-	const styles = {
-		font: {
-			fontFamily: "Special Elite, cursive",
-		},
-		heading: {
-			//   paddingTop: 40,
-		},
-	};
-	useEffect(() => {
-		console.log(id);
-		if (id) {
-			axios
-				.get(`/api/sessions/${id}`)
-				.then((response) => {
-					console.log(response.data);
-					const {
-						student,
-						date,
-						time,
-            sessionLength,
-            tutor,
-          
-					} = response.data;
-					setStudent(student);
-					setDate(date);
-					setTime(time);
-          setSessionLength(sessionLength);
-          setTutor(tutor);
-					// history.push("/landing")
-					// alert("Successfully added session")
-				})
-				.catch((err) => {
-					console.log(err);
-				});
-		}
-	}, [id]);
-	return (
-		<>
-    <div style={{height:"50px"}}></div>
-			<div >
-				<h1
-					style={{
-						fontFamily: "Special Elite, cursive",
-						fontSize: "50px",
-            textAlign: "center",
-      
-					}}
-				>
-					Edit Session
-				</h1>
-				{/* <div className="spacer" style={{ height: "50px" }}></div> */}
-			</div>
-
-			<div
-				className="is-6 is-offset-3"
-				style={{
-					margin: "10px",
-					border: "1px solid",
-					padding: "5px",
-					width: "30%",
-					display: "inline-block",
-					flexDirection: "row",
-					// boxShadow: "5px 2px 2px grey",
-					borderRadius: "15px",
-				}}
-			>
-				<div className="card-image">
-          <figure className="image is-128x128">
-            <img
-              src={tutor.image}
-              alt={tutor.name}
-              style={{ borderRadius: "15px" }}
-            />
-          </figure>
-        </div>
-=======
   const [student, setStudent] = useState("");
   const [sessionLength, setSessionLength] = useState("");
   const [date, setDate] = useState("");
@@ -134,7 +50,6 @@ const EditBookSession = ({ buttonText, handleFormSubmit }) => {
           Edit Session
         </h1>
       </div>
->>>>>>> 02e444ebc57f7865508a96c1cf463679c71126fc
 
       <div
         className="is-6 is-offset-3"
