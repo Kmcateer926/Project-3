@@ -11,8 +11,8 @@ const SessionSchema = new Schema({
 	sessionLength: {
 		type: Number,
 		trim: true,
-		required: true,
-		message: "please enter session length"
+		required: [true,'please enter session length']
+		
 	},
 	date: {
 		type: String,

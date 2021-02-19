@@ -1,6 +1,7 @@
-### Tutor-Hub
+# Tutor-Hub
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Table of Contents
+## Table of Contents
 
 - [Description](#description)
 - [Author](#author)
@@ -26,7 +27,7 @@ Tutor-Hub
 
 Have you noticed how difficult it can be to stay focused on a screen for an entire day? As we’ve physically distanced during the COVID-19 pandemic parents have definitely noticed all of the distractions and difficulties that come with distanced learning and are looking for ways to make up for a reduced amount of face to face time children have with their teachers.
 
-### Author
+### Authors
 
 Kevin, Stef, Andrew, Geoff
 
@@ -42,7 +43,17 @@ Start by creating a profile, logging in, then browse or list of available tutors
 
 ### Technology
 
-React, JavaScript, HTML, Bulma, Bulma Calender, Twilio, cloudinary, bcrypt, Node, MongoDB
+* `React` 
+* `JavaScript` 
+* `HTML` 
+* `Bulma` 
+* `Bulma Calender` 
+* `Twilio`
+* `Cloudinary` 
+* `bcrypt`
+* `Express`
+* `Node`
+* `MongoDB`
 
 ### URL
 
@@ -50,7 +61,10 @@ https://radiant-hollows-90628.herokuapp.com/
 
 ### Contributors
 
-Estefania Lupo, Geoff Nix, Andrew Amerson, Kevin McAteer
+* **Estefania Lupo** 
+* **Geoff Nix** 
+* **Andrew Amerson**
+* **Kevin McAteer**
 
 ### Github
 
@@ -58,7 +72,10 @@ Kmcateer926
 
 ### Email
 
-kmcateer926@gmail.com, nialupo87@gmail.com, aamerson198@gmail.com,
+* kmcateer926@gmail.com 
+* nialupo87@gmail.com
+* aamerson198@gmail.com
+* fullstackgeoff@gmail.com
 
 ### Phone
 
@@ -74,4 +91,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ### Questions
 
-For additional questions, contact me at kmcateer926@gmail.com, nialupo87@gmail.com, aamerson198@gmail.com, 706-867-5611
+For additional questions, contact us at kmcateer926@gmail.com, nialupo87@gmail.com, aamerson198@gmail.com, or fullstackgeoff@gmail.com 706-867-5611
