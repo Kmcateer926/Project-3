@@ -45,6 +45,7 @@ const TutorTableRow = ({
         <td style={{ textAlign: "center" }}>
           <label>
             <Switch
+            
 			id={_id}
               isOn={approved}
               handleToggle={() => editTutor(_id)}

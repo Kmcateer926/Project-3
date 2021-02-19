@@ -2,10 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import SessionForm from "../../components/SessionForm/SessionForm";
-// import AlertContext from "../../utils/alertContext";
 
 const NewSession = () => {
-//   const alert = useContext(AlertContext);
   const history = useHistory();
 
   const handleFormSubmit = (e, sessionData) => {
@@ -18,10 +16,6 @@ const NewSession = () => {
       })
       .catch((err) => {
         console.log(err);
-        // alert.setAlert({
-        //   message: "Failed to create new session.",
-        //   type: "danger",
-        // });
       });
   };
 
