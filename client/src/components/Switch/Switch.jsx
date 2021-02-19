@@ -12,7 +12,7 @@ const Switch = ({id, isOn, handleToggle }) => {
       />
       <label
 
-        style={{ background: isOn && "#15C217" }}
+        style={{ background: isOn && "#15C217", transform: "translate(30%, -40%)" }}
 
         className="react-switch-label"
         htmlFor={`react-switch-new-${id}`}

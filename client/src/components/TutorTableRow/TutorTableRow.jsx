@@ -56,7 +56,7 @@ const TutorTableRow = ({
         <td style={{ textAlign: "center" }}>
           <button
             className="fa fa-trash-alt"
-            style={{ fontSize: "24px", marginTop: "8px" }}
+            style={{ fontSize: "24px", marginTop: "25px" }}
             onClick={() => {
               deleteTutor(_id);
             }}
