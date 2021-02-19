@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+//handle forms submit for the sessions form
+//session form was passed into tutor card in order to book a session directly from the tutor
 const SessionForm = ({ buttonText, handleFormSubmit }) => {
   const [student, setStudent] = useState("");
   const [date, setDate] = useState("");
   const [sessionLength, setSessionLength] = useState("");
   const [time, setTime] = useState("");
-
+//api call to get sessions
   const { id } = useParams();
   useEffect(() => {
     console.log(id);
@@ -32,7 +33,7 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
         });
     }
   }, [id]);
-
+//form for submitting session details from the parent
   return (
     <>
       <form
@@ -130,15 +131,9 @@ const SessionForm = ({ buttonText, handleFormSubmit }) => {
               <option>7:00 PM</option>
               <option>7:30 PM</option>
               <option>8:00 PM</option>
-            </select>
-
-            
-            
+            </select>    
           </div>
-        </div>
-       
-        
-
+        </div>       
         <button type="submit" className="button is-light is-outlined"style={{
               fontFamily: "Special Elite, cursive",
               fontSize: "20px"
