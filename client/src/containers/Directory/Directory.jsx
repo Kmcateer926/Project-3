@@ -1,5 +1,3 @@
-// import React, { useContext } from "react";
-
 import board from "../../components/ChalkBG/chalkBoard.jpg";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -7,7 +5,6 @@ import axios from "axios";
 import TutorCard from "../../components/TutorCard/TutorCard";
 
 const Tutors = () => {
-	// const [tutors, setTutors] = useState([]);
 	const [approvedTutors, setApprovedTutors] = useState([]);
 	useEffect(() => {
 		axios

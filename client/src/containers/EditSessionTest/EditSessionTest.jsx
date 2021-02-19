@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+
+import React from "react";
 import axios from "axios";
-import board from "../../components/ChalkBG/chalkBoard.jpg";
 import { useHistory } from "react-router-dom";
 import EditBookSession from "../../components/EditBookSession/EditBookSession";
 
-
 const EditSessionTest = () => {
 	const history = useHistory();
-
-
-
 	const handleFormSubmit = (e, sessionData, id) => {
 		console.log(sessionData);
 		console.log("click");
@@ -33,7 +29,6 @@ const EditSessionTest = () => {
 			textAlign: "center",
 		},
 	};
-
 
 	return (
 		<>
