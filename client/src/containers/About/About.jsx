@@ -1,5 +1,5 @@
 import React from "react";
-import Video3 from "./tutotHubTest.mp4";
+import Video3 from "./tutorHubVid2.mp4";
 import "./About.css";
 import Thumbnail from "./thumbnail.png";
 
