@@ -9,7 +9,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
   const styles = {
     signin: {
-      marginTop: 40,
+    //   marginTop: 40,
       marginRight: 50,
       fontFamily: "Special Elite, cursive",
       align: "center",
@@ -29,9 +29,9 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
       backgroundPosition: "center center",
       backgroundRepeat: "no-repeat",
       width: "100%",
-      height: "100vh",
+      height: "90vh",
       minWidth: "100%",
-      margin: "0"
+      margin: "10px 0px 0px"
     },
   };
 
@@ -60,7 +60,7 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
 
   return (
     <>
-    	<html style={{ margin: "0" }}>
+    	
       <div className="main" style={styles.background}>
         <div className="container" style={styles.signin}>
           <div className="columns">
@@ -169,7 +169,6 @@ const LoginForm = ({ handleLoginSubmit, setToken }) => {
           </form>
         </div>
       </div>
-      </html>
     </>
   );
 };
