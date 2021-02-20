@@ -6,11 +6,10 @@ import TutorTableRow from "../../components/TutorTableRow/TutorTableRow";
 
 const Admin = () => {
   const [tutors, setTutors] = useState([]);
-
   useEffect(() => {
     getTutors();
   }, []);
-
+  //api call to get tutors that appear in the tutor table
   const getTutors = () => {
     axios
       .get("/api/tutors")
@@ -22,9 +21,7 @@ const Admin = () => {
         console.log(err);
       });
   };
-
-
-
+  //TutorTable component is passed below
   return (
     <>
       <body style={{ backgroundImage: `url(${board})` }}>
@@ -41,12 +38,15 @@ const Admin = () => {
             Admin View
           </h1>
           <div>
-            <h4 className="subtitle is-6 has-text-centered" style={{
-              textAlign: "center",
-              color: "white",
-              fontSize: "18px",
-              fontFamily: "Special Elite, cursive",
-            }} >
+            <h4
+              className="subtitle is-6 has-text-centered"
+              style={{
+                textAlign: "center",
+                color: "white",
+                fontSize: "18px",
+                fontFamily: "Special Elite, cursive",
+              }}
+            >
               Need a new tutor?<a href="/admin/new-tutor"> New Tutor</a>
             </h4>
           </div>
@@ -69,7 +69,6 @@ const Admin = () => {
                 <th id="row"> DELETE</th>
               </tr>
             </thead>
-
             <tbody>
               {tutors.map((tutor) => (
                 <TutorTableRow
@@ -81,13 +80,10 @@ const Admin = () => {
             </tbody>
           </table>
         </div>
-        
       </body>
-      <div style={{height:"200px",backgroundImage: `url(${board})`}}></div>
+      <div style={{ height: "200px", backgroundImage: `url(${board})` }}></div>
     </>
   );
-
-
 };
 
 export default Admin;
