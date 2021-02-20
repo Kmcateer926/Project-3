@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-
+//model for sessions
 const SessionSchema = new Schema({
 	student: {
 		type: String,

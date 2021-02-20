@@ -1,19 +1,8 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-
+//model for parents
 const parentSchema = new Schema({
-  // name: {
-  //   type: String,
-  //   trim: true,
-  //   required: "name"
-  // },
-
-  //   lastName: {
-  //     type: String,
-  //     trim: true,
-  //     required: "Last name is Required"
-  //   },
 
   password: {
     type: String,
@@ -28,25 +17,6 @@ const parentSchema = new Schema({
     sparse: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
-  //may or may not need userCreated
-  // userCreated: {
-  //   type: Date,
-  //   default: Date.now
-  // },
-
-  // subjects:[
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "Subjects"
-  //   }
-  // ],
-
-  //   status: null,
-
-  // id: {
-  //   type: Number,
-  //   required: true
-  // }
 });
 
 parentSchema.pre("save", function (next) {

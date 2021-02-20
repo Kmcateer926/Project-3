@@ -3,9 +3,9 @@ const router = express.Router();
 const Session = require("../models/session");
 const theOther = require("../models");
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
-// console.log(accountSid);
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require("twilio")(accountSid, authToken);
+
 router.get("/", (req, res) => {
 	Session.find({})
 		.populate("tutor")
@@ -52,14 +52,14 @@ router.post("/", (req, res) => {
 		// .populate("tutor")
 		.then((newSession) => {
 			console.log(newSession);
-			//   client.messages
-			//     .create({
-			//       body: `${req.body.student} booked for ${req.body.date} at ${req.body.time} with ${req.body.tutor}`,
-			//       from: "+15093944876",
-			//       to: "+16787933025",
-			//     })
-			//     .then((message) => console.log(message))
-			//     .catch((err) => console.log(err));
+			  client.messages
+			    .create({
+			      body: `${req.body.student} booked for ${req.body.date} at ${req.body.time} with ${req.body.tutor}`,
+			      from: "+15093944876",
+			      to: "+16787933025",
+			    })
+			    .then((message) => console.log(message))
+			    .catch((err) => console.log(err));
 			res.json(newSession);
 		})
 		.catch((err) => {

@@ -1,15 +1,13 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-
+//model for tutors
 const tutorSchema = new Schema({
   name: {
     type: String,
     trim: true,
     required: "First name is Required",
   },
-
- 
 
   education: {
     type: String,
@@ -26,8 +24,6 @@ const tutorSchema = new Schema({
     type: Number,
     required: "years of experience required",
   },
-
- 
 
   email: {
     type: String,
@@ -46,7 +42,6 @@ const tutorSchema = new Schema({
     default: false,
   },
   
-
    session: [{type: Schema.Types.ObjectId, ref: "Session"}]
 });
 
